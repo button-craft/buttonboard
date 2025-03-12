@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUTTONBoard Hot 100</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;700&display=swap');
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Fredoka One', cursive;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 400;
         }
         
         body {
@@ -35,7 +36,7 @@
         .logo {
             color: #ff3d3d;
             font-size: 36px;
-            font-weight: 900;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: -1px;
         }
@@ -75,17 +76,20 @@
             color: #ff3d3d;
             margin-bottom: 5px;
             font-size: 16px;
+            font-weight: 500;
         }
         
         .biggest-jump-info h4 {
             font-size: 18px;
             margin-bottom: 3px;
             color: #f0f0f0;
+            font-weight: 500;
         }
         
         .biggest-jump-info p {
             font-size: 14px;
             color: #b0b0b0;
+            font-weight: 300;
         }
         
         .chart-container {
@@ -99,14 +103,23 @@
         
         .chart-header {
             background-color: #2d2d2d;
-            padding: 12px 20px;
+            padding: 15px 20px;
             border-bottom: 1px solid #333;
             display: grid;
             grid-template-columns: 40px 80px 1fr 100px 100px 80px;
             align-items: center;
-            font-weight: bold;
+            font-weight: 500;
             font-size: 13px;
             color: #b0b0b0;
+        }
+        
+        .chart-header > div {
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .chart-header > div:hover {
+            color: #f0f0f0;
         }
         
         .chart-header > div:nth-child(4),
@@ -115,8 +128,18 @@
             text-align: center;
         }
         
+        .chart-header > div.sort-asc::after {
+            content: ' ▲';
+            font-size: 10px;
+        }
+        
+        .chart-header > div.sort-desc::after {
+            content: ' ▼';
+            font-size: 10px;
+        }
+        
         .chart-row {
-            padding: 15px 20px;
+            padding: 20px;
             display: grid;
             grid-template-columns: 40px 80px 1fr 100px 100px 80px;
             align-items: center;
@@ -129,7 +152,7 @@
         
         .position {
             font-size: 24px;
-            font-weight: bold;
+            font-weight: 500;
             color: #f0f0f0;
             text-align: center;
         }
@@ -146,12 +169,14 @@
             margin-bottom: 3px;
             color: #f0f0f0;
             text-align: left;
+            font-weight: 500;
         }
         
         .song-info p {
             font-size: 14px;
             color: #b0b0b0;
             text-align: left;
+            font-weight: 300;
         }
         
         .stat {
@@ -211,155 +236,219 @@
     
     <div class="chart-container">
         <div class="chart-header">
-            <div>POS</div>
+            <div class="sort-asc" data-sort="position">POS</div>
             <div></div>
-            <div>TITLE</div>
-            <div>PEAK</div>
-            <div>STREAK</div>
+            <div data-sort="title">TITLE</div>
+            <div data-sort="peak">PEAK</div>
+            <div data-sort="streak">STREAK</div>
             <div>PREV.</div>
         </div>
         
-        <!-- Example chart rows -->
-        <div class="chart-row">
-            <div class="position">1</div>
-            <div><img src="img/JIG" alt="Album Cover" class="album-cover"></div>
-            <div class="song-info">
-                <h3>JIG (Janna is a Hoe)</h3>
-                <p>Ray, ft. EJ and Ryan</p>
-            </div>
-            <div class="stat">1</div>
-            <div class="stat">1</div>
-            <div class="trend new">
-                <div class="arrow">NEW</div>
-            </div>
+        <div id="chart-body">
+            <!-- Chart rows will be inserted here by JavaScript -->
         </div>
-        
-        <div class="chart-row">
-            <div class="position">2</div>
-            <div><img src="img/Summertime%20Hits%20Vol.%203" alt="Album Cover" class="album-cover"></div>
-            <div class="song-info">
-                <h3>GYATT RIZZ SIGMA</h3>
-                <p>Ray</p>
-            </div>
-            <div class="stat">2</div>
-            <div class="stat">1</div>
-            <div class="trend new">
-                <div class="arrow">NEW</div>
-            </div>
-        </div>
-        
-        <div class="chart-row">
-            <div class="position">3</div>
-            <div><img src="img/Gemsie%20Sings%20(UNRELEASED)" alt="Album Cover" class="album-cover"></div>
-            <div class="song-info">
-                <h3>"Think About It Song"</h3>
-                <p>EJ</p>
-            </div>
-            <div class="stat">3</div>
-            <div class="stat">1</div>
-            <div class="trend new">
-                <div class="arrow">NEW</div>
-            </div>
-        </div>
-        
-        <div class="chart-row">
-            <div class="position">4</div>
-            <div><img src="img/Summertime%20Hits%20Vol.%203" alt="Album Cover" class="album-cover"></div>
-            <div class="song-info">
-                <h3>ATLANTA PRIME</h3>
-                <p>Ray, ft. EJ</p>
-            </div>
-            <div class="stat">4</div>
-            <div class="stat">1</div>
-            <div class="trend new">
-                <div class="arrow">NEW</div>
-            </div>
-        </div>
-        
-        <div class="chart-row">
-            <div class="position">5</div>
-            <div><img src="img/Summertime%20Hits%20Vol.%203" alt="Album Cover" class="album-cover"></div>
-            <div class="song-info">
-                <h3>boat</h3>
-                <p>Ray (with EJ)</p>
-            </div>
-            <div class="stat">5</div>
-            <div class="stat">1</div>
-            <div class="trend new">
-                <div class="arrow">NEW</div>
-            </div>
-        </div>
-        
-        <div class="chart-row">
-            <div class="position">6</div>
-            <div><img src="img/Summertime%20Hits%20Vol.%201" alt="Album Cover" class="album-cover"></div>
-            <div class="song-info">
-                <h3>Nom nom nom</h3>
-                <p>BUTTON!!!</p>
-            </div>
-            <div class="stat">6</div>
-            <div class="stat">1</div>
-            <div class="trend new">
-                <div class="arrow">NEW</div>
-            </div>
-        </div>
-        
-        <div class="chart-row">
-            <div class="position">7</div>
-            <div><img src="img/Summertime%20Hits%20Vol.%201" alt="Album Cover" class="album-cover"></div>
-            <div class="song-info">
-                <h3>No Fighting</h3>
-                <p>Kate, prod. Ray</p>
-            </div>
-            <div class="stat">7</div>
-            <div class="stat">1</div>
-            <div class="trend new">
-                <div class="arrow">NEW</div>
-            </div>
-        </div>
-        
-        <div class="chart-row">
-            <div class="position">8</div>
-            <div><img src="img/Gemsie%20Sings" alt="Album Cover" class="album-cover"></div>
-            <div class="song-info">
-                <h3>Single Ladies (Put a Ring On It) Cover</h3>
-                <p>EJ</p>
-            </div>
-            <div class="stat">8</div>
-            <div class="stat">1</div>
-            <div class="trend new">
-                <div class="arrow">NEW</div>
-            </div>
-        </div>
-        
-        <div class="chart-row">
-            <div class="position">9</div>
-            <div><img src="img/Summertime%20Hits%20Vol.%201" alt="Album Cover" class="album-cover"></div>
-            <div class="song-info">
-                <h3>What the Squirrel</h3>
-                <p>BUTTON!!!</p>
-            </div>
-            <div class="stat">9</div>
-            <div class="stat">1</div>
-            <div class="trend new">
-                <div class="arrow">NEW</div>
-            </div>
-        </div>
-        
-        <div class="chart-row">
-            <div class="position">10</div>
-            <div><img src="img/Summertime%20Hits%20Vol.%202" alt="Album Cover" class="album-cover"></div>
-            <div class="song-info">
-                <h3>Flipping with Anderson</h3>
-                <p>Ray</p>
-            </div>
-            <div class="stat">10</div>
-            <div class="stat">1</div>
-            <div class="trend new">
-                <div class="arrow">NEW</div>
-            </div>
-        </div>
-        
     </div>
+    
+    <script>
+        // Chart data
+        const chartData = [
+            {
+                position: 1,
+                albumCover: "img/JIG",
+                title: "JIG (Janna is a Hoe)",
+                artist: "Ray, ft. EJ and Ryan",
+                peak: 1,
+                streak: 1,
+                prevPosition: "NEW",
+                trend: "new"
+            },
+            {
+                position: 2,
+                albumCover: "img/Summertime%20Hits%20Vol.%203",
+                title: "GYATT RIZZ SIGMA",
+                artist: "Ray",
+                peak: 2,
+                streak: 1,
+                prevPosition: "NEW",
+                trend: "new"
+            },
+            {
+                position: 3,
+                albumCover: "img/Gemsie%20Sings%20(UNRELEASED)",
+                title: "\"Think About It Song\"",
+                artist: "EJ",
+                peak: 3,
+                streak: 1,
+                prevPosition: "NEW",
+                trend: "new"
+            },
+            {
+                position: 4,
+                albumCover: "img/Summertime%20Hits%20Vol.%203",
+                title: "ATLANTA PRIME",
+                artist: "Ray, ft. EJ",
+                peak: 4,
+                streak: 1,
+                prevPosition: "NEW",
+                trend: "new"
+            },
+            {
+                position: 5,
+                albumCover: "img/Summertime%20Hits%20Vol.%203",
+                title: "boat",
+                artist: "Ray (with EJ)",
+                peak: 5,
+                streak: 1,
+                prevPosition: "NEW",
+                trend: "new"
+            },
+            {
+                position: 6,
+                albumCover: "img/Summertime%20Hits%20Vol.%201",
+                title: "Nom nom nom",
+                artist: "BUTTON!!!",
+                peak: 6,
+                streak: 1,
+                prevPosition: "NEW",
+                trend: "new"
+            },
+            {
+                position: 7,
+                albumCover: "img/Summertime%20Hits%20Vol.%201",
+                title: "No Fighting",
+                artist: "Kate, prod. Ray",
+                peak: 7,
+                streak: 1,
+                prevPosition: "NEW",
+                trend: "new"
+            },
+            {
+                position: 8,
+                albumCover: "img/Gemsie%20Sings",
+                title: "Single Ladies (Put a Ring On It) Cover",
+                artist: "EJ",
+                peak: 8,
+                streak: 1,
+                prevPosition: "NEW",
+                trend: "new"
+            },
+            {
+                position: 9,
+                albumCover: "img/Summertime%20Hits%20Vol.%201",
+                title: "What the Squirrel",
+                artist: "BUTTON!!!",
+                peak: 9,
+                streak: 1,
+                prevPosition: "NEW",
+                trend: "new"
+            },
+            {
+                position: 10,
+                albumCover: "img/Summertime%20Hits%20Vol.%202",
+                title: "Flipping with Anderson",
+                artist: "Ray",
+                peak: 10,
+                streak: 1,
+                prevPosition: "NEW",
+                trend: "new"
+            }
+        ];
+        
+        // Function to render chart data
+        function renderChart(data) {
+            const chartBody = document.getElementById('chart-body');
+            chartBody.innerHTML = '';
+            
+            data.forEach(item => {
+                let trendIcon = '';
+                let trendClass = '';
+                
+                if (item.trend === 'up') {
+                    trendIcon = '▲';
+                    trendClass = 'up';
+                } else if (item.trend === 'down') {
+                    trendIcon = '▼';
+                    trendClass = 'down';
+                } else if (item.trend === 'same') {
+                    trendIcon = '-';
+                    trendClass = 'same';
+                } else if (item.trend === 'new') {
+                    trendIcon = 'NEW';
+                    trendClass = 'new';
+                }
+                
+                const row = document.createElement('div');
+                row.className = 'chart-row';
+                row.innerHTML = `
+                    <div class="position">${item.position}</div>
+                    <div><img src="${item.albumCover}" alt="Album Cover" class="album-cover"></div>
+                    <div class="song-info">
+                        <h3>${item.title}</h3>
+                        <p>${item.artist}</p>
+                    </div>
+                    <div class="stat">${item.peak}</div>
+                    <div class="stat">${item.streak}</div>
+                    <div class="trend ${trendClass}">
+                        <div class="arrow">${trendIcon}</div>
+                        ${item.trend !== 'new' ? `<span>${item.prevPosition}</span>` : ''}
+                    </div>
+                `;
+                
+                chartBody.appendChild(row);
+            });
+        }
+        
+        // Initialize with default sorting (by position)
+        let currentSort = 'position';
+        let sortDirection = 'asc';
+        
+        // Function to sort chart data
+        function sortChart(sortBy) {
+            if (currentSort === sortBy) {
+                // Toggle sort direction if clicking the same column
+                sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+            } else {
+                // Default to ascending for new sort column
+                sortDirection = 'asc';
+                currentSort = sortBy;
+            }
+            
+            // Update UI to show sort indicators
+            const headers = document.querySelectorAll('.chart-header > div');
+            headers.forEach(header => {
+                header.classList.remove('sort-asc', 'sort-desc');
+                if (header.dataset.sort === sortBy) {
+                    header.classList.add(sortDirection === 'asc' ? 'sort-asc' : 'sort-desc');
+                }
+            });
+            
+            // Sort the data
+            const sortedData = [...chartData].sort((a, b) => {
+                let comparison = 0;
+                
+                if (sortBy === 'title') {
+                    comparison = a.title.localeCompare(b.title);
+                } else if (sortBy === 'artist') {
+                    comparison = a.artist.localeCompare(b.artist);
+                } else {
+                    comparison = a[sortBy] - b[sortBy];
+                }
+                
+                return sortDirection === 'asc' ? comparison : -comparison;
+            });
+            
+            renderChart(sortedData);
+        }
+        
+        // Add event listeners for sorting
+        document.querySelectorAll('.chart-header > div[data-sort]').forEach(header => {
+            header.addEventListener('click', () => {
+                sortChart(header.dataset.sort);
+            });
+        });
+        
+        // Initial render
+        renderChart(chartData);
+    </script>
 </body>
 </html>
