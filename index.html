@@ -106,7 +106,7 @@
             padding: 15px 20px;
             border-bottom: 1px solid #333;
             display: grid;
-            grid-template-columns: 40px 80px 1fr 100px 100px 80px;
+            grid-template-columns: 40px 100px 1fr 100px 100px 80px;
             align-items: center;
             font-weight: 500;
             font-size: 13px;
@@ -139,9 +139,9 @@
         }
         
         .chart-row {
-            padding: 20px;
+            padding: 25px 20px;
             display: grid;
-            grid-template-columns: 40px 80px 1fr 100px 100px 80px;
+            grid-template-columns: 40px 100px 1fr 100px 100px 80px;
             align-items: center;
             border-bottom: 1px solid #333;
         }
@@ -157,30 +157,68 @@
             text-align: center;
         }
         
+        /* Top position styling */
+        .top-position {
+            padding: 35px 20px;
+            background-color: #2a1a1a;
+            border-bottom: 2px solid #ff3d3d;
+        }
+        
+        .top-rank {
+            font-size: 42px;
+            font-weight: 700;
+            color: #ff3d3d;
+        }
+        
+        .top-cover {
+            width: 120px;
+            height: 120px;
+            box-shadow: 0 0 10px rgba(255, 61, 61, 0.3);
+        }
+        
+        .top-info h3 {
+            font-size: 26px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        .top-info p {
+            font-size: 18px;
+        }
+        
+        .top-stat {
+            font-size: 20px;
+            font-weight: 500;
+        }
+        
+        .top-trend {
+            font-size: 18px;
+        }
+        
         .album-cover {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             object-fit: cover;
             border-radius: 8px;
         }
         
         .song-info h3 {
-            font-size: 16px;
-            margin-bottom: 3px;
+            font-size: 18px;
+            margin-bottom: 5px;
             color: #f0f0f0;
             text-align: left;
             font-weight: 500;
         }
         
         .song-info p {
-            font-size: 14px;
+            font-size: 16px;
             color: #b0b0b0;
             text-align: left;
             font-weight: 300;
         }
         
         .stat {
-            font-size: 14px;
+            font-size: 16px;
             color: #b0b0b0;
             text-align: center;
         }
@@ -274,16 +312,6 @@
             },
             {
                 position: 3,
-                albumCover: "img/Gemsie%20Sings%20(UNRELEASED)",
-                title: "\"Think About It Song\"",
-                artist: "EJ",
-                peak: 3,
-                streak: 1,
-                prevPosition: "NEW",
-                trend: "new"
-            },
-            {
-                position: 4,
                 albumCover: "img/Summertime%20Hits%20Vol.%203",
                 title: "ATLANTA PRIME",
                 artist: "Ray, ft. EJ",
@@ -293,7 +321,7 @@
                 trend: "new"
             },
             {
-                position: 5,
+                position: 4,
                 albumCover: "img/Summertime%20Hits%20Vol.%203",
                 title: "boat",
                 artist: "Ray (with EJ)",
@@ -303,7 +331,7 @@
                 trend: "new"
             },
             {
-                position: 6,
+                position: 5,
                 albumCover: "img/Summertime%20Hits%20Vol.%201",
                 title: "Nom nom nom",
                 artist: "BUTTON!!!",
@@ -313,11 +341,21 @@
                 trend: "new"
             },
             {
-                position: 7,
+                position: 6,
                 albumCover: "img/Summertime%20Hits%20Vol.%201",
                 title: "No Fighting",
                 artist: "Kate, prod. Ray",
                 peak: 7,
+                streak: 1,
+                prevPosition: "NEW",
+                trend: "new"
+            },
+            {
+                position: 7,
+                albumCover: "img/Gemsie%20Sings%20(UNRELEASED)",
+                title: "\"Think About It Song\"",
+                artist: "EJ",
+                peak: 3,
                 streak: 1,
                 prevPosition: "NEW",
                 trend: "new"
@@ -360,6 +398,8 @@
             chartBody.innerHTML = '';
             
             data.forEach(item => {
+                // Check if this is the #1 position
+                const isTopPosition = item.position === 1;
                 let trendIcon = '';
                 let trendClass = '';
                 
@@ -378,21 +418,40 @@
                 }
                 
                 const row = document.createElement('div');
-                row.className = 'chart-row';
-                row.innerHTML = `
-                    <div class="position">${item.position}</div>
-                    <div><img src="${item.albumCover}" alt="Album Cover" class="album-cover"></div>
-                    <div class="song-info">
-                        <h3>${item.title}</h3>
-                        <p>${item.artist}</p>
-                    </div>
-                    <div class="stat">${item.peak}</div>
-                    <div class="stat">${item.streak}</div>
-                    <div class="trend ${trendClass}">
-                        <div class="arrow">${trendIcon}</div>
-                        ${item.trend !== 'new' ? `<span>${item.prevPosition}</span>` : ''}
-                    </div>
-                `;
+                row.className = isTopPosition ? 'chart-row top-position' : 'chart-row';
+                
+                // Create custom HTML for the top position
+                if (isTopPosition) {
+                    row.innerHTML = `
+                        <div class="position top-rank">${item.position}</div>
+                        <div><img src="${item.albumCover}" alt="Album Cover" class="album-cover top-cover"></div>
+                        <div class="song-info top-info">
+                            <h3>${item.title}</h3>
+                            <p>${item.artist}</p>
+                        </div>
+                        <div class="stat top-stat">${item.peak}</div>
+                        <div class="stat top-stat">${item.streak}</div>
+                        <div class="trend ${trendClass} top-trend">
+                            <div class="arrow">${trendIcon}</div>
+                            ${item.trend !== 'new' ? `<span>${item.prevPosition}</span>` : ''}
+                        </div>
+                    `;
+                } else {
+                    row.innerHTML = `
+                        <div class="position">${item.position}</div>
+                        <div><img src="${item.albumCover}" alt="Album Cover" class="album-cover"></div>
+                        <div class="song-info">
+                            <h3>${item.title}</h3>
+                            <p>${item.artist}</p>
+                        </div>
+                        <div class="stat">${item.peak}</div>
+                        <div class="stat">${item.streak}</div>
+                        <div class="trend ${trendClass}">
+                            <div class="arrow">${trendIcon}</div>
+                            ${item.trend !== 'new' ? `<span>${item.prevPosition}</span>` : ''}
+                        </div>
+                    `;
+                }
                 
                 chartBody.appendChild(row);
             });
