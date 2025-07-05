@@ -149,6 +149,12 @@
             color: var(--text-primary);
         }
         
+        .chart-header-desktop > div:nth-child(1) {
+            text-align: center;
+            justify-self: center;
+            cursor: default;
+        }
+        
         .chart-header-desktop > div:nth-child(1),
         .chart-header-desktop > div:nth-child(4),
         .chart-header-desktop > div:nth-child(5),
@@ -207,17 +213,23 @@
             align-items: start;
         }
         
+        .top-position .mobile-content {
+            gap: clamp(16px, 3vw, 24px);
+        }
+        
         .album-cover {
             width: clamp(60px, 12vw, 80px);
             height: clamp(60px, 12vw, 80px);
             object-fit: cover;
             border-radius: 8px;
+            flex-shrink: 0;
         }
         
         .song-details {
             display: flex;
             flex-direction: column;
             gap: 8px;
+            min-width: 0; /* Allow text to wrap */
         }
         
         .song-info h3 {
@@ -226,6 +238,7 @@
             color: var(--text-primary);
             font-weight: 500;
             line-height: 1.2;
+            word-break: break-word;
         }
         
         .song-info p {
@@ -273,6 +286,10 @@
                 grid-template-columns: 40px 100px 1fr 100px 100px 80px;
                 gap: 10px;
                 align-items: center;
+            }
+            
+            .top-position {
+                gap: 15px;
             }
             
             .chart-row > *,
@@ -348,11 +365,14 @@
             width: clamp(80px, 15vw, 120px);
             height: clamp(80px, 15vw, 120px);
             box-shadow: 0 0 10px rgba(255, 61, 61, 0.3);
+            flex-shrink: 0;
         }
         
         .top-position .song-info h3 {
             font-size: clamp(20px, 3vw, 26px);
             font-weight: 700;
+            margin-bottom: 4px;
+            word-break: break-word;
         }
         
         .top-position .song-info p {
@@ -418,7 +438,7 @@
     
     <div class="chart-container">
         <div class="chart-header-desktop">
-            <div class="sort-asc" data-sort="position">POS</div>
+            <div>POS</div>
             <div></div>
             <div>TITLE</div>
             <div data-sort="peak">PEAK</div>
