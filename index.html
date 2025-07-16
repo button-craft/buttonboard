@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,696 +7,702 @@
     <title>BUTTONBoard Hot 100</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;700&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 400;
-        }
-        
-        :root {
-            --primary-red: #ff3d3d;
-            --bg-dark: #121212;
-            --bg-medium: #1e1e1e;
-            --bg-light: #2d2d2d;
-            --text-primary: #f0f0f0;
-            --text-secondary: #b0b0b0;
-            --border-color: #333;
-            --hover-bg: #252525;
-            --green: #4caf50;
-            --blue: #2196f3;
-        }
-        
-        body {
-            background-color: var(--bg-dark);
-            padding: clamp(10px, 3vw, 20px);
-            color: var(--text-primary);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
-        
-        header {
-            display: flex;
-            justify-content: center;
-            margin-bottom: clamp(15px, 3vw, 20px);
-            width: 100%;
-            max-width: 1000px;
-        }
-        
-        .logo {
-            color: var(--primary-red);
-            font-size: clamp(24px, 5vw, 36px);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-            text-align: center;
-        }
-        
-        .logo span {
-            color: var(--text-primary);
-        }
-        
-        .chart-date {
-            text-align: center;
-            margin-bottom: clamp(15px, 3vw, 20px);
-            font-size: clamp(12px, 2vw, 14px);
-            color: var(--text-secondary);
-        }
-        
-        .biggest-jump {
-            background-color: #400000;
-            border: 1px solid #200000;
-            padding: clamp(10px, 2vw, 15px);
-            margin-bottom: clamp(15px, 3vw, 20px);
-            display: flex;
-            align-items: center;
-            border-radius: 12px;
-            max-width: 1000px;
-            width: 100%;
-            gap: clamp(10px, 2vw, 15px);
-        }
-        
-        .biggest-jump .cover {
-            width: clamp(60px, 10vw, 80px);
-            height: clamp(60px, 10vw, 80px);
-            object-fit: cover;
-            border-radius: 8px;
-            flex-shrink: 0;
-        }
-        
-        .biggest-jump-info h3 {
-            color: var(--primary-red);
-            margin-bottom: 5px;
-            font-size: clamp(14px, 2vw, 16px);
-            font-weight: 500;
-        }
-        
-        .biggest-jump-info h4 {
-            font-size: clamp(16px, 2.5vw, 18px);
-            margin-bottom: 3px;
-            color: var(--text-primary);
-            font-weight: 500;
-        }
-        
-        .biggest-jump-info p {
-            font-size: clamp(12px, 2vw, 14px);
-            color: var(--text-secondary);
-            font-weight: 300;
-        }
-        
-        .chart-container {
-            background-color: var(--bg-medium);
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            overflow: hidden;
-            max-width: 1000px;
-            width: 100%;
-        }
-        
-        /* Desktop Header */
-        .chart-header {
-            display: none;
-        }
-        
+
+```
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Fredoka', sans-serif;
+        font-weight: 400;
+    }
+    
+    :root {
+        --primary-red: #ff3d3d;
+        --bg-dark: #121212;
+        --bg-medium: #1e1e1e;
+        --bg-light: #2d2d2d;
+        --text-primary: #f0f0f0;
+        --text-secondary: #b0b0b0;
+        --border-color: #333;
+        --hover-bg: #252525;
+        --green: #4caf50;
+        --blue: #2196f3;
+    }
+    
+    body {
+        background-color: var(--bg-dark);
+        padding: clamp(10px, 3vw, 20px);
+        color: var(--text-primary);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+    }
+    
+    header {
+        display: flex;
+        justify-content: center;
+        margin-bottom: clamp(15px, 3vw, 20px);
+        width: 100%;
+        max-width: 1000px;
+    }
+    
+    .logo {
+        color: var(--primary-red);
+        font-size: clamp(24px, 5vw, 36px);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+        text-align: center;
+    }
+    
+    .logo span {
+        color: var(--text-primary);
+    }
+    
+    .chart-date {
+        text-align: center;
+        margin-bottom: clamp(15px, 3vw, 20px);
+        font-size: clamp(12px, 2vw, 14px);
+        color: var(--text-secondary);
+    }
+    
+    .biggest-jump {
+        background-color: #400000;
+        border: 1px solid #200000;
+        padding: clamp(10px, 2vw, 15px);
+        margin-bottom: clamp(15px, 3vw, 20px);
+        display: flex;
+        align-items: center;
+        border-radius: 12px;
+        max-width: 1000px;
+        width: 100%;
+        gap: clamp(10px, 2vw, 15px);
+    }
+    
+    .biggest-jump .cover {
+        width: clamp(60px, 10vw, 80px);
+        height: clamp(60px, 10vw, 80px);
+        object-fit: cover;
+        border-radius: 8px;
+        flex-shrink: 0;
+    }
+    
+    .biggest-jump-info h3 {
+        color: var(--primary-red);
+        margin-bottom: 5px;
+        font-size: clamp(14px, 2vw, 16px);
+        font-weight: 500;
+    }
+    
+    .biggest-jump-info h4 {
+        font-size: clamp(16px, 2.5vw, 18px);
+        margin-bottom: 3px;
+        color: var(--text-primary);
+        font-weight: 500;
+    }
+    
+    .biggest-jump-info p {
+        font-size: clamp(12px, 2vw, 14px);
+        color: var(--text-secondary);
+        font-weight: 300;
+    }
+    
+    .chart-container {
+        background-color: var(--bg-medium);
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        overflow: hidden;
+        max-width: 1000px;
+        width: 100%;
+    }
+    
+    /* Desktop Header */
+    .chart-header {
+        display: none;
+    }
+    
+    .chart-header-desktop {
+        background-color: var(--bg-light);
+        padding: 15px 20px;
+        border-bottom: 1px solid var(--border-color);
+        display: grid;
+        grid-template-columns: 40px 100px 1fr 100px 100px 80px;
+        align-items: center;
+        font-weight: 500;
+        font-size: 13px;
+        color: var(--text-secondary);
+        gap: 10px;
+    }
+    
+    @media (min-width: 768px) {
         .chart-header-desktop {
-            background-color: var(--bg-light);
-            padding: 15px 20px;
-            border-bottom: 1px solid var(--border-color);
             display: grid;
-            grid-template-columns: 40px 100px 1fr 100px 100px 80px;
-            align-items: center;
-            font-weight: 500;
-            font-size: 13px;
-            color: var(--text-secondary);
-            gap: 10px;
         }
-        
-        @media (min-width: 768px) {
-            .chart-header-desktop {
-                display: grid;
-            }
-        }
-        
-        .chart-header-desktop > div[data-sort] {
-            cursor: pointer;
-            user-select: none;
-        }
-        
-        .chart-header-desktop > div[data-sort]:hover {
-            color: var(--text-primary);
-        }
-        
-        .chart-header-desktop > div:nth-child(1) {
-            text-align: center;
-            justify-self: center;
-            cursor: default;
-        }
-        
-        .chart-header-desktop > div:nth-child(1),
-        .chart-header-desktop > div:nth-child(4),
-        .chart-header-desktop > div:nth-child(5),
-        .chart-header-desktop > div:nth-child(6) {
-            text-align: center;
-            justify-self: center;
-        }
-        
-        .chart-header-desktop > div:nth-child(3) {
-            text-align: left;
-            padding-left: 5px;
-        }
-        
-        .chart-header-desktop > div.sort-asc::after {
-            content: ' ▲';
-            font-size: 10px;
-        }
-        
-        .chart-header-desktop > div.sort-desc::after {
-            content: ' ▼';
-            font-size: 10px;
-        }
-        
-        /* Chart Row - Mobile First */
+    }
+    
+    .chart-header-desktop > div[data-sort] {
+        cursor: pointer;
+        user-select: none;
+    }
+    
+    .chart-header-desktop > div[data-sort]:hover {
+        color: var(--text-primary);
+    }
+    
+    .chart-header-desktop > div:nth-child(1) {
+        text-align: center;
+        justify-self: center;
+        cursor: default;
+    }
+    
+    .chart-header-desktop > div:nth-child(1),
+    .chart-header-desktop > div:nth-child(4),
+    .chart-header-desktop > div:nth-child(5),
+    .chart-header-desktop > div:nth-child(6) {
+        text-align: center;
+        justify-self: center;
+    }
+    
+    .chart-header-desktop > div:nth-child(3) {
+        text-align: left;
+        padding-left: 5px;
+    }
+    
+    .chart-header-desktop > div.sort-asc::after {
+        content: ' ▲';
+        font-size: 10px;
+    }
+    
+    .chart-header-desktop > div.sort-desc::after {
+        content: ' ▼';
+        font-size: 10px;
+    }
+    
+    /* Chart Row - Mobile First */
+    .chart-row {
+        padding: clamp(15px, 3vw, 25px) clamp(10px, 3vw, 20px);
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 15px;
+        align-items: start;
+        border-bottom: 1px solid var(--border-color);
+        position: relative;
+    }
+    
+    .chart-row:hover {
+        background-color: var(--hover-bg);
+    }
+    
+    /* Mobile Layout */
+    .position {
+        font-size: clamp(20px, 4vw, 24px);
+        font-weight: 500;
+        color: var(--text-primary);
+        text-align: center;
+        grid-row: span 2;
+        align-self: center;
+        padding-right: 10px;
+        justify-self: center;
+        width: 100%;
+    }
+    
+    .mobile-content {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 12px;
+        align-items: start;
+    }
+    
+    .top-position .mobile-content {
+        gap: clamp(16px, 3vw, 24px);
+    }
+    
+    .album-cover {
+        width: clamp(60px, 12vw, 80px);
+        height: clamp(60px, 12vw, 80px);
+        object-fit: cover;
+        border-radius: 8px;
+        flex-shrink: 0;
+    }
+    
+    .song-details {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        min-width: 0; /* Allow text to wrap */
+    }
+    
+    .song-info h3 {
+        font-size: clamp(16px, 2.5vw, 18px);
+        margin-bottom: 2px;
+        color: var(--text-primary);
+        font-weight: 500;
+        line-height: 1.2;
+        word-break: break-word;
+    }
+    
+    .song-info p {
+        font-size: clamp(14px, 2vw, 16px);
+        color: var(--text-secondary);
+        font-weight: 300;
+    }
+    
+    .mobile-stats {
+        display: flex;
+        gap: 20px;
+        font-size: clamp(12px, 2vw, 14px);
+        color: var(--text-secondary);
+        margin-top: 5px;
+    }
+    
+    .mobile-stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+    }
+    
+    .mobile-stat-label {
+        font-size: clamp(10px, 1.5vw, 12px);
+        text-transform: uppercase;
+        opacity: 0.7;
+    }
+    
+    .mobile-stat-value {
+        font-weight: 500;
+        color: var(--text-primary);
+    }
+    
+    .trend {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+    
+    /* Desktop Layout */
+    @media (min-width: 768px) {
         .chart-row {
-            padding: clamp(15px, 3vw, 25px) clamp(10px, 3vw, 20px);
-            display: grid;
-            grid-template-columns: auto 1fr;
+            grid-template-columns: 40px 100px 1fr 100px 100px 80px;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .top-position {
             gap: 15px;
-            align-items: start;
-            border-bottom: 1px solid var(--border-color);
-            position: relative;
         }
         
-        .chart-row:hover {
-            background-color: var(--hover-bg);
+        .chart-row > *,
+        .chart-header-desktop > * {
+            padding: 0 5px;
         }
         
-        /* Mobile Layout */
         .position {
-            font-size: clamp(20px, 4vw, 24px);
-            font-weight: 500;
-            color: var(--text-primary);
-            text-align: center;
-            grid-row: span 2;
-            align-self: center;
-            padding-right: 10px;
-            justify-self: center;
+            grid-row: 1;
+            padding-right: 0;
             width: 100%;
         }
         
         .mobile-content {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 12px;
-            align-items: start;
-        }
-        
-        .top-position .mobile-content {
-            gap: clamp(16px, 3vw, 24px);
-        }
-        
-        .album-cover {
-            width: clamp(60px, 12vw, 80px);
-            height: clamp(60px, 12vw, 80px);
-            object-fit: cover;
-            border-radius: 8px;
-            flex-shrink: 0;
+            display: contents;
         }
         
         .song-details {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            min-width: 0; /* Allow text to wrap */
-        }
-        
-        .song-info h3 {
-            font-size: clamp(16px, 2.5vw, 18px);
-            margin-bottom: 2px;
-            color: var(--text-primary);
-            font-weight: 500;
-            line-height: 1.2;
-            word-break: break-word;
-        }
-        
-        .song-info p {
-            font-size: clamp(14px, 2vw, 16px);
-            color: var(--text-secondary);
-            font-weight: 300;
+            display: contents;
         }
         
         .mobile-stats {
-            display: flex;
-            gap: 20px;
-            font-size: clamp(12px, 2vw, 14px);
-            color: var(--text-secondary);
-            margin-top: 5px;
+            display: contents;
         }
         
         .mobile-stat {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2px;
+            flex-direction: row;
+            gap: 0;
+            justify-content: center;
         }
         
         .mobile-stat-label {
-            font-size: clamp(10px, 1.5vw, 12px);
-            text-transform: uppercase;
-            opacity: 0.7;
+            display: none;
         }
         
         .mobile-stat-value {
-            font-weight: 500;
-            color: var(--text-primary);
+            text-align: center;
+            font-size: 16px;
         }
         
-        .trend {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-        }
-        
-        /* Desktop Layout */
-        @media (min-width: 768px) {
-            .chart-row {
-                grid-template-columns: 40px 100px 1fr 100px 100px 80px;
-                gap: 10px;
-                align-items: center;
-            }
-            
-            .top-position {
-                gap: 15px;
-            }
-            
-            .chart-row > *,
-            .chart-header-desktop > * {
-                padding: 0 5px;
-            }
-            
-            .position {
-                grid-row: 1;
-                padding-right: 0;
-                width: 100%;
-            }
-            
-            .mobile-content {
-                display: contents;
-            }
-            
-            .song-details {
-                display: contents;
-            }
-            
-            .mobile-stats {
-                display: contents;
-            }
-            
-            .mobile-stat {
-                flex-direction: row;
-                gap: 0;
-                justify-content: center;
-            }
-            
-            .mobile-stat-label {
-                display: none;
-            }
-            
-            .mobile-stat-value {
-                text-align: center;
-                font-size: 16px;
-            }
-            
-            .mobile-stat:nth-child(1) .mobile-stat-value,
-            .mobile-stat:nth-child(2) .mobile-stat-value {
-                color: var(--text-secondary);
-            }
-            
-            .song-info {
-                text-align: left;
-            }
-            
-            .mobile-stat:nth-child(3) {
-                justify-content: center;
-            }
-            
-            .mobile-stat:nth-child(3) .trend {
-                justify-content: center;
-            }
-        }
-        
-        /* Top position styling */
-        .top-position {
-            background-color: #2a1a1a;
-            border-bottom: 2px solid var(--primary-red);
-            padding: clamp(20px, 4vw, 35px) clamp(10px, 3vw, 20px);
-        }
-        
-        .top-position .position {
-            font-size: clamp(32px, 6vw, 42px);
-            font-weight: 700;
-            color: var(--primary-red);
-        }
-        
-        .top-position .album-cover {
-            width: clamp(80px, 15vw, 120px);
-            height: clamp(80px, 15vw, 120px);
-            box-shadow: 0 0 10px rgba(255, 61, 61, 0.3);
-            flex-shrink: 0;
-        }
-        
-        .top-position .song-info h3 {
-            font-size: clamp(20px, 3vw, 26px);
-            font-weight: 700;
-            margin-bottom: 4px;
-            word-break: break-word;
-        }
-        
-        .top-position .song-info p {
-            font-size: clamp(16px, 2.5vw, 18px);
-        }
-        
-        .top-position .mobile-stat-value {
-            font-size: clamp(16px, 2.5vw, 20px);
-            font-weight: 500;
-        }
-        
-        /* Trend indicators */
-        .up {
-            color: var(--green);
-        }
-        
-        .down {
-            color: var(--primary-red);
-        }
-        
-        .new {
-            color: var(--blue);
-        }
-        
-        .same {
+        .mobile-stat:nth-child(1) .mobile-stat-value,
+        .mobile-stat:nth-child(2) .mobile-stat-value {
             color: var(--text-secondary);
         }
         
-        .arrow {
-            font-size: clamp(16px, 2.5vw, 18px);
+        .song-info {
+            text-align: left;
         }
         
-        /* Touch-friendly for mobile */
-        @media (max-width: 767px) {
-            .chart-row {
-                min-height: 100px;
-                cursor: pointer;
-            }
-            
-            .chart-header-desktop {
-                display: none;
-            }
+        .mobile-stat:nth-child(3) {
+            justify-content: center;
         }
-    </style>
+        
+        .mobile-stat:nth-child(3) .trend {
+            justify-content: center;
+        }
+    }
+    
+    /* Top position styling */
+    .top-position {
+        background-color: #2a1a1a;
+        border-bottom: 2px solid var(--primary-red);
+        padding: clamp(20px, 4vw, 35px) clamp(10px, 3vw, 20px);
+    }
+    
+    .top-position .position {
+        font-size: clamp(32px, 6vw, 42px);
+        font-weight: 700;
+        color: var(--primary-red);
+    }
+    
+    .top-position .album-cover {
+        width: clamp(80px, 15vw, 120px);
+        height: clamp(80px, 15vw, 120px);
+        box-shadow: 0 0 10px rgba(255, 61, 61, 0.3);
+        flex-shrink: 0;
+    }
+    
+    .top-position .song-info h3 {
+        font-size: clamp(20px, 3vw, 26px);
+        font-weight: 700;
+        margin-bottom: 4px;
+        word-break: break-word;
+    }
+    
+    .top-position .song-info p {
+        font-size: clamp(16px, 2.5vw, 18px);
+    }
+    
+    .top-position .mobile-stat-value {
+        font-size: clamp(16px, 2.5vw, 20px);
+        font-weight: 500;
+    }
+    
+    /* Trend indicators */
+    .up {
+        color: var(--green);
+    }
+    
+    .down {
+        color: var(--primary-red);
+    }
+    
+    .new {
+        color: var(--blue);
+    }
+    
+    .same {
+        color: var(--text-secondary);
+    }
+    
+    .arrow {
+        font-size: clamp(16px, 2.5vw, 18px);
+    }
+    
+    /* Touch-friendly for mobile */
+    @media (max-width: 767px) {
+        .chart-row {
+            min-height: 100px;
+            cursor: pointer;
+        }
+        
+        .chart-header-desktop {
+            display: none;
+        }
+    }
+</style>
+```
+
 </head>
 <body>
     <header>
         <h1 class="logo">BUTTON<span>Board</span> HOT 100</h1>
     </header>
-    
-    <div style="text-align: center; margin-bottom: 20px;">
-        <a href="stream.html" style="display: inline-block; background: linear-gradient(45deg, #ff3d3d, #ff6b6b); color: white; text-decoration: none; padding: 12px 30px; border-radius: 25px; font-weight: 500; font-size: 16px; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(255, 61, 61, 0.3);" 
-           onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(255, 61, 61, 0.4)';" 
-           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(255, 61, 61, 0.3)';">
-            BUTTIFY®
-        </a>
+
+```
+<div style="text-align: center; margin-bottom: 20px;">
+    <a href="stream.html" style="display: inline-block; background: linear-gradient(45deg, #ff3d3d, #ff6b6b); color: white; text-decoration: none; padding: 12px 30px; border-radius: 25px; font-weight: 500; font-size: 16px; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(255, 61, 61, 0.3);" 
+       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(255, 61, 61, 0.4)';" 
+       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(255, 61, 61, 0.3)';">
+        🎵 Stream All Songs
+    </a>
+</div>
+
+<div class="chart-date">
+    WK/O July 13, 2025
+</div>
+
+<div class="biggest-jump">
+    <img src="img/Summertime%20Hits%20Vol.%204" alt="Album Cover" class="cover">
+    <div class="biggest-jump-info">
+        <h3>BIGGEST JUMP THIS WEEK</h3>
+        <h4>We Didn't Start the Cleetus</h4>
+        <p>Ray • Climbed to #1 (from #2)</p>
+    </div>
+</div>
+
+<div class="biggest-jump" style="background-color: #1a1a40; border-color: #0a0a20;">
+    <img src="img/Summertime%20Hits%20Vol.%203" alt="Album Cover" class="cover">
+    <div class="biggest-jump-info">
+        <h3 style="color: #6b9bd1;">BIGGEST DROP THIS WEEK</h3>
+        <h4>GYATT RIZZ SIGMA</h4>
+        <p>Ray • Dropped from #4 to #7 (-3)</p>
+    </div>
+</div>
+
+<div class="chart-container">
+    <div class="chart-header-desktop">
+        <div>POS</div>
+        <div></div>
+        <div>TITLE</div>
+        <div data-sort="peak">PEAK</div>
+        <div data-sort="streak">STREAK</div>
+        <div>PREV.</div>
     </div>
     
-    <div class="chart-date">
-        WK/O July 17, 2025
+    <div id="chart-body">
+        <!-- Chart rows will be inserted here by JavaScript -->
     </div>
+</div>
+
+<script>
+    // Chart data
+    const chartData = [
+        {
+            position: 1,
+            albumCover: "img/Summertime%20Hits%20Vol.%204",
+            title: "We Didn't Start the Cleetus",
+            artist: "Ray",
+            peak: 1,
+            streak: 2,
+            prevPosition: "2",
+            trend: "up"
+        },
+        {
+            position: 2,
+            albumCover: "img/JIG",
+            title: "JIG (Janna is a Hoe)",
+            artist: "Ray, ft. EJ and Ryan",
+            peak: 1,
+            streak: 3,
+            prevPosition: "1",
+            trend: "down"
+        },
+        {
+            position: 3,
+            albumCover: "img/Summertime%20Hits%20Vol.%203",
+            title: "ATLANTA PRIME",
+            artist: "Ray, ft. EJ",
+            peak: 3,
+            streak: 3,
+            prevPosition: "3",
+            trend: "same"
+        },
+        {
+            position: 4,
+            albumCover: "img/IMG_5081.jpeg",
+            title: "This Land Is Our Land - '25 Remaster",
+            artist: "David & Ray",
+            peak: 4,
+            streak: 1,
+            prevPosition: "NEW",
+            trend: "new"
+        },
+        {
+            position: 5,
+            albumCover: "img/Summertime%20Hits%20Vol.%201",
+            title: "No Fighting",
+            artist: "Kate, prod. Ray",
+            peak: 4,
+            streak: 3,
+            prevPosition: "5",
+            trend: "same"
+        },
+        {
+            position: 6,
+            albumCover: "img/IMG_5081.jpeg",
+            title: "Upsies",
+            artist: "EJ & Ray",
+            peak: 6,
+            streak: 1,
+            prevPosition: "NEW",
+            trend: "new"
+        },
+        {
+            position: 7,
+            albumCover: "img/Summertime%20Hits%20Vol.%203",
+            title: "GYATT RIZZ SIGMA",
+            artist: "Ray",
+            peak: 2,
+            streak: 3,
+            prevPosition: "4",
+            trend: "down"
+        },
+        {
+            position: 8,
+            albumCover: "img/Summertime%20Hits%20Vol.%201",
+            title: "What the Squirrel",
+            artist: "BUTTON!!!",
+            peak: 5,
+            streak: 3,
+            prevPosition: "6",
+            trend: "down"
+        },
+        {
+            position: 9,
+            albumCover: "img/Gemsie%20Sings%20(UNRELEASED)",
+            title: "Think About it Song",
+            artist: "EJ",
+            peak: 7,
+            streak: 1,
+            prevPosition: "NEW",
+            trend: "new"
+        },
+        {
+            position: 10,
+            albumCover: "img/Summertime%20Hits%20Vol.%204",
+            title: "Button(Craft)Cards",
+            artist: "Kate, prod. Ray",
+            peak: 9,
+            streak: 2,
+            prevPosition: "9",
+            trend: "down"
+        }
+    ];
     
-    <div class="biggest-jump">
-        <img src="img/Summertime%20Hits%20Vol.%204" alt="Album Cover" class="cover">
-        <div class="biggest-jump-info">
-            <h3>BIGGEST JUMP THIS WEEK</h3>
-            <h4>We Didn't Start the Cleetus</h4>
-            <p>Ray • Climbed to #1 (from #2)</p>
-        </div>
-    </div>
-    
-    <div class="biggest-jump" style="background-color: #1a1a40; border-color: #0a0a20;">
-        <img src="img/Summertime%20Hits%20Vol.%203" alt="Album Cover" class="cover">
-        <div class="biggest-jump-info">
-            <h3 style="color: #6b9bd1;">BIGGEST DROP THIS WEEK</h3>
-            <h4>GYATT RIZZ SIGMA</h4>
-            <p>Ray • Dropped from #4 to #7 (-3)</p>
-        </div>
-    </div>
-    
-    <div class="chart-container">
-        <div class="chart-header-desktop">
-            <div>POS</div>
-            <div></div>
-            <div>TITLE</div>
-            <div data-sort="peak">PEAK</div>
-            <div data-sort="streak">STREAK</div>
-            <div>PREV.</div>
-        </div>
+    // Function to render chart data
+    function renderChart(data) {
+        const chartBody = document.getElementById('chart-body');
+        chartBody.innerHTML = '';
         
-        <div id="chart-body">
-            <!-- Chart rows will be inserted here by JavaScript -->
-        </div>
-    </div>
-    
-    <script>
-        // Chart data
-        const chartData = [
-            {
-                position: 1,
-                albumCover: "img/Summertime%20Hits%20Vol.%204",
-                title: "We Didn't Start the Cleetus",
-                artist: "Ray",
-                peak: 1,
-                streak: 2,
-                prevPosition: "2",
-                trend: "up"
-            },
-            {
-                position: 2,
-                albumCover: "img/JIG",
-                title: "JIG (Janna is a Hoe)",
-                artist: "Ray, ft. EJ and Ryan",
-                peak: 1,
-                streak: 3,
-                prevPosition: "1",
-                trend: "down"
-            },
-            {
-                position: 3,
-                albumCover: "img/Summertime%20Hits%20Vol.%203",
-                title: "ATLANTA PRIME",
-                artist: "Ray, ft. EJ",
-                peak: 3,
-                streak: 3,
-                prevPosition: "3",
-                trend: "same"
-            },
-            {
-                position: 4,
-                albumCover: "img/IMG_5081.jpeg",
-                title: "This Land Is Our Land - '25 Remaster",
-                artist: "David & Ray",
-                peak: 4,
-                streak: 1,
-                prevPosition: "NEW",
-                trend: "new"
-            },
-            {
-                position: 5,
-                albumCover: "img/Summertime%20Hits%20Vol.%201",
-                title: "No Fighting",
-                artist: "Kate, prod. Ray",
-                peak: 4,
-                streak: 3,
-                prevPosition: "5",
-                trend: "same"
-            },
-            {
-                position: 6,
-                albumCover: "img/IMG_5081.jpeg",
-                title: "Upsies",
-                artist: "EJ & Ray",
-                peak: 6,
-                streak: 1,
-                prevPosition: "NEW",
-                trend: "new"
-            },
-            {
-                position: 7,
-                albumCover: "img/Summertime%20Hits%20Vol.%203",
-                title: "GYATT RIZZ SIGMA",
-                artist: "Ray",
-                peak: 2,
-                streak: 3,
-                prevPosition: "4",
-                trend: "down"
-            },
-            {
-                position: 8,
-                albumCover: "img/Summertime%20Hits%20Vol.%201",
-                title: "What the Squirrel",
-                artist: "BUTTON!!!",
-                peak: 5,
-                streak: 3,
-                prevPosition: "6",
-                trend: "down"
-            },
-            {
-                position: 9,
-                albumCover: "img/Gemsie%20Sings%20(UNRELEASED)",
-                title: "Think About it Song",
-                artist: "EJ",
-                peak: 7,
-                streak: 1,
-                prevPosition: "NEW",
-                trend: "new"
-            },
-            {
-                position: 10,
-                albumCover: "img/Summertime%20Hits%20Vol.%204",
-                title: "Button(Craft)Cards",
-                artist: "Kate, prod. Ray",
-                peak: 9,
-                streak: 2,
-                prevPosition: "9",
-                trend: "down"
-            }
-        ];
-        
-        // Function to render chart data
-        function renderChart(data) {
-            const chartBody = document.getElementById('chart-body');
-            chartBody.innerHTML = '';
+        data.forEach(item => {
+            const isTopPosition = item.position === 1;
+            let trendIcon = '';
+            let trendClass = '';
             
-            data.forEach(item => {
-                const isTopPosition = item.position === 1;
-                let trendIcon = '';
-                let trendClass = '';
-                
-                if (item.trend === 'up') {
-                    const change = parseInt(item.prevPosition) - item.position;
-                    trendIcon = '▲';
-                    trendClass = 'up';
-                } else if (item.trend === 'down') {
-                    const change = item.position - parseInt(item.prevPosition);
-                    trendIcon = '▼';
-                    trendClass = 'down';
-                } else if (item.trend === 'same') {
-                    trendIcon = '=';
-                    trendClass = 'same';
-                } else if (item.trend === 'new') {
-                    trendIcon = 'NEW';
-                    trendClass = 'new';
-                }
-                
-                const row = document.createElement('div');
-                row.className = isTopPosition ? 'chart-row top-position' : 'chart-row';
-                
-                // Responsive layout that works for both mobile and desktop
-                row.innerHTML = `
-                    <div class="position">${item.position}</div>
-                    <div class="mobile-content">
-                        <img src="${item.albumCover}" alt="Album Cover" class="album-cover">
-                        <div class="song-details">
-                            <div class="song-info">
-                                <h3>${item.title}</h3>
-                                <p>${item.artist}</p>
+            if (item.trend === 'up') {
+                const change = parseInt(item.prevPosition) - item.position;
+                trendIcon = '▲';
+                trendClass = 'up';
+            } else if (item.trend === 'down') {
+                const change = item.position - parseInt(item.prevPosition);
+                trendIcon = '▼';
+                trendClass = 'down';
+            } else if (item.trend === 'same') {
+                trendIcon = '=';
+                trendClass = 'same';
+            } else if (item.trend === 'new') {
+                trendIcon = 'NEW';
+                trendClass = 'new';
+            }
+            
+            const row = document.createElement('div');
+            row.className = isTopPosition ? 'chart-row top-position' : 'chart-row';
+            
+            // Responsive layout that works for both mobile and desktop
+            row.innerHTML = `
+                <div class="position">${item.position}</div>
+                <div class="mobile-content">
+                    <img src="${item.albumCover}" alt="Album Cover" class="album-cover">
+                    <div class="song-details">
+                        <div class="song-info">
+                            <h3>${item.title}</h3>
+                            <p>${item.artist}</p>
+                        </div>
+                        <div class="mobile-stats">
+                            <div class="mobile-stat">
+                                <span class="mobile-stat-label">Peak</span>
+                                <span class="mobile-stat-value">${item.peak}</span>
                             </div>
-                            <div class="mobile-stats">
-                                <div class="mobile-stat">
-                                    <span class="mobile-stat-label">Peak</span>
-                                    <span class="mobile-stat-value">${item.peak}</span>
-                                </div>
-                                <div class="mobile-stat">
-                                    <span class="mobile-stat-label">Weeks</span>
-                                    <span class="mobile-stat-value">${item.streak}</span>
-                                </div>
-                                <div class="mobile-stat">
-                                    <span class="mobile-stat-label">Prev</span>
-                                    <div class="trend ${trendClass}">
-                                        <div class="arrow mobile-stat-value">${trendIcon}</div>
-                                        ${item.prevPosition !== 'NEW' && item.trend !== 'same' ? `<span class="mobile-stat-value">${item.prevPosition}</span>` : ''}
-                                    </div>
+                            <div class="mobile-stat">
+                                <span class="mobile-stat-label">Weeks</span>
+                                <span class="mobile-stat-value">${item.streak}</span>
+                            </div>
+                            <div class="mobile-stat">
+                                <span class="mobile-stat-label">Prev</span>
+                                <div class="trend ${trendClass}">
+                                    <div class="arrow mobile-stat-value">${trendIcon}</div>
+                                    ${item.prevPosition !== 'NEW' && item.trend !== 'same' ? `<span class="mobile-stat-value">${item.prevPosition}</span>` : ''}
                                 </div>
                             </div>
                         </div>
                     </div>
-                `;
-                
-                chartBody.appendChild(row);
-            });
+                </div>
+            `;
+            
+            chartBody.appendChild(row);
+        });
+    }
+    
+    // Initialize with default sorting (by position)
+    let currentSort = 'position';
+    let sortDirection = 'asc';
+    
+    // Function to sort chart data
+    function sortChart(sortBy) {
+        if (currentSort === sortBy) {
+            sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+        } else {
+            sortDirection = 'asc';
+            currentSort = sortBy;
         }
         
-        // Initialize with default sorting (by position)
-        let currentSort = 'position';
-        let sortDirection = 'asc';
-        
-        // Function to sort chart data
-        function sortChart(sortBy) {
-            if (currentSort === sortBy) {
-                sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
-            } else {
-                sortDirection = 'asc';
-                currentSort = sortBy;
+        // Update UI to show sort indicators
+        const headers = document.querySelectorAll('.chart-header-desktop > div');
+        headers.forEach(header => {
+            header.classList.remove('sort-asc', 'sort-desc');
+            if (header.dataset.sort === sortBy) {
+                header.classList.add(sortDirection === 'asc' ? 'sort-asc' : 'sort-desc');
             }
-            
-            // Update UI to show sort indicators
-            const headers = document.querySelectorAll('.chart-header-desktop > div');
-            headers.forEach(header => {
-                header.classList.remove('sort-asc', 'sort-desc');
-                if (header.dataset.sort === sortBy) {
-                    header.classList.add(sortDirection === 'asc' ? 'sort-asc' : 'sort-desc');
-                }
-            });
-            
-            // Sort the data
-            const sortedData = [...chartData].sort((a, b) => {
-                let comparison = 0;
-                
-                if (sortBy === 'artist') {
-                    comparison = a.artist.localeCompare(b.artist);
-                } else {
-                    comparison = a[sortBy] - b[sortBy];
-                }
-                
-                return sortDirection === 'asc' ? comparison : -comparison;
-            });
-            
-            renderChart(sortedData);
-        }
-        
-        // Add event listeners for sorting (desktop only)
-        document.querySelectorAll('.chart-header-desktop > div[data-sort]').forEach(header => {
-            header.addEventListener('click', () => {
-                sortChart(header.dataset.sort);
-            });
         });
         
-        // Initial render
-        renderChart(chartData);
+        // Sort the data
+        const sortedData = [...chartData].sort((a, b) => {
+            let comparison = 0;
+            
+            if (sortBy === 'artist') {
+                comparison = a.artist.localeCompare(b.artist);
+            } else {
+                comparison = a[sortBy] - b[sortBy];
+            }
+            
+            return sortDirection === 'asc' ? comparison : -comparison;
+        });
         
-        // Add touch feedback for mobile
-        if ('ontouchstart' in window) {
-            document.querySelectorAll('.chart-row').forEach(row => {
-                row.addEventListener('touchstart', function() {
-                    this.style.backgroundColor = 'var(--hover-bg)';
-                });
-                row.addEventListener('touchend', function() {
-                    this.style.backgroundColor = '';
-                });
+        renderChart(sortedData);
+    }
+    
+    // Add event listeners for sorting (desktop only)
+    document.querySelectorAll('.chart-header-desktop > div[data-sort]').forEach(header => {
+        header.addEventListener('click', () => {
+            sortChart(header.dataset.sort);
+        });
+    });
+    
+    // Initial render
+    renderChart(chartData);
+    
+    // Add touch feedback for mobile
+    if ('ontouchstart' in window) {
+        document.querySelectorAll('.chart-row').forEach(row => {
+            row.addEventListener('touchstart', function() {
+                this.style.backgroundColor = 'var(--hover-bg)';
             });
-        }
-    </script>
+            row.addEventListener('touchend', function() {
+                this.style.backgroundColor = '';
+            });
+        });
+    }
+</script>
+```
+
 </body>
 </html>
