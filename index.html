@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUTTONBoard Hot 100</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Fredoka", "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+            font-weight: 400;
+        }
 
 ```
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Fredoka', sans-serif;
-        font-weight: 400;
-    }
-    
     :root {
         --primary-red: #ff3d3d;
         --bg-dark: #121212;
@@ -419,6 +420,15 @@
         }
     }
 </style>
+<script>
+    // Fallback font loading
+    if (!document.fonts.check("12px Fredoka")) {
+        const link = document.createElement("link");
+        link.href = "https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;700&display=swap";
+        link.rel = "stylesheet";
+        document.head.appendChild(link);
+    }
+</script>
 ```
 
 </head>
@@ -430,8 +440,8 @@
 ```
 <div style="text-align: center; margin-bottom: 20px;">
     <a href="stream.html" style="display: inline-block; background: linear-gradient(45deg, #ff3d3d, #ff6b6b); color: white; text-decoration: none; padding: 12px 30px; border-radius: 25px; font-weight: 500; font-size: 16px; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(255, 61, 61, 0.3);" 
-       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(255, 61, 61, 0.4)';" 
-       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(255, 61, 61, 0.3)';">
+       onmouseover="this.style.transform=&apos;translateY(-2px)&apos;; this.style.boxShadow=&apos;0 6px 20px rgba(255, 61, 61, 0.4)&apos;;" 
+       onmouseout="this.style.transform=&apos;translateY(0)&apos;; this.style.boxShadow=&apos;0 4px 15px rgba(255, 61, 61, 0.3)&apos;;">
         🎵 Stream All Songs
     </a>
 </div>
