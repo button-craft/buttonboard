@@ -9,17 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;700&display=swap");
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Fredoka", "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+            font-weight: 400;
+        }
 
 ```
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Fredoka", sans-serif;
-        font-weight: 400;
-    }
-    
     :root {
         --primary-red: #ff3d3d;
         --bg-dark: #121212;
@@ -249,6 +247,15 @@
         }
     }
 </style>
+<script>
+    // Fallback font loading
+    if (!document.fonts.check("12px Fredoka")) {
+        const link = document.createElement("link");
+        link.href = "https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;700&display=swap";
+        link.rel = "stylesheet";
+        document.head.appendChild(link);
+    }
+</script>
 ```
 
 </head>
@@ -257,7 +264,7 @@
         <header>
             <a href="index.html" class="back-link">← Back to Chart</a>
             <h1 class="logo">BUTTON<span>Board</span> MUSIC</h1>
-            <p class="subtitle">BUTTIFY®</p>
+            <p class="subtitle">by BUTTIFY®</p>
         </header>
 
 ```
