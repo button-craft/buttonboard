@@ -61,7 +61,7 @@
     }
     
     .logo {
-        color: var(--primary-red);
+        color: #ff3d3d !important;
         font-size: clamp(24px, 5vw, 36px);
         font-weight: 700;
         text-transform: uppercase;
@@ -70,7 +70,7 @@
     }
     
     .logo span {
-        color: var(--text-primary);
+        color: #f0f0f0 !important;
     }
     
     .chart-date {
@@ -102,7 +102,7 @@
     }
     
     .biggest-jump-info h3 {
-        color: var(--primary-red);
+        color: #ff3d3d !important;
         margin-bottom: 5px;
         font-size: clamp(14px, 2vw, 16px);
         font-weight: 500;
@@ -111,13 +111,13 @@
     .biggest-jump-info h4 {
         font-size: clamp(16px, 2.5vw, 18px);
         margin-bottom: 3px;
-        color: var(--text-primary);
+        color: #f0f0f0 !important;
         font-weight: 500;
     }
     
     .biggest-jump-info p {
         font-size: clamp(12px, 2vw, 14px);
-        color: var(--text-secondary);
+        color: #b0b0b0 !important;
         font-weight: 300;
     }
     
@@ -164,7 +164,7 @@
     }
     
     .chart-header-desktop > div[data-sort]:hover {
-        color: var(--text-primary);
+        color: #f0f0f0 !important;
     }
     
     .chart-header-desktop > div:nth-child(1) {
@@ -378,7 +378,7 @@
     .top-position .position {
         font-size: clamp(32px, 6vw, 42px);
         font-weight: 700;
-        color: var(--primary-red);
+        color: #ff3d3d !important;
     }
     
     .top-position .album-cover {
@@ -406,28 +406,43 @@
     
     /* Trend indicators */
     .up {
-        color: var(--green);
+        color: #4caf50 !important;
     }
     
     .down {
-        color: var(--primary-red);
+        color: #ff3d3d !important;
     }
     
     .new {
-        color: var(--blue);
+        color: #2196f3 !important;
     }
     
     .same {
-        color: var(--text-secondary);
+        color: #b0b0b0 !important;
     }
     
     .arrow {
         font-size: clamp(16px, 2.5vw, 18px);
     }
     
-    /* Force text colors for dark theme */
-    h1, h2, h3, h4, h5, h6, p, span, div {
-        color: inherit;
+    /* Override any default styles that might cause white background */
+    *, *::before, *::after {
+        background-color: inherit;
+    }
+    
+    body > * {
+        background-color: transparent !important;
+    }
+    
+    /* Specific overrides for common white background issues */
+    .container, .wrapper, .content, main, section, article {
+        background-color: transparent !important;
+    }
+    
+    /* Force dark background on root elements */
+    :root, html, body {
+        background: #121212 !important;
+        background-color: #121212 !important;
     }
     
     /* Ensure all text in chart is visible */
@@ -465,15 +480,15 @@
 ```
 
 </head>
-<body style="background-color: #121212; color: #f0f0f0;">
-    <div style="background-color: #121212; min-height: 100vh; width: 100%;">
+<body style="background-color: #121212 !important; color: #f0f0f0 !important;">
+    <div style="background-color: #121212 !important; min-height: 100vh; width: 100%;">
     <header>
         <h1 class="logo">BUTTON<span>Board</span> HOT 100</h1>
     </header>
 
 ```
 <div style="text-align: center; margin-bottom: 20px;">
-    <a href="stream.html" style="display: inline-block; background: linear-gradient(45deg, #ff3d3d, #ff6b6b); color: white; text-decoration: none; padding: 12px 30px; border-radius: 25px; font-weight: 500; font-size: 16px; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(255, 61, 61, 0.3);" 
+    <a href="stream.html" style="display: inline-block; background: linear-gradient(45deg, #ff3d3d, #ff6b6b) !important; color: white !important; text-decoration: none; padding: 12px 30px; border-radius: 25px; font-weight: 500; font-size: 16px; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(255, 61, 61, 0.3);" 
        onmouseover="this.style.transform=&apos;translateY(-2px)&apos;; this.style.boxShadow=&apos;0 6px 20px rgba(255, 61, 61, 0.4)&apos;;" 
        onmouseout="this.style.transform=&apos;translateY(0)&apos;; this.style.boxShadow=&apos;0 4px 15px rgba(255, 61, 61, 0.3)&apos;;">
         BUTTIFY®
@@ -481,24 +496,24 @@
 </div>
 
 <div class="chart-date">
-    WK/O July 13, 2025
+    WK/O July 20, 2025
 </div>
 
 <div class="biggest-jump">
-    <img src="img/Summertime%20Hits%20Vol.%204" alt="Album Cover" class="cover">
+    <img src="img/Atlanta" alt="Album Cover" class="cover">
     <div class="biggest-jump-info">
-        <h3>BIGGEST JUMP THIS WEEK</h3>
-        <h4>We Didn't Start the Cleetus</h4>
-        <p>Ray • Climbed to #1 (from #2)</p>
+        <h3>HOT SHOT DEBUT</h3>
+        <h4>Atlanta State of Prime</h4>
+        <p>Ray, EJ, and Claire • Debuts at #1!</p>
     </div>
 </div>
 
 <div class="biggest-jump" style="background-color: #1a1a40; border-color: #0a0a20;">
-    <img src="img/Summertime%20Hits%20Vol.%203" alt="Album Cover" class="cover">
+    <img src="img/IMG_5081.jpeg" alt="Album Cover" class="cover">
     <div class="biggest-jump-info">
         <h3 style="color: #6b9bd1;">BIGGEST DROP THIS WEEK</h3>
-        <h4>GYATT RIZZ SIGMA</h4>
-        <p>Ray • Dropped from #4 to #7 (-3)</p>
+        <h4>This Land Is Our Land - '25 Remaster</h4>
+        <p>David & Ray • Dropped from #4 to #9 (-5)</p>
     </div>
 </div>
 
@@ -522,19 +537,19 @@
     const chartData = [
         {
             position: 1,
-            albumCover: "img/Summertime%20Hits%20Vol.%204",
-            title: "We Didn't Start the Cleetus",
-            artist: "Ray",
+            albumCover: "img/Atlanta",
+            title: "Atlanta State of Prime",
+            artist: "Ray, EJ, and Claire",
             peak: 1,
-            streak: 2,
-            prevPosition: "2",
-            trend: "up"
+            streak: 1,
+            prevPosition: "NEW",
+            trend: "new"
         },
         {
             position: 2,
-            albumCover: "img/JIG",
-            title: "JIG (Janna is a Hoe)",
-            artist: "Ray, ft. EJ and Ryan",
+            albumCover: "img/Summertime%20Hits%20Vol.%204",
+            title: "We Didn't Start the Cleetus",
+            artist: "Ray",
             peak: 1,
             streak: 3,
             prevPosition: "1",
@@ -542,19 +557,19 @@
         },
         {
             position: 3,
-            albumCover: "img/Summertime%20Hits%20Vol.%203",
-            title: "ATLANTA PRIME",
-            artist: "Ray, ft. EJ",
-            peak: 3,
-            streak: 3,
-            prevPosition: "3",
-            trend: "same"
+            albumCover: "img/JIG",
+            title: "JIG (Janna is a Hoe)",
+            artist: "Ray, EJ, and Ryan",
+            peak: 1,
+            streak: 4,
+            prevPosition: "2",
+            trend: "down"
         },
         {
             position: 4,
             albumCover: "img/IMG_5081.jpeg",
-            title: "This Land Is Our Land - '25 Remaster",
-            artist: "David & Ray",
+            title: "EJ's Base",
+            artist: "BUTTON!!!",
             peak: 4,
             streak: 1,
             prevPosition: "NEW",
@@ -562,19 +577,19 @@
         },
         {
             position: 5,
-            albumCover: "img/Summertime%20Hits%20Vol.%201",
-            title: "No Fighting",
-            artist: "Kate, prod. Ray",
-            peak: 4,
-            streak: 3,
-            prevPosition: "5",
-            trend: "same"
+            albumCover: "img/Summertime%20Hits%20Vol.%203",
+            title: "ATLANTA PRIME",
+            artist: "Ray, EJ",
+            peak: 3,
+            streak: 4,
+            prevPosition: "3",
+            trend: "down"
         },
         {
             position: 6,
-            albumCover: "img/IMG_5081.jpeg",
-            title: "Upsies",
-            artist: "EJ & Ray",
+            albumCover: "img/Summertime%20Hits%20Vol.%204",
+            title: "voidmaxmpornhub",
+            artist: "Ray",
             peak: 6,
             streak: 1,
             prevPosition: "NEW",
@@ -582,28 +597,8 @@
         },
         {
             position: 7,
-            albumCover: "img/Summertime%20Hits%20Vol.%203",
-            title: "GYATT RIZZ SIGMA",
-            artist: "Ray",
-            peak: 2,
-            streak: 3,
-            prevPosition: "4",
-            trend: "down"
-        },
-        {
-            position: 8,
-            albumCover: "img/Summertime%20Hits%20Vol.%201",
-            title: "What the Squirrel",
-            artist: "BUTTON!!!",
-            peak: 5,
-            streak: 3,
-            prevPosition: "6",
-            trend: "down"
-        },
-        {
-            position: 9,
-            albumCover: "img/Gemsie%20Sings%20(UNRELEASED)",
-            title: "Think About it Song",
+            albumCover: "img/Gemsie%20Sings",
+            title: "Preorder",
             artist: "EJ",
             peak: 7,
             streak: 1,
@@ -611,11 +606,31 @@
             trend: "new"
         },
         {
-            position: 10,
-            albumCover: "img/Summertime%20Hits%20Vol.%204",
-            title: "Button(Craft)Cards",
+            position: 8,
+            albumCover: "img/Summertime%20Hits%20Vol.%201",
+            title: "No Fighting",
             artist: "Kate, prod. Ray",
-            peak: 9,
+            peak: 4,
+            streak: 4,
+            prevPosition: "5",
+            trend: "down"
+        },
+        {
+            position: 9,
+            albumCover: "img/IMG_5081.jpeg",
+            title: "This Land Is Our Land - '25 Remaster",
+            artist: "David & Ray",
+            peak: 4,
+            streak: 2,
+            prevPosition: "4",
+            trend: "down"
+        },
+        {
+            position: 10,
+            albumCover: "img/Gemsie%20Sings%20(UNRELEASED)",
+            title: "Think About it Song",
+            artist: "EJ",
+            peak: 7,
             streak: 2,
             prevPosition: "9",
             trend: "down"
