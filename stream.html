@@ -1,11 +1,21 @@
-<!DOCTYPE html>
+.album-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #ff3d3d !important;
+            margin-bottom: 5px;
+        }
+        
+        .album-subtitle {
+            font-size: 16px;
+            color: #b0b0b0 !important;
+        }<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="dark">
     <meta name="theme-color" content="#121212">
-    <title>BUTTIFY®</title>
+    <title>by BUTTIFY</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -20,6 +30,17 @@
         
         /* Force dark background on all containers */
         html, body, .container, main, section {
+            background-color: #121212 !important;
+        }
+        
+        /* Override any default styles that might cause white background */
+        *, *::before, *::after {
+            background-color: inherit;
+        }
+        
+        /* Force dark background on root elements */
+        :root, html, body {
+            background: #121212 !important;
             background-color: #121212 !important;
         }
         
@@ -59,7 +80,7 @@
         }
         
         .logo {
-            color: var(--primary-red);
+            color: #ff3d3d !important;
             font-size: clamp(28px, 5vw, 42px);
             font-weight: 700;
             text-transform: uppercase;
@@ -68,12 +89,12 @@
         }
         
         .logo span {
-            color: var(--text-primary);
+            color: #f0f0f0 !important;
         }
         
         .back-link {
             display: inline-block;
-            color: var(--accent-blue);
+            color: #4a9eff !important;
             text-decoration: none;
             margin-bottom: 20px;
             font-size: 16px;
@@ -85,7 +106,7 @@
         }
         
         .subtitle {
-            color: var(--text-secondary);
+            color: #b0b0b0 !important;
             font-size: 18px;
             margin-bottom: 30px;
         }
@@ -221,6 +242,10 @@
             border-bottom-color: rgba(255, 61, 61, 0.3);
         }
         
+        .album-section h3 {
+            margin: 0;
+        }
+        
         .now-playing {
             position: fixed;
             bottom: 20px;
@@ -268,8 +293,8 @@
         }
     </script>
 </head>
-<body style="background-color: #121212; color: #f0f0f0;">
-    <div style="background-color: #121212; min-height: 100vh; width: 100%;">
+<body style="background-color: #121212 !important; color: #f0f0f0 !important;">
+    <div style="background-color: #121212 !important; min-height: 100vh; width: 100%;">
     <div class="container">
         <header>
             <a href="index.html" class="back-link">← Back to Chart</a>
@@ -462,7 +487,7 @@
                 <img src="img/IMG_5081.jpeg" alt="Summertime Hits Vol. 5" class="album-cover">
                 <div class="album-info">
                     <h2 class="album-title">Summertime Hits Vol. 5</h2>
-                    <p class="album-subtitle">2 Tracks • David, EJ & Ray</p>
+                    <p class="album-subtitle">3 Tracks • David, EJ & Ray</p>
                 </div>
             </div>
             <div class="track-item">
@@ -485,17 +510,117 @@
                     <source src="5.2 Upsies.mp3" type="audio/mpeg">
                 </audio>
             </div>
+            <div class="track-item">
+                <span class="track-number">3</span>
+                <div class="track-info">
+                    <div class="track-title">EJ's Base</div>
+                    <div class="track-artist">BUTTON!!!</div>
+                </div>
+                <audio controls preload="none">
+                    <source src="EJs Base.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+        
+        <div class="album-section">
+            <div class="album-header">
+                <img src="img/Atlanta" alt="Atlanta" class="album-cover">
+                <div class="album-info">
+                    <h2 class="album-title">Atlanta</h2>
+                    <p class="album-subtitle">1 Track • Ray, EJ, and Claire</p>
+                </div>
+            </div>
+            <div class="track-item">
+                <span class="track-number">1</span>
+                <div class="track-info">
+                    <div class="track-title">Atlanta State of Prime</div>
+                    <div class="track-artist">Ray, EJ, and Claire</div>
+                </div>
+                <audio controls preload="none">
+                    <source src="Atlanta State of Prime.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+        
+        <div class="album-section">
+            <div class="album-header">
+                <img src="img/Gemsie%20Sings" alt="Gemsie Sings OG Album" class="album-cover">
+                <div class="album-info">
+                    <h2 class="album-title">Gemsie Sings OG Album</h2>
+                    <p class="album-subtitle">5 Tracks • EJ</p>
+                </div>
+            </div>
+            <div class="track-item">
+                <span class="track-number">1</span>
+                <div class="track-info">
+                    <div class="track-title">All the Single Ladies</div>
+                    <div class="track-artist">EJ</div>
+                </div>
+                <audio controls preload="none">
+                    <source src="All the Single Ladies.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="track-item">
+                <span class="track-number">2</span>
+                <div class="track-info">
+                    <div class="track-title">Gangnam Style</div>
+                    <div class="track-artist">EJ</div>
+                </div>
+                <audio controls preload="none">
+                    <source src="Gangnam Style.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="track-item">
+                <span class="track-number">3</span>
+                <div class="track-info">
+                    <div class="track-title">Preorder</div>
+                    <div class="track-artist">EJ</div>
+                </div>
+                <audio controls preload="none">
+                    <source src="Preorder.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="track-item">
+                <span class="track-number">4</span>
+                <div class="track-info">
+                    <div class="track-title">This Girl is on Fire</div>
+                    <div class="track-artist">EJ</div>
+                </div>
+                <audio controls preload="none">
+                    <source src="This Girl is on Fire.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="track-item">
+                <span class="track-number">5</span>
+                <div class="track-info">
+                    <div class="track-title">Wannabe</div>
+                    <div class="track-artist">EJ</div>
+                </div>
+                <audio controls preload="none">
+                    <source src="Wannabe.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #444;">
+                <h3 style="color: #ff3d3d; font-size: 18px; margin-bottom: 15px; font-weight: 500;">Unreleased Promo Track</h3>
+                <div class="track-item">
+                    <span class="track-number">★</span>
+                    <div class="track-info">
+                        <div class="track-title">Think About it Song</div>
+                        <div class="track-artist">EJ</div>
+                    </div>
+                    <audio controls preload="none">
+                        <source src="Think About it Song.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
         </div>
         
         <div class="album-section singles-section">
             <div class="album-header">
-                <div style="display: flex; gap: 10px;">
-                    <img src="img/JIG" alt="JIG" style="width: 55px; height: 55px; border-radius: 8px; object-fit: cover; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
-                    <img src="img/Gemsie%20Sings%20(UNRELEASED)" alt="Gemsie Sings" style="width: 55px; height: 55px; border-radius: 8px; object-fit: cover; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
-                </div>
+                <img src="img/JIG" alt="JIG" class="album-cover">
                 <div class="album-info">
                     <h2 class="album-title">Singles & Special Releases</h2>
-                    <p class="album-subtitle">2 Tracks • Various Artists</p>
+                    <p class="album-subtitle">1 Track • Ray, ft. EJ and Ryan</p>
                 </div>
             </div>
             <div class="track-item">
@@ -506,16 +631,6 @@
                 </div>
                 <audio controls preload="none">
                     <source src="JIG.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <div class="track-item">
-                <span class="track-number">★</span>
-                <div class="track-info">
-                    <div class="track-title">Think About it Song</div>
-                    <div class="track-artist">EJ</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="Think About it Song.mp3" type="audio/mpeg">
                 </audio>
             </div>
         </div>
