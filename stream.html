@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,271 +18,272 @@
             font-family: "Fredoka", "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
             font-weight: 400;
         }
-        
-        /* Force dark background on all containers */
-        html, body, .container, main, section {
-            background-color: #121212 !important;
-        }
-        
-        /* Override any default styles that might cause white background */
-        *, *::before, *::after {
-            background-color: inherit;
-        }
-        
-        /* Force dark background on root elements */
-        :root, html, body {
-            background: #121212 !important;
-            background-color: #121212 !important;
-        }
-        
-        :root {
-            --primary-red: #ff3d3d;
-            --bg-dark: #121212;
-            --bg-medium: #1e1e1e;
-            --bg-light: #2d2d2d;
-            --text-primary: #f0f0f0;
-            --text-secondary: #b0b0b0;
-            --border-color: #333;
-            --hover-bg: #252525;
-            --accent-blue: #4a9eff;
-        }
-        
-        html {
-            background-color: #121212;
-        }
-        
-        body {
-            background-color: #121212;
-            color: #f0f0f0;
-            min-height: 100vh;
-            padding: 20px;
-            margin: 0;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: transparent !important;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .logo {
-            color: #ff3d3d !important;
-            font-size: clamp(28px, 5vw, 42px);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-            margin-bottom: 10px;
-        }
-        
-        .logo span {
-            color: #f0f0f0 !important;
-        }
-        
-        .back-link {
-            display: inline-block;
-            color: #4a9eff !important;
-            text-decoration: none;
-            margin-bottom: 20px;
-            font-size: 16px;
-            transition: opacity 0.3s;
-        }
-        
-        .back-link:hover {
-            opacity: 0.7;
-        }
-        
-        .subtitle {
-            color: #b0b0b0 !important;
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-        
-        .album-section {
-            background-color: #1e1e1e !important;
-            border-radius: 16px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-        }
-        
-        .album-header {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid var(--border-color);
-        }
-        
-        .album-cover {
-            width: 120px;
-            height: 120px;
-            border-radius: 12px;
-            object-fit: cover;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .album-cover:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.6);
-        }
-        
-        .album-info {
-            flex: 1;
-        }
-        
-        .album-title {
-            font-size: 24px;
-            font-weight: 600;
-            color: var(--primary-red);
-            margin-bottom: 5px;
-        }
-        
-        .album-subtitle {
-            font-size: 16px;
-            color: var(--text-secondary);
-        }
-        
+
+    /* Force dark background on all containers */
+    html, body, .container, main, section {
+        background-color: #121212 !important;
+    }
+    
+    /* Override any default styles that might cause white background */
+    *, *::before, *::after {
+        background-color: inherit;
+    }
+    
+    /* Force dark background on root elements */
+    :root, html, body {
+        background: #121212 !important;
+        background-color: #121212 !important;
+    }
+    
+    :root {
+        --primary-red: #ff3d3d;
+        --bg-dark: #121212;
+        --bg-medium: #1e1e1e;
+        --bg-light: #2d2d2d;
+        --text-primary: #f0f0f0;
+        --text-secondary: #b0b0b0;
+        --border-color: #333;
+        --hover-bg: #252525;
+        --accent-blue: #4a9eff;
+    }
+    
+    html {
+        background-color: #121212;
+    }
+    
+    body {
+        background-color: #121212;
+        color: #f0f0f0;
+        min-height: 100vh;
+        padding: 20px;
+        margin: 0;
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: transparent !important;
+    }
+    
+    header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    .logo {
+        color: #ff3d3d !important;
+        font-size: clamp(28px, 5vw, 42px);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+        margin-bottom: 10px;
+    }
+    
+    .logo span {
+        color: #f0f0f0 !important;
+    }
+    
+    .back-link {
+        display: inline-block;
+        color: #4a9eff !important;
+        text-decoration: none;
+        margin-bottom: 20px;
+        font-size: 16px;
+        transition: opacity 0.3s;
+    }
+    
+    .back-link:hover {
+        opacity: 0.7;
+    }
+    
+    .subtitle {
+        color: #b0b0b0 !important;
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+    
+    .album-section {
+        background-color: #1e1e1e !important;
+        border-radius: 16px;
+        padding: 25px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    
+    .album-header {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 25px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid var(--border-color);
+    }
+    
+    .album-cover {
+        width: 120px;
+        height: 120px;
+        border-radius: 12px;
+        object-fit: cover;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .album-cover:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+    }
+    
+    .album-info {
+        flex: 1;
+    }
+    
+    .album-title {
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--primary-red);
+        margin-bottom: 5px;
+    }
+    
+    .album-subtitle {
+        font-size: 16px;
+        color: var(--text-secondary);
+    }
+    
+    .track-item {
+        background-color: #2d2d2d !important;
+        border-radius: 12px;
+        padding: 15px 20px;
+        margin-bottom: 12px;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .track-item:hover {
+        background-color: #252525 !important;
+        transform: translateX(5px);
+    }
+    
+    .track-number {
+        font-size: 18px;
+        color: var(--text-secondary);
+        min-width: 30px;
+    }
+    
+    .track-info {
+        flex: 1;
+    }
+    
+    .track-title {
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--text-primary);
+        margin-bottom: 3px;
+    }
+    
+    .track-artist {
+        font-size: 14px;
+        color: var(--text-secondary);
+    }
+    
+    audio {
+        width: 300px;
+        height: 32px;
+        filter: invert(1);
+    }
+    
+    @media (max-width: 768px) {
         .track-item {
-            background-color: #2d2d2d !important;
-            border-radius: 12px;
-            padding: 15px 20px;
-            margin-bottom: 12px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .track-item:hover {
-            background-color: #252525 !important;
-            transform: translateX(5px);
-        }
-        
-        .track-number {
-            font-size: 18px;
-            color: var(--text-secondary);
-            min-width: 30px;
-        }
-        
-        .track-info {
-            flex: 1;
-        }
-        
-        .track-title {
-            font-size: 18px;
-            font-weight: 500;
-            color: var(--text-primary);
-            margin-bottom: 3px;
-        }
-        
-        .track-artist {
-            font-size: 14px;
-            color: var(--text-secondary);
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
         }
         
         audio {
-            width: 300px;
-            height: 32px;
-            filter: invert(1);
+            width: 100%;
         }
         
-        @media (max-width: 768px) {
-            .track-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-            
-            audio {
-                width: 100%;
-            }
-            
-            .album-header {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            
-            .album-cover {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .album-info {
-                text-align: center;
-            }
-            
-            .singles-section .album-header > div:first-child {
-                justify-content: center;
-            }
+        .album-header {
+            flex-direction: column;
+            text-align: center;
+            gap: 15px;
         }
         
-        .singles-section {
-            background: linear-gradient(135deg, #2a1a1a, #1a2a2a) !important;
-            border: 2px solid #ff3d3d;
+        .album-cover {
+            width: 150px;
+            height: 150px;
         }
         
-        .singles-section .album-header {
-            border-bottom-color: rgba(255, 61, 61, 0.3);
+        .album-info {
+            text-align: center;
         }
         
-        .album-section h3 {
-            margin: 0;
+        .singles-section .album-header > div:first-child {
+            justify-content: center;
         }
-        
+    }
+    
+    .singles-section {
+        background: linear-gradient(135deg, #2a1a1a, #1a2a2a) !important;
+        border: 2px solid #ff3d3d;
+    }
+    
+    .singles-section .album-header {
+        border-bottom-color: rgba(255, 61, 61, 0.3);
+    }
+    
+    .album-section h3 {
+        margin: 0;
+    }
+    
+    .now-playing {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: var(--bg-light);
+        padding: 15px 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        display: none;
+        align-items: center;
+        gap: 10px;
+        z-index: 1000;
+    }
+    
+    .now-playing.active {
+        display: flex;
+    }
+    
+    .now-playing-text {
+        font-size: 14px;
+        color: var(--text-secondary);
+    }
+    
+    .now-playing-title {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--primary-red);
+    }
+    
+    @media (max-width: 640px) {
         .now-playing {
-            position: fixed;
-            bottom: 20px;
+            left: 20px;
             right: 20px;
-            background-color: var(--bg-light);
-            padding: 15px 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            display: none;
-            align-items: center;
-            gap: 10px;
-            z-index: 1000;
+            bottom: 10px;
         }
-        
-        .now-playing.active {
-            display: flex;
-        }
-        
-        .now-playing-text {
-            font-size: 14px;
-            color: var(--text-secondary);
-        }
-        
-        .now-playing-title {
-            font-size: 16px;
-            font-weight: 500;
-            color: var(--primary-red);
-        }
-        
-        @media (max-width: 640px) {
-            .now-playing {
-                left: 20px;
-                right: 20px;
-                bottom: 10px;
-            }
-        }
-    </style>
-    <script>
-        // Fallback font loading
-        if (!document.fonts.check("12px Fredoka")) {
-            const link = document.createElement("link");
-            link.href = "https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;700&display=swap";
-            link.rel = "stylesheet";
-            document.head.appendChild(link);
-        }
-    </script>
+    }
+</style>
+<script>
+    // Fallback font loading
+    if (!document.fonts.check("12px Fredoka")) {
+        const link = document.createElement("link");
+        link.href = "https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;700&display=swap";
+        link.rel = "stylesheet";
+        document.head.appendChild(link);
+    }
+</script>
+
 </head>
 <body style="background-color: #121212 !important; color: #f0f0f0 !important;">
     <div style="background-color: #121212 !important; min-height: 100vh; width: 100%;">
@@ -291,417 +293,408 @@
             <h1 class="logo">BUTTON<span>Board</span> MUSIC</h1>
             <p class="subtitle">by BUTTIFY®</p>
         </header>
-        
-        <div class="album-section">
-            <div class="album-header">
-                <img src="img/Summertime%20Hits%20Vol.%201" alt="Summertime Hits Vol. 1" class="album-cover">
-                <div class="album-info">
-                    <h2 class="album-title">Summertime Hits Vol. 1</h2>
-                    <p class="album-subtitle">4 Tracks • BUTTON!!! & Kate</p>
-                </div>
-            </div>
-            <div class="track-item">
-                <span class="track-number">1</span>
-                <div class="track-info">
-                    <div class="track-title">No Fighting</div>
-                    <div class="track-artist">Kate, prod. Ray</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="1.1 No Fighting.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <div class="track-item">
-                <span class="track-number">2</span>
-                <div class="track-info">
-                    <div class="track-title">Nom Nom Nom</div>
-                    <div class="track-artist">BUTTON!!!</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="1.2 Nom Nom Nom.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <div class="track-item">
-                <span class="track-number">3</span>
-                <div class="track-info">
-                    <div class="track-title">What the Squirrel</div>
-                    <div class="track-artist">BUTTON!!!</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="1.3 What the Squirrel.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <div class="track-item">
-                <span class="track-number">4</span>
-                <div class="track-info">
-                    <div class="track-title">Impostor Imperceptible</div>
-                    <div class="track-artist">BUTTON!!!</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="1.4 Impostor Imperceptible.mp3" type="audio/mpeg">
-                </audio>
+
+    <div class="album-section">
+        <div class="album-header">
+            <img src="img/Summertime%20Hits%20Vol.%201" alt="Summertime Hits Vol. 1" class="album-cover">
+            <div class="album-info">
+                <h2 class="album-title">Summertime Hits Vol. 1</h2>
+                <p class="album-subtitle">4 Tracks • BUTTON!!! & Kate</p>
             </div>
         </div>
-        
-        <div class="album-section">
-            <div class="album-header">
-                <img src="img/Summertime%20Hits%20Vol.%202" alt="Summertime Hits Vol. 2" class="album-cover">
-                <div class="album-info">
-                    <h2 class="album-title">Summertime Hits Vol. 2</h2>
-                    <p class="album-subtitle">3 Tracks • Ray & David</p>
-                </div>
+        <div class="track-item">
+            <span class="track-number">1</span>
+            <div class="track-info">
+                <div class="track-title">No Fighting</div>
+                <div class="track-artist">Kate, prod. Ray</div>
             </div>
-            <div class="track-item">
-                <span class="track-number">1</span>
-                <div class="track-info">
-                    <div class="track-title">Flipping With Anderson</div>
-                    <div class="track-artist">Ray</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="2.1 Flipping With Anderson.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <div class="track-item">
-                <span class="track-number">2</span>
-                <div class="track-info">
-                    <div class="track-title">Twenty Dollars</div>
-                    <div class="track-artist">Ray</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="2.2 Twenty Dollars.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <div class="track-item">
-                <span class="track-number">3</span>
-                <div class="track-info">
-                    <div class="track-title">Fly on the Shoe</div>
-                    <div class="track-artist">David, prod. Ray</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="2.3 Fly on the Shoe.mp3" type="audio/mpeg">
-                </audio>
-            </div>
+            <audio controls preload="none">
+                <source src="1.1 No Fighting.mp3" type="audio/mpeg">
+            </audio>
         </div>
-        
-        <div class="album-section">
-            <div class="album-header">
-                <img src="img/Summertime%20Hits%20Vol.%203" alt="Summertime Hits Vol. 3" class="album-cover">
-                <div class="album-info">
-                    <h2 class="album-title">Summertime Hits Vol. 3</h2>
-                    <p class="album-subtitle">3 Tracks • Ray & EJ</p>
-                </div>
+        <div class="track-item">
+            <span class="track-number">2</span>
+            <div class="track-info">
+                <div class="track-title">Nom Nom Nom</div>
+                <div class="track-artist">BUTTON!!!</div>
             </div>
-            <div class="track-item">
-                <span class="track-number">1</span>
-                <div class="track-info">
-                    <div class="track-title">GYATT RIZZ SIGMA</div>
-                    <div class="track-artist">Ray</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="3.1 GYATT RIZZ SIGMAA.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <div class="track-item">
-                <span class="track-number">2</span>
-                <div class="track-info">
-                    <div class="track-title">ATLANTA PRIME</div>
-                    <div class="track-artist">Ray, ft. EJ</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="3.2 ATLANTA PRIME.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <div class="track-item">
-                <span class="track-number">3</span>
-                <div class="track-info">
-                    <div class="track-title">boat</div>
-                    <div class="track-artist">Ray (with EJ)</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="3.3 boat.mp3" type="audio/mpeg">
-                </audio>
-            </div>
+            <audio controls preload="none">
+                <source src="1.2 Nom Nom Nom.mp3" type="audio/mpeg">
+            </audio>
         </div>
-        
-        <div class="album-section">
-            <div class="album-header">
-                <img src="img/Summertime%20Hits%20Vol.%204" alt="Summertime Hits Vol. 4" class="album-cover">
-                <div class="album-info">
-                    <h2 class="album-title">Summertime Hits Vol. 4</h2>
-                    <p class="album-subtitle">4 Tracks • Ray & Kate</p>
-                </div>
+        <div class="track-item">
+            <span class="track-number">3</span>
+            <div class="track-info">
+                <div class="track-title">What the Squirrel</div>
+                <div class="track-artist">BUTTON!!!</div>
             </div>
-            <div class="track-item">
-                <span class="track-number">1</span>
-                <div class="track-info">
-                    <div class="track-title">BUTTON(Craft)Cards</div>
-                    <div class="track-artist">Kate, prod. Ray</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="4.1 BUTTON(Craft) Cards.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <div class="track-item">
-                <span class="track-number">2</span>
-                <div class="track-info">
-                    <div class="track-title">ketchup</div>
-                    <div class="track-artist">Ray</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="4.2 ketchup.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <div class="track-item">
-                <span class="track-number">3</span>
-                <div class="track-info">
-                    <div class="track-title">voidmaxmpornhub</div>
-                    <div class="track-artist">Ray</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="4.3 voidmaxmpornhub.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <div class="track-item">
-                <span class="track-number">4</span>
-                <div class="track-info">
-                    <div class="track-title">We Didn't Start The Cleetus</div>
-                    <div class="track-artist">Ray</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="4.4 We Didnt Start The Cleetus.mp3" type="audio/mpeg">
-                </audio>
-            </div>
+            <audio controls preload="none">
+                <source src="1.3 What the Squirrel.mp3" type="audio/mpeg">
+            </audio>
         </div>
-        
-        <div class="album-section">
-            <div class="album-header">
-                <img src="img/IMG_5081.jpeg" alt="Summertime Hits Vol. 5" class="album-cover">
-                <div class="album-info">
-                    <h2 class="album-title">Summertime Hits Vol. 5</h2>
-                    <p class="album-subtitle">3 Tracks • David, EJ & Ray</p>
-                </div>
+        <div class="track-item">
+            <span class="track-number">4</span>
+            <div class="track-info">
+                <div class="track-title">Impostor Imperceptible</div>
+                <div class="track-artist">BUTTON!!!</div>
             </div>
-            <div class="track-item">
-                <span class="track-number">1</span>
-                <div class="track-info">
-                    <div class="track-title">This Land Is Our Land - '25 Remaster</div>
-                    <div class="track-artist">David & Ray</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="5.1 This Land Is Our Land.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <div class="track-item">
-                <span class="track-number">2</span>
-                <div class="track-info">
-                    <div class="track-title">Upsies</div>
-                    <div class="track-artist">EJ & Ray</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="5.2 Upsies.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <div class="track-item">
-                <span class="track-number">3</span>
-                <div class="track-info">
-                    <div class="track-title">EJ's Base</div>
-                    <div class="track-artist">BUTTON!!!</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="EJs Base.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-        </div>
-        
-        <div class="album-section">
-            <div class="album-header">
-                <img src="img/Atlanta" alt="Atlanta" class="album-cover">
-                <div class="album-info">
-                    <h2 class="album-title">Atlanta</h2>
-                    <p class="album-subtitle">1 Track • Ray, EJ, and Claire</p>
-                </div>
-            </div>
-            <div class="track-item">
-                <span class="track-number">1</span>
-                <div class="track-info">
-                    <div class="track-title">Atlanta State of Prime</div>
-                    <div class="track-artist">Ray, EJ, and Claire</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="Atlanta State of Prime.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-        </div>
-        
-        <div class="album-section">
-            <div class="album-header">
-                <img src="img/Gemsie%20Sings" alt="Gemsie Sings OG Album" class="album-cover">
-                <div class="album-info">
-                    <h2 class="album-title">Gemsie Sings OG Album</h2>
-                    <p class="album-subtitle">5 Tracks • EJ</p>
-                </div>
-            </div>
-            <div class="track-item">
-                <span class="track-number">1</span>
-                <div class="track-info">
-                    <div class="track-title">All the Single Ladies</div>
-                    <div class="track-artist">EJ</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="All the Single Ladies.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <div class="track-item">
-                <span class="track-number">2</span>
-                <div class="track-info">
-                    <div class="track-title">Gangnam Style</div>
-                    <div class="track-artist">EJ</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="Gangnam Style.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <div class="track-item">
-                <span class="track-number">3</span>
-                <div class="track-info">
-                    <div class="track-title">Preorder</div>
-                    <div class="track-artist">EJ</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="Preorder.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <div class="track-item">
-                <span class="track-number">4</span>
-                <div class="track-info">
-                    <div class="track-title">This Girl is on Fire</div>
-                    <div class="track-artist">EJ</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="This Girl is on Fire.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <div class="track-item">
-                <span class="track-number">5</span>
-                <div class="track-info">
-                    <div class="track-title">Wannabe</div>
-                    <div class="track-artist">EJ</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="Wannabe.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #444;">
-                <h3 style="color: #ff3d3d; font-size: 18px; margin-bottom: 15px; font-weight: 500;">Unreleased Promo Track</h3>
-                <div class="track-item">
-                    <span class="track-number">★</span>
-                    <div class="track-info">
-                        <div class="track-title">Think About it Song</div>
-                        <div class="track-artist">EJ</div>
-                    </div>
-                    <audio controls preload="none">
-                        <source src="Think About it Song.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-            </div>
-        </div>
-        
-        <div class="album-section singles-section">
-            <div class="album-header">
-                <img src="img/JIG" alt="JIG" class="album-cover">
-                <div class="album-info">
-                    <h2 class="album-title">Singles & Special Releases</h2>
-                    <p class="album-subtitle">1 Track • Ray, ft. EJ and Ryan</p>
-                </div>
-            </div>
-            <div class="track-item">
-                <span class="track-number">★</span>
-                <div class="track-info">
-                    <div class="track-title">JIG (Janna is a Hoe)</div>
-                    <div class="track-artist">Ray, ft. EJ and Ryan</div>
-                </div>
-                <audio controls preload="none">
-                    <source src="JIG.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-        </div>
-        
-        <div class="now-playing" id="nowPlaying">
-            <span class="now-playing-text">Now Playing:</span>
-            <span class="now-playing-title" id="nowPlayingTitle"></span>
+            <audio controls preload="none">
+                <source src="1.4 Impostor Imperceptible.mp3" type="audio/mpeg">
+            </audio>
         </div>
     </div>
     
-    <script>
-        // Track currently playing audio
-        let currentlyPlaying = null;
-        const nowPlayingDiv = document.getElementById('nowPlaying');
-        const nowPlayingTitle = document.getElementById('nowPlayingTitle');
+    <div class="album-section">
+        <div class="album-header">
+            <img src="img/Summertime%20Hits%20Vol.%202" alt="Summertime Hits Vol. 2" class="album-cover">
+            <div class="album-info">
+                <h2 class="album-title">Summertime Hits Vol. 2</h2>
+                <p class="album-subtitle">3 Tracks • Ray, Claire & Kate</p>
+            </div>
+        </div>
+        <div class="track-item">
+            <span class="track-number">1</span>
+            <div class="track-info">
+                <div class="track-title">Flipping With Anderson</div>
+                <div class="track-artist">Ray</div>
+            </div>
+            <audio controls preload="none">
+                <source src="2.1 Flipping With Anderson.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="track-item">
+            <span class="track-number">2</span>
+            <div class="track-info">
+                <div class="track-title">Twenty Dollars</div>
+                <div class="track-artist">Claire & Kate, prod. Ray</div>
+            </div>
+            <audio controls preload="none">
+                <source src="2.2 Twenty Dollars.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="track-item">
+            <span class="track-number">3</span>
+            <div class="track-info">
+                <div class="track-title">Fly on the Shoe</div>
+                <div class="track-artist">David, prod. Ray</div>
+            </div>
+            <audio controls preload="none">
+                <source src="2.3 Fly on the Shoe.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+    
+    <div class="album-section">
+        <div class="album-header">
+            <img src="img/Summertime%20Hits%20Vol.%203" alt="Summertime Hits Vol. 3" class="album-cover">
+            <div class="album-info">
+                <h2 class="album-title">Summertime Hits Vol. 3</h2>
+                <p class="album-subtitle">3 Tracks • Ray & EJ</p>
+            </div>
+        </div>
+        <div class="track-item">
+            <span class="track-number">1</span>
+            <div class="track-info">
+                <div class="track-title">GYATT RIZZ SIGMA</div>
+                <div class="track-artist">Ray</div>
+            </div>
+            <audio controls preload="none">
+                <source src="3.1 GYATT RIZZ SIGMAA.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="track-item">
+            <span class="track-number">2</span>
+            <div class="track-info">
+                <div class="track-title">ATLANTA PRIME</div>
+                <div class="track-artist">Ray & EJ</div>
+            </div>
+            <audio controls preload="none">
+                <source src="3.2 ATLANTA PRIME.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="track-item">
+            <span class="track-number">3</span>
+            <div class="track-info">
+                <div class="track-title">boat</div>
+                <div class="track-artist">Ray & EJ</div>
+            </div>
+            <audio controls preload="none">
+                <source src="3.3 boat.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+    
+    <div class="album-section">
+        <div class="album-header">
+            <img src="img/Summertime%20Hits%20Vol.%204" alt="Summertime Hits Vol. 4" class="album-cover">
+            <div class="album-info">
+                <h2 class="album-title">Summertime Hits Vol. 4</h2>
+                <p class="album-subtitle">4 Tracks • Ray, Kate & Ryan</p>
+            </div>
+        </div>
+        <div class="track-item">
+            <span class="track-number">1</span>
+            <div class="track-info">
+                <div class="track-title">BUTTON(Craft)Cards</div>
+                <div class="track-artist">Kate, prod. Ray</div>
+            </div>
+            <audio controls preload="none">
+                <source src="4.1 BUTTON(Craft) Cards.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="track-item">
+            <span class="track-number">2</span>
+            <div class="track-info">
+                <div class="track-title">ketchup</div>
+                <div class="track-artist">Ray, EJ, & Ryan</div>
+            </div>
+            <audio controls preload="none">
+                <source src="4.2 ketchup.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="track-item">
+            <span class="track-number">3</span>
+            <div class="track-info">
+                <div class="track-title">voidmaxmpornhub</div>
+                <div class="track-artist">Ray</div>
+            </div>
+            <audio controls preload="none">
+                <source src="4.3 voidmaxmpornhub.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="track-item">
+            <span class="track-number">4</span>
+            <div class="track-info">
+                <div class="track-title">We Didn't Start The Cleetus</div>
+                <div class="track-artist">Ray</div>
+            </div>
+            <audio controls preload="none">
+                <source src="4.4 We Didnt Start The Cleetus.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+    
+    <div class="album-section">
+        <div class="album-header">
+            <img src="img/IMG_5081.jpeg" alt="Summertime Hits Vol. 5" class="album-cover">
+            <div class="album-info">
+                <h2 class="album-title">Summertime Hits Vol. 5</h2>
+                <p class="album-subtitle">3 Tracks • David, EJ & Ray</p>
+            </div>
+        </div>
+        <div class="track-item">
+            <span class="track-number">1</span>
+            <div class="track-info">
+                <div class="track-title">This Land Is Our Land - '25 Remaster</div>
+                <div class="track-artist">David & Ray</div>
+            </div>
+            <audio controls preload="none">
+                <source src="5.1 This Land Is Our Land.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="track-item">
+            <span class="track-number">2</span>
+            <div class="track-info">
+                <div class="track-title">Upsies</div>
+                <div class="track-artist">EJ & Ray</div>
+            </div>
+            <audio controls preload="none">
+                <source src="5.2 Upsies.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="track-item">
+            <span class="track-number">3</span>
+            <div class="track-info">
+                <div class="track-title">EJ's Base</div>
+                <div class="track-artist">BUTTON!!!</div>
+            </div>
+            <audio controls preload="none">
+                <source src="EJs Base.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+    
+    <div class="album-section">
+        <div class="album-header">
+            <img src="img/Gemsie%20Sings" alt="Gemsie Sings OG Album" class="album-cover">
+            <div class="album-info">
+                <h2 class="album-title">Gemsie Sings OG Album</h2>
+                <p class="album-subtitle">5 Tracks • EJ</p>
+            </div>
+        </div>
+        <div class="track-item">
+            <span class="track-number">1</span>
+            <div class="track-info">
+                <div class="track-title">All the Single Ladies</div>
+                <div class="track-artist">EJ</div>
+            </div>
+            <audio controls preload="none">
+                <source src="All the Single Ladies.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="track-item">
+            <span class="track-number">2</span>
+            <div class="track-info">
+                <div class="track-title">Gangnam Style</div>
+                <div class="track-artist">EJ</div>
+            </div>
+            <audio controls preload="none">
+                <source src="Gangnam Style.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="track-item">
+            <span class="track-number">3</span>
+            <div class="track-info">
+                <div class="track-title">Preorder</div>
+                <div class="track-artist">EJ</div>
+            </div>
+            <audio controls preload="none">
+                <source src="Preorder.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="track-item">
+            <span class="track-number">4</span>
+            <div class="track-info">
+                <div class="track-title">This Girl is on Fire</div>
+                <div class="track-artist">EJ</div>
+            </div>
+            <audio controls preload="none">
+                <source src="This Girl is on Fire.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="track-item">
+            <span class="track-number">5</span>
+            <div class="track-info">
+                <div class="track-title">Wannabe</div>
+                <div class="track-artist">EJ</div>
+            </div>
+            <audio controls preload="none">
+                <source src="Wannabe.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #444;">
+            <h3 style="color: #ff3d3d; font-size: 18px; margin-bottom: 15px; font-weight: 500;">Unreleased Promo Track</h3>
+            <div class="track-item">
+                <span class="track-number">★</span>
+                <div class="track-info">
+                    <div class="track-title">Think About it Song</div>
+                    <div class="track-artist">EJ</div>
+                </div>
+                <audio controls preload="none">
+                    <source src="Think About it Song.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+    </div>
+    
+    <div class="album-section singles-section">
+        <div class="album-header">
+            <img src="img/JIG" alt="JIG" class="album-cover">
+            <div class="album-info">
+                <h2 class="album-title">Singles & Special Releases</h2>
+                <p class="album-subtitle">2 Tracks • Ray, EJ, Claire & Ryan</p>
+            </div>
+        </div>
+        <div class="track-item">
+            <span class="track-number">★</span>
+            <div class="track-info">
+                <div class="track-title">JIG (Janna is a Hoe)</div>
+                <div class="track-artist">Ray, ft. EJ and Ryan</div>
+            </div>
+            <audio controls preload="none">
+                <source src="JIG.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="track-item">
+            <span class="track-number">★</span>
+            <div class="track-info">
+                <div class="track-title">Atlanta State of Prime</div>
+                <div class="track-artist">Ray, EJ, and Claire</div>
+            </div>
+            <audio controls preload="none">
+                <source src="Atlanta State of Prime.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+    
+    <div class="now-playing" id="nowPlaying">
+        <span class="now-playing-text">Now Playing:</span>
+        <span class="now-playing-title" id="nowPlayingTitle"></span>
+    </div>
+</div>
+
+<script>
+    // Track currently playing audio
+    let currentlyPlaying = null;
+    const nowPlayingDiv = document.getElementById('nowPlaying');
+    const nowPlayingTitle = document.getElementById('nowPlayingTitle');
+    
+    // Add event listeners to all audio elements
+    document.querySelectorAll('audio').forEach(audio => {
+        audio.addEventListener('play', function() {
+            // Pause any other playing audio
+            if (currentlyPlaying && currentlyPlaying !== this) {
+                currentlyPlaying.pause();
+            }
+            currentlyPlaying = this;
+            
+            // Update now playing display
+            const trackItem = this.closest('.track-item');
+            const title = trackItem.querySelector('.track-title').textContent;
+            const artist = trackItem.querySelector('.track-artist').textContent;
+            nowPlayingTitle.textContent = `${title} - ${artist}`;
+            nowPlayingDiv.classList.add('active');
+        });
         
-        // Add event listeners to all audio elements
-        document.querySelectorAll('audio').forEach(audio => {
-            audio.addEventListener('play', function() {
-                // Pause any other playing audio
-                if (currentlyPlaying && currentlyPlaying !== this) {
-                    currentlyPlaying.pause();
-                }
-                currentlyPlaying = this;
-                
-                // Update now playing display
-                const trackItem = this.closest('.track-item');
-                const title = trackItem.querySelector('.track-title').textContent;
-                const artist = trackItem.querySelector('.track-artist').textContent;
-                nowPlayingTitle.textContent = `${title} - ${artist}`;
-                nowPlayingDiv.classList.add('active');
-            });
-            
-            audio.addEventListener('pause', function() {
-                if (currentlyPlaying === this) {
-                    nowPlayingDiv.classList.remove('active');
-                }
-            });
-            
-            audio.addEventListener('ended', function() {
+        audio.addEventListener('pause', function() {
+            if (currentlyPlaying === this) {
                 nowPlayingDiv.classList.remove('active');
-            });
-        });
-        
-        // Smooth scroll effect
-        document.querySelectorAll('.track-item').forEach((item, index) => {
-            item.style.opacity = '0';
-            item.style.animation = `fadeIn 0.5s ease-out ${index * 0.05}s forwards`;
-        });
-        
-        // Add fadeIn animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(20px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
             }
-            @keyframes fadeInScale {
-                from {
-                    opacity: 0;
-                    transform: scale(0.9);
-                }
-                to {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-            }
-        `;
-        document.head.appendChild(style);
-        
-        // Animate album covers on load
-        document.querySelectorAll('.album-cover').forEach((cover, index) => {
-            cover.style.opacity = '0';
-            cover.style.animation = `fadeInScale 0.5s ease-out ${index * 0.1}s forwards`;
         });
-    </script>
+        
+        audio.addEventListener('ended', function() {
+            nowPlayingDiv.classList.remove('active');
+        });
+    });
+    
+    // Smooth scroll effect
+    document.querySelectorAll('.track-item').forEach((item, index) => {
+        item.style.opacity = '0';
+        item.style.animation = `fadeIn 0.5s ease-out ${index * 0.05}s forwards`;
+    });
+    
+    // Add fadeIn animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // Animate album covers on load
+    document.querySelectorAll('.album-cover').forEach((cover, index) => {
+        cover.style.opacity = '0';
+        cover.style.animation = `fadeInScale 0.5s ease-out ${index * 0.1}s forwards`;
+    });
+</script>
+
 </body>
 </html>
