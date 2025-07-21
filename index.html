@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,488 +16,691 @@
             padding: 0;
             box-sizing: border-box;
             font-family: "Fredoka", "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
-            font-weight: 400;
+            font-weight: i;
         }
-        
-        /* Force dark background on all containers */
-        html, body, .container, main, section {
-            background-color: #121212 !important;
-        }
-        
-        :root {
-            --primary-red: #ff3d3d;
-            --bg-dark: #121212;
-            --bg-medium: #1e1e1e;
-            --bg-light: #2d2d2d;
-            --text-primary: #f0f0f0;
-            --text-secondary: #b0b0b0;
-            --border-color: #333;
-            --hover-bg: #252525;
-            --green: #4caf50;
-            --blue: #2196f3;
-        }
-        
-        html {
-            background-color: #121212;
-        }
-        
-        body {
-            background-color: #121212;
-            padding: clamp(10px, 3vw, 20px);
-            color: #f0f0f0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-        
-        header {
-            display: flex;
-            justify-content: center;
-            margin-bottom: clamp(15px, 3vw, 20px);
-            width: 100%;
-            max-width: 1000px;
-        }
-        
-        .logo {
-            color: #ff3d3d !important;
-            font-size: clamp(24px, 5vw, 36px);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-            text-align: center;
-        }
-        
-        .logo span {
-            color: #f0f0f0 !important;
-        }
-        
-        .chart-date {
-            text-align: center;
-            margin-bottom: clamp(15px, 3vw, 20px);
-            font-size: clamp(12px, 2vw, 14px);
-            color: #b0b0b0 !important;
-        }
-        
-        .biggest-jump {
-            background-color: #400000;
-            border: 1px solid #200000;
-            padding: clamp(10px, 2vw, 15px);
-            margin-bottom: clamp(15px, 3vw, 20px);
-            display: flex;
-            align-items: center;
-            border-radius: 12px;
-            max-width: 1000px;
-            width: 100%;
-            gap: clamp(10px, 2vw, 15px);
-        }
-        
-        .biggest-jump .cover {
-            width: clamp(60px, 10vw, 80px);
-            height: clamp(60px, 10vw, 80px);
-            object-fit: cover;
-            border-radius: 8px;
-            flex-shrink: 0;
-        }
-        
-        .biggest-jump-info h3 {
-            color: #ff3d3d !important;
-            margin-bottom: 5px;
-            font-size: clamp(14px, 2vw, 16px);
-            font-weight: 500;
-        }
-        
-        .biggest-jump-info h4 {
-            font-size: clamp(16px, 2.5vw, 18px);
-            margin-bottom: 3px;
-            color: #f0f0f0 !important;
-            font-weight: 500;
-        }
-        
-        .biggest-jump-info p {
-            font-size: clamp(12px, 2vw, 14px);
-            color: #b0b0b0 !important;
-            font-weight: 300;
-        }
-        
-        .chart-container {
-            background-color: #1e1e1e !important;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            overflow: hidden;
-            max-width: 1000px;
-            width: 100%;
-        }
-        
-        #chart-body {
-            background-color: #1e1e1e !important;
-        }
-        
-        /* Desktop Header */
-        .chart-header {
-            display: none;
-        }
-        
+
+    /* Force dark background on all containers */
+    html, body, .container, main, section {
+        background-color: #121212 !important;
+    }
+    
+    :root {
+        --primary-red: #ff3d3d;
+        --bg-dark: #121212;
+        --bg-medium: #1e1e1e;
+        --bg-light: #2d2d2d;
+        --text-primary: #f0f0f0;
+        --text-secondary: #b0b0b0;
+        --border-color: #333;
+        --hover-bg: #252525;
+        --green: #4caf50;
+        --blue: #2196f3;
+    }
+    
+    html {
+        background-color: #121212;
+    }
+    
+    body {
+        background-color: #121212;
+        padding: clamp(10px, 3vw, 20px);
+        color: #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+    
+    header {
+        display: flex;
+        justify-content: center;
+        margin-bottom: clamp(15px, 3vw, 20px);
+        width: 100%;
+        max-width: 1000px;
+    }
+    
+    .logo {
+        color: #ff3d3d !important;
+        font-size: clamp(24px, 5vw, 36px);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+        text-align: center;
+    }
+    
+    .logo span {
+        color: #f0f0f0 !important;
+    }
+    
+    /* Toggle Switch Styles */
+    .view-toggle {
+        display: flex;
+        justify-content: center;
+        margin-bottom: clamp(20px, 4vw, 30px);
+        width: 100%;
+        max-width: 1000px;
+    }
+    
+    .toggle-container {
+        background-color: #2d2d2d;
+        border-radius: 25px;
+        padding: 4px;
+        display: flex;
+        position: relative;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    
+    .toggle-option {
+        padding: 12px 24px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        font-size: 16px;
+        z-index: 2;
+        position: relative;
+    }
+    
+    .toggle-option.active {
+        color: #f0f0f0;
+    }
+    
+    .toggle-option:not(.active) {
+        color: #b0b0b0;
+    }
+    
+    .toggle-option:not(.active):hover {
+        color: #d0d0d0;
+    }
+    
+    .toggle-slider {
+        position: absolute;
+        background: linear-gradient(135deg, #ff3d3d, #ff6b6b);
+        border-radius: 20px;
+        transition: transform 0.3s ease;
+        height: calc(100% - 8px);
+        width: calc(50% - 4px);
+        top: 4px;
+        left: 4px;
+        box-shadow: 0 2px 8px rgba(255, 61, 61, 0.3);
+    }
+    
+    .toggle-slider.artists {
+        transform: translateX(100%);
+    }
+    
+    .chart-date {
+        text-align: center;
+        margin-bottom: clamp(15px, 3vw, 20px);
+        font-size: clamp(12px, 2vw, 14px);
+        color: #b0b0b0 !important;
+    }
+    
+    /* Artists View Styles */
+    .artists-view {
+        display: none;
+        width: 100%;
+        max-width: 1000px;
+    }
+    
+    .artists-view.active {
+        display: block;
+    }
+    
+    .artists-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: clamp(15px, 3vw, 25px);
+        margin-bottom: 30px;
+    }
+    
+    .artist-card {
+        background-color: #1e1e1e;
+        border-radius: 16px;
+        padding: 25px;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .artist-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(255, 61, 61, 0.2);
+        border-color: rgba(255, 61, 61, 0.3);
+    }
+    
+    .artist-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #ff3d3d, #ff6b6b);
+    }
+    
+    .artist-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .artist-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #ff3d3d, #ff6b6b);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: 700;
+        color: white;
+        flex-shrink: 0;
+        object-fit: cover;
+        border: 3px solid #ff3d3d;
+    }
+    
+    .artist-info h3 {
+        font-size: 22px;
+        font-weight: 600;
+        color: #f0f0f0;
+        margin-bottom: 5px;
+    }
+    
+    .artist-stats {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .stat {
+        text-align: center;
+    }
+    
+    .stat-number {
+        font-size: 20px;
+        font-weight: 700;
+        color: #ff3d3d;
+        display: block;
+    }
+    
+    .stat-label {
+        font-size: 12px;
+        color: #b0b0b0;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    
+    .artist-description {
+        color: #b0b0b0;
+        line-height: 1.5;
+        font-size: 14px;
+    }
+    
+    /* Songs View (existing chart styles) */
+    .songs-view {
+        width: 100%;
+        max-width: 1000px;
+    }
+    
+    .songs-view.hidden {
+        display: none;
+    }
+    
+    .biggest-jump {
+        background-color: #400000;
+        border: 1px solid #200000;
+        padding: clamp(10px, 2vw, 15px);
+        margin-bottom: clamp(15px, 3vw, 20px);
+        display: flex;
+        align-items: center;
+        border-radius: 12px;
+        max-width: 1000px;
+        width: 100%;
+        gap: clamp(10px, 2vw, 15px);
+    }
+    
+    .biggest-jump .cover {
+        width: clamp(60px, 10vw, 80px);
+        height: clamp(60px, 10vw, 80px);
+        object-fit: cover;
+        border-radius: 8px;
+        flex-shrink: 0;
+    }
+    
+    .biggest-jump-info h3 {
+        color: #ff3d3d !important;
+        margin-bottom: 5px;
+        font-size: clamp(14px, 2vw, 16px);
+        font-weight: 500;
+    }
+    
+    .biggest-jump-info h4 {
+        font-size: clamp(16px, 2.5vw, 18px);
+        margin-bottom: 3px;
+        color: #f0f0f0 !important;
+        font-weight: 500;
+    }
+    
+    .biggest-jump-info p {
+        font-size: clamp(12px, 2vw, 14px);
+        color: #b0b0b0 !important;
+        font-weight: 300;
+    }
+    
+    .chart-container {
+        background-color: #1e1e1e !important;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        overflow: hidden;
+        max-width: 1000px;
+        width: 100%;
+    }
+    
+    #chart-body {
+        background-color: #1e1e1e !important;
+    }
+    
+    /* Desktop Header */
+    .chart-header {
+        display: none;
+    }
+    
+    .chart-header-desktop {
+        background-color: #2d2d2d !important;
+        padding: 15px 20px;
+        border-bottom: 1px solid #333;
+        display: grid;
+        grid-template-columns: 40px 100px 1fr 100px 100px 80px;
+        align-items: center;
+        font-weight: 500;
+        font-size: 13px;
+        color: #b0b0b0;
+        gap: 10px;
+    }
+    
+    @media (min-width: 768px) {
         .chart-header-desktop {
-            background-color: #2d2d2d !important;
-            padding: 15px 20px;
-            border-bottom: 1px solid #333;
             display: grid;
-            grid-template-columns: 40px 100px 1fr 100px 100px 80px;
-            align-items: center;
-            font-weight: 500;
-            font-size: 13px;
-            color: #b0b0b0;
-            gap: 10px;
         }
-        
-        @media (min-width: 768px) {
-            .chart-header-desktop {
-                display: grid;
-            }
-        }
-        
-        .chart-header-desktop > div[data-sort] {
-            cursor: pointer;
-            user-select: none;
-        }
-        
-        .chart-header-desktop > div[data-sort]:hover {
-            color: #f0f0f0 !important;
-        }
-        
-        .chart-header-desktop > div:nth-child(1) {
-            text-align: center;
-            justify-self: center;
-            cursor: default;
-        }
-        
-        .chart-header-desktop > div:nth-child(1),
-        .chart-header-desktop > div:nth-child(4),
-        .chart-header-desktop > div:nth-child(5),
-        .chart-header-desktop > div:nth-child(6) {
-            text-align: center;
-            justify-self: center;
-        }
-        
-        .chart-header-desktop > div:nth-child(3) {
-            text-align: left;
-            padding-left: 5px;
-        }
-        
-        .chart-header-desktop > div.sort-asc::after {
-            content: ' ▲';
-            font-size: 10px;
-        }
-        
-        .chart-header-desktop > div.sort-desc::after {
-            content: ' ▼';
-            font-size: 10px;
-        }
-        
-        /* Chart Row - Mobile First */
+    }
+    
+    .chart-header-desktop > div[data-sort] {
+        cursor: pointer;
+        user-select: none;
+    }
+    
+    .chart-header-desktop > div[data-sort]:hover {
+        color: #f0f0f0 !important;
+    }
+    
+    .chart-header-desktop > div:nth-child(1) {
+        text-align: center;
+        justify-self: center;
+        cursor: default;
+    }
+    
+    .chart-header-desktop > div:nth-child(1),
+    .chart-header-desktop > div:nth-child(4),
+    .chart-header-desktop > div:nth-child(5),
+    .chart-header-desktop > div:nth-child(6) {
+        text-align: center;
+        justify-self: center;
+    }
+    
+    .chart-header-desktop > div:nth-child(3) {
+        text-align: left;
+        padding-left: 5px;
+    }
+    
+    .chart-header-desktop > div.sort-asc::after {
+        content: ' ▲';
+        font-size: 10px;
+    }
+    
+    .chart-header-desktop > div.sort-desc::after {
+        content: ' ▼';
+        font-size: 10px;
+    }
+    
+    /* Chart Row - Mobile First */
+    .chart-row {
+        padding: clamp(15px, 3vw, 25px) clamp(10px, 3vw, 20px);
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 15px;
+        align-items: start;
+        border-bottom: 1px solid var(--border-color);
+        position: relative;
+        background-color: transparent;
+    }
+    
+    .chart-row:hover {
+        background-color: #252525 !important;
+    }
+    
+    /* Mobile Layout */
+    .position {
+        font-size: clamp(20px, 4vw, 24px);
+        font-weight: 500;
+        color: #f0f0f0 !important;
+        text-align: center;
+        grid-row: span 2;
+        align-self: center;
+        padding-right: 10px;
+        justify-self: center;
+        width: 100%;
+    }
+    
+    .mobile-content {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 12px;
+        align-items: start;
+    }
+    
+    .top-position .mobile-content {
+        gap: clamp(16px, 3vw, 24px);
+    }
+    
+    .album-cover {
+        width: clamp(60px, 12vw, 80px);
+        height: clamp(60px, 12vw, 80px);
+        object-fit: cover;
+        border-radius: 8px;
+        flex-shrink: 0;
+    }
+    
+    .song-details {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        min-width: 0;
+    }
+    
+    .song-info h3 {
+        font-size: clamp(16px, 2.5vw, 18px);
+        margin-bottom: 2px;
+        color: #f0f0f0 !important;
+        font-weight: 500;
+        line-height: 1.2;
+        word-break: break-word;
+    }
+    
+    .song-info p {
+        font-size: clamp(14px, 2vw, 16px);
+        color: #b0b0b0 !important;
+        font-weight: 300;
+    }
+    
+    .mobile-stats {
+        display: flex;
+        gap: 20px;
+        font-size: clamp(12px, 2vw, 14px);
+        color: var(--text-secondary);
+        margin-top: 5px;
+    }
+    
+    .mobile-stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+    }
+    
+    .mobile-stat-label {
+        font-size: clamp(10px, 1.5vw, 12px);
+        text-transform: uppercase;
+        opacity: 0.7;
+        color: #b0b0b0 !important;
+    }
+    
+    .mobile-stat-value {
+        font-weight: 500;
+        color: #f0f0f0 !important;
+    }
+    
+    .trend {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+    
+    /* Desktop Layout */
+    @media (min-width: 768px) {
         .chart-row {
-            padding: clamp(15px, 3vw, 25px) clamp(10px, 3vw, 20px);
-            display: grid;
-            grid-template-columns: auto 1fr;
+            grid-template-columns: 40px 100px 1fr 100px 100px 80px;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .top-position {
             gap: 15px;
-            align-items: start;
-            border-bottom: 1px solid var(--border-color);
-            position: relative;
-            background-color: transparent;
         }
         
-        .chart-row:hover {
-            background-color: #252525 !important;
+        .chart-row > *,
+        .chart-header-desktop > * {
+            padding: 0 5px;
         }
         
-        /* Mobile Layout */
         .position {
-            font-size: clamp(20px, 4vw, 24px);
-            font-weight: 500;
-            color: #f0f0f0 !important;
-            text-align: center;
-            grid-row: span 2;
-            align-self: center;
-            padding-right: 10px;
-            justify-self: center;
+            grid-row: 1;
+            padding-right: 0;
             width: 100%;
         }
         
         .mobile-content {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 12px;
-            align-items: start;
-        }
-        
-        .top-position .mobile-content {
-            gap: clamp(16px, 3vw, 24px);
-        }
-        
-        .album-cover {
-            width: clamp(60px, 12vw, 80px);
-            height: clamp(60px, 12vw, 80px);
-            object-fit: cover;
-            border-radius: 8px;
-            flex-shrink: 0;
+            display: contents;
         }
         
         .song-details {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            min-width: 0; /* Allow text to wrap */
-        }
-        
-        .song-info h3 {
-            font-size: clamp(16px, 2.5vw, 18px);
-            margin-bottom: 2px;
-            color: #f0f0f0 !important;
-            font-weight: 500;
-            line-height: 1.2;
-            word-break: break-word;
-        }
-        
-        .song-info p {
-            font-size: clamp(14px, 2vw, 16px);
-            color: #b0b0b0 !important;
-            font-weight: 300;
+            display: contents;
         }
         
         .mobile-stats {
-            display: flex;
-            gap: 20px;
-            font-size: clamp(12px, 2vw, 14px);
-            color: var(--text-secondary);
-            margin-top: 5px;
+            display: contents;
         }
         
         .mobile-stat {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2px;
+            flex-direction: row;
+            gap: 0;
+            justify-content: center;
         }
         
         .mobile-stat-label {
-            font-size: clamp(10px, 1.5vw, 12px);
-            text-transform: uppercase;
-            opacity: 0.7;
-            color: #b0b0b0 !important;
+            display: none;
         }
         
         .mobile-stat-value {
-            font-weight: 500;
-            color: #f0f0f0 !important;
+            text-align: center;
+            font-size: 16px;
         }
         
-        .trend {
-            display: flex;
-            align-items: center;
+        .mobile-stat:nth-child(1) .mobile-stat-value,
+        .mobile-stat:nth-child(2) .mobile-stat-value {
+            color: #b0b0b0 !important;
+        }
+        
+        .song-info {
+            text-align: left;
+        }
+        
+        .mobile-stat:nth-child(3) {
             justify-content: center;
-            gap: 5px;
         }
         
-        /* Desktop Layout */
-        @media (min-width: 768px) {
-            .chart-row {
-                grid-template-columns: 40px 100px 1fr 100px 100px 80px;
-                gap: 10px;
-                align-items: center;
-            }
-            
-            .top-position {
-                gap: 15px;
-            }
-            
-            .chart-row > *,
-            .chart-header-desktop > * {
-                padding: 0 5px;
-            }
-            
-            .position {
-                grid-row: 1;
-                padding-right: 0;
-                width: 100%;
-            }
-            
-            .mobile-content {
-                display: contents;
-            }
-            
-            .song-details {
-                display: contents;
-            }
-            
-            .mobile-stats {
-                display: contents;
-            }
-            
-            .mobile-stat {
-                flex-direction: row;
-                gap: 0;
-                justify-content: center;
-            }
-            
-            .mobile-stat-label {
-                display: none;
-            }
-            
-            .mobile-stat-value {
-                text-align: center;
-                font-size: 16px;
-            }
-            
-            .mobile-stat:nth-child(1) .mobile-stat-value,
-            .mobile-stat:nth-child(2) .mobile-stat-value {
-                color: #b0b0b0 !important;
-            }
-            
-            .song-info {
-                text-align: left;
-            }
-            
-            .mobile-stat:nth-child(3) {
-                justify-content: center;
-            }
-            
-            .mobile-stat:nth-child(3) .trend {
-                justify-content: center;
-            }
+        .mobile-stat:nth-child(3) .trend {
+            justify-content: center;
         }
         
-        /* Top position styling */
-        .top-position {
-            background-color: #2a1a1a !important;
-            border-bottom: 2px solid #ff3d3d;
-            padding: clamp(20px, 4vw, 35px) clamp(10px, 3vw, 20px);
+        .artists-grid {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+    }
+    
+    /* Top position styling */
+    .top-position {
+        background-color: #2a1a1a !important;
+        border-bottom: 2px solid #ff3d3d;
+        padding: clamp(20px, 4vw, 35px) clamp(10px, 3vw, 20px);
+    }
+    
+    .top-position .position {
+        font-size: clamp(32px, 6vw, 42px);
+        font-weight: 700;
+        color: #ff3d3d !important;
+    }
+    
+    .top-position .album-cover {
+        width: clamp(80px, 15vw, 120px);
+        height: clamp(80px, 15vw, 120px);
+        box-shadow: 0 0 10px rgba(255, 61, 61, 0.3);
+        flex-shrink: 0;
+    }
+    
+    .top-position .song-info h3 {
+        font-size: clamp(20px, 3vw, 26px);
+        font-weight: 700;
+        margin-bottom: 4px;
+        word-break: break-word;
+    }
+    
+    .top-position .song-info p {
+        font-size: clamp(16px, 2.5vw, 18px);
+    }
+    
+    .top-position .mobile-stat-value {
+        font-size: clamp(16px, 2.5vw, 20px);
+        font-weight: 500;
+    }
+    
+    /* Trend indicators */
+    .up {
+        color: #4caf50 !important;
+    }
+    
+    .down {
+        color: #ff3d3d !important;
+    }
+    
+    .new {
+        color: #2196f3 !important;
+    }
+    
+    .same {
+        color: #b0b0b0 !important;
+    }
+    
+    .arrow {
+        font-size: clamp(16px, 2.5vw, 18px);
+    }
+    
+    /* Override any default styles that might cause white background */
+    *, *::before, *::after {
+        background-color: inherit;
+    }
+    
+    body > * {
+        background-color: transparent !important;
+    }
+    
+    /* Specific overrides for common white background issues */
+    .container, .wrapper, .content, main, section, article {
+        background-color: transparent !important;
+    }
+    
+    /* Force dark background on root elements */
+    :root, html, body {
+        background: #121212 !important;
+        background-color: #121212 !important;
+    }
+    
+    /* Ensure all text in chart is visible */
+    .chart-container * {
+        color: #f0f0f0;
+    }
+    
+    .chart-container .mobile-stat-label,
+    .chart-container .track-artist,
+    .chart-container .album-subtitle {
+        color: #b0b0b0 !important;
+    }
+    
+    /* Touch-friendly for mobile */
+    @media (max-width: 767px) {
+        .chart-row {
+            min-height: 100px;
+            cursor: pointer;
         }
         
-        .top-position .position {
-            font-size: clamp(32px, 6vw, 42px);
-            font-weight: 700;
-            color: #ff3d3d !important;
+        .chart-header-desktop {
+            display: none;
         }
-        
-        .top-position .album-cover {
-            width: clamp(80px, 15vw, 120px);
-            height: clamp(80px, 15vw, 120px);
-            box-shadow: 0 0 10px rgba(255, 61, 61, 0.3);
-            flex-shrink: 0;
+    }
+
+    /* Animation for view transitions */
+    .artists-view, .songs-view {
+        animation: fadeIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
         }
-        
-        .top-position .song-info h3 {
-            font-size: clamp(20px, 3vw, 26px);
-            font-weight: 700;
-            margin-bottom: 4px;
-            word-break: break-word;
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
-        
-        .top-position .song-info p {
-            font-size: clamp(16px, 2.5vw, 18px);
-        }
-        
-        .top-position .mobile-stat-value {
-            font-size: clamp(16px, 2.5vw, 20px);
-            font-weight: 500;
-        }
-        
-        /* Trend indicators */
-        .up {
-            color: #4caf50 !important;
-        }
-        
-        .down {
-            color: #ff3d3d !important;
-        }
-        
-        .new {
-            color: #2196f3 !important;
-        }
-        
-        .same {
-            color: #b0b0b0 !important;
-        }
-        
-        .arrow {
-            font-size: clamp(16px, 2.5vw, 18px);
-        }
-        
-        /* Override any default styles that might cause white background */
-        *, *::before, *::after {
-            background-color: inherit;
-        }
-        
-        body > * {
-            background-color: transparent !important;
-        }
-        
-        /* Specific overrides for common white background issues */
-        .container, .wrapper, .content, main, section, article {
-            background-color: transparent !important;
-        }
-        
-        /* Force dark background on root elements */
-        :root, html, body {
-            background: #121212 !important;
-            background-color: #121212 !important;
-        }
-        
-        /* Ensure all text in chart is visible */
-        .chart-container * {
-            color: #f0f0f0;
-        }
-        
-        .chart-container .mobile-stat-label,
-        .chart-container .track-artist,
-        .chart-container .album-subtitle {
-            color: #b0b0b0 !important;
-        }
-        
-        /* Touch-friendly for mobile */
-        @media (max-width: 767px) {
-            .chart-row {
-                min-height: 100px;
-                cursor: pointer;
-            }
-            
-            .chart-header-desktop {
-                display: none;
-            }
-        }
-    </style>
-    <script>
-        // Fallback font loading
-        if (!document.fonts.check("12px Fredoka")) {
-            const link = document.createElement("link");
-            link.href = "https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;700&display=swap";
-            link.rel = "stylesheet";
-            document.head.appendChild(link);
-        }
-    </script>
+    }
+</style>
+<script>
+    // Fallback font loading
+    if (!document.fonts.check("12px Fredoka")) {
+        const link = document.createElement("link");
+        link.href = "https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;700&display=swap";
+        link.rel = "stylesheet";
+        document.head.appendChild(link);
+    }
+</script>
+
 </head>
 <body style="background-color: #121212 !important; color: #f0f0f0 !important;">
     <div style="background-color: #121212 !important; min-height: 100vh; width: 100%;">
     <header>
         <h1 class="logo">BUTTON<span>Board</span> HOT 100</h1>
     </header>
-    
-    <div style="text-align: center; margin-bottom: 20px;">
-        <a href="stream.html" style="display: inline-block; background: linear-gradient(45deg, #ff3d3d, #ff6b6b) !important; color: white !important; text-decoration: none; padding: 12px 30px; border-radius: 25px; font-weight: 500; font-size: 16px; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(255, 61, 61, 0.3);" 
-           onmouseover="this.style.transform=&apos;translateY(-2px)&apos;; this.style.boxShadow=&apos;0 6px 20px rgba(255, 61, 61, 0.4)&apos;;" 
-           onmouseout="this.style.transform=&apos;translateY(0)&apos;; this.style.boxShadow=&apos;0 4px 15px rgba(255, 61, 61, 0.3)&apos;;">
-            BUTTIFY®
-        </a>
+
+<div style="text-align: center; margin-bottom: 20px;">
+    <a href="stream.html" style="display: inline-block; background: linear-gradient(45deg, #ff3d3d, #ff6b6b) !important; color: white !important; text-decoration: none; padding: 12px 30px; border-radius: 25px; font-weight: 500; font-size: 16px; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(255, 61, 61, 0.3);" 
+       onmouseover="this.style.transform=&apos;translateY(-2px)&apos;; this.style.boxShadow=&apos;0 6px 20px rgba(255, 61, 61, 0.4)&apos;;" 
+       onmouseout="this.style.transform=&apos;translateY(0)&apos;; this.style.boxShadow=&apos;0 4px 15px rgba(255, 61, 61, 0.3)&apos;;">
+        BUTTIFY®
+    </a>
+</div>
+
+<!-- View Toggle -->
+<div class="view-toggle">
+    <div class="toggle-container">
+        <div class="toggle-slider" id="toggleSlider"></div>
+        <div class="toggle-option active" id="songsToggle" onclick="switchView('songs')">Songs</div>
+        <div class="toggle-option" id="artistsToggle" onclick="switchView('artists')">Artists</div>
     </div>
-    
+</div>
+
+<!-- Songs View (existing content) -->
+<div class="songs-view" id="songsView">
     <div class="chart-date">
         WK/O July 20, 2025
     </div>
     
     <div class="biggest-jump">
-        <img src="img/Atlanta" alt="Album Cover" class="cover">
+        <img src="img/Atlanta.png" alt="Album Cover" class="cover">
         <div class="biggest-jump-info">
             <h3>HOT SHOT DEBUT</h3>
             <h4>Atlanta State of Prime</h4>
@@ -527,235 +731,400 @@
             <!-- Chart rows will be inserted here by JavaScript -->
         </div>
     </div>
+</div>
+
+<!-- Artists View -->
+<div class="artists-view" id="artistsView">
+    <div class="chart-date">
+        Artist Showcase
+    </div>
     
-    <script>
-        // Chart data
-        const chartData = [
-            {
-                position: 1,
-                albumCover: "img/Atlanta",
-                title: "Atlanta State of Prime",
-                artist: "Ray, EJ, and Claire",
-                peak: 1,
-                streak: 1,
-                prevPosition: "NEW",
-                trend: "new"
-            },
-            {
-                position: 2,
-                albumCover: "img/Summertime%20Hits%20Vol.%204",
-                title: "We Didn't Start the Cleetus",
-                artist: "Ray",
-                peak: 1,
-                streak: 3,
-                prevPosition: "1",
-                trend: "down"
-            },
-            {
-                position: 3,
-                albumCover: "img/JIG",
-                title: "JIG (Janna is a Hoe)",
-                artist: "Ray, ft. EJ and Ryan",
-                peak: 1,
-                streak: 4,
-                prevPosition: "2",
-                trend: "down"
-            },
-            {
-                position: 4,
-                albumCover: "img/IMG_5081.jpeg",
-                title: "EJ's Base",
-                artist: "BUTTON!!!",
-                peak: 4,
-                streak: 1,
-                prevPosition: "NEW",
-                trend: "new"
-            },
-            {
-                position: 5,
-                albumCover: "img/Summertime%20Hits%20Vol.%203",
-                title: "ATLANTA PRIME",
-                artist: "Ray, ft. EJ",
-                peak: 3,
-                streak: 4,
-                prevPosition: "3",
-                trend: "down"
-            },
-            {
-                position: 6,
-                albumCover: "img/Summertime%20Hits%20Vol.%204",
-                title: "voidmaxmpohub",
-                artist: "Ray",
-                peak: 6,
-                streak: 1,
-                prevPosition: "NEW",
-                trend: "new"
-            },
-            {
-                position: 7,
-                albumCover: "img/Gemsie%20Sings",
-                title: "Preorder",
-                artist: "EJ",
-                peak: 7,
-                streak: 1,
-                prevPosition: "NEW",
-                trend: "new"
-            },
-            {
-                position: 8,
-                albumCover: "img/Summertime%20Hits%20Vol.%201",
-                title: "No Fighting",
-                artist: "Kate, prod. Ray",
-                peak: 4,
-                streak: 4,
-                prevPosition: "5",
-                trend: "down"
-            },
-            {
-                position: 9,
-                albumCover: "img/IMG_5081.jpeg",
-                title: "This Land Is Our Land - '25 Remaster",
-                artist: "David & Ray",
-                peak: 4,
-                streak: 2,
-                prevPosition: "4",
-                trend: "down"
-            },
-            {
-                position: 10,
-                albumCover: "img/Gemsie%20Sings%20(UNRELEASED)",
-                title: "Think About it Song",
-                artist: "EJ",
-                peak: 7,
-                streak: 2,
-                prevPosition: "9",
-                trend: "down"
-            }
-        ];
+    <div class="artists-grid">
+        <div class="artist-card">
+            <div class="artist-header">
+                <img src="img/Ray.png" alt="Ray" class="artist-avatar">
+                <div class="artist-info">
+                    <h3>Ray</h3>
+                    <div class="artist-stats">
+                        <div class="stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">#1 Hits</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">14</span>
+                            <span class="stat-label">Tracks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="artist-description">
+                Ray is the visionary founder and creative force behind Summertime Hits, establishing the collective that would define a generation of music. As the most prolific artist in the catalog with chart-toppers like "We Didn't Start the Cleetus" and "JIG," Ray masterfully balances solo artistry with production genius, crafting the signature sound that runs through the entire Summertime Hits legacy.
+            </div>
+        </div>
         
-        // Function to render chart data
-        function renderChart(data) {
-            const chartBody = document.getElementById('chart-body');
-            chartBody.innerHTML = '';
+        <div class="artist-card">
+            <div class="artist-header">
+                <img src="img/EJ.png" alt="EJ" class="artist-avatar">
+                <div class="artist-info">
+                    <h3>EJ</h3>
+                    <div class="artist-stats">
+                        <div class="stat">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">#1 Hits</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">9</span>
+                            <span class="stat-label">Tracks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="artist-description">
+                EJ burst onto the scene with the groundbreaking "Gemsie Sings OG Album" in 2020, a polarizing masterpiece that redefined what BUTTON!!! music could be. From covering classics like "All the Single Ladies" to creating original hits like "Preorder," EJ's versatile vocal range and fearless artistic vision have made them an indispensable cornerstone of the collective's evolution.
+            </div>
+        </div>
+        
+        <div class="artist-card">
+            <div class="artist-header">
+                <img src="img/Claire.png" alt="Claire" class="artist-avatar">
+                <div class="artist-info">
+                    <h3>Claire</h3>
+                    <div class="artist-stats">
+                        <div class="stat">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">#1 Hits</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Tracks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="artist-description">
+                Claire represents the new generation of BUTTON!!! talent, bringing fresh energy and stunning vocal prowess to the collective. Her show-stopping performance on the chart-topping "Atlanta State of Prime" and creative contributions to "EJ's Base" showcase an artist with both technical skill and natural star power, positioning her as the future of the franchise.
+            </div>
+        </div>
+        
+        <div class="artist-card">
+            <div class="artist-header">
+                <img src="img/Kate.png" alt="Kate" class="artist-avatar">
+                <div class="artist-info">
+                    <h3>Kate</h3>
+                    <div class="artist-stats">
+                        <div class="stat">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">#1 Hits</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Tracks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="artist-description">
+                Kate stands as the beloved heart of the early Summertime Hits era, serving as the main face of the franchise during its foundational years. Her emotionally resonant performances on classics like "No Fighting" and the playful "BUTTON(Craft)Cards" demonstrate an artist who understands both vulnerability and fun, making her an enduring fan favorite and essential piece of BUTTON!!! history.
+            </div>
+        </div>
+        
+        <div class="artist-card">
+            <div class="artist-header">
+                <img src="img/David.png" alt="David" class="artist-avatar">
+                <div class="artist-info">
+                    <h3>David</h3>
+                    <div class="artist-stats">
+                        <div class="stat">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">#1 Hits</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Tracks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="artist-description">
+                David emerges as both co-founder and archivist of the Summertime Hits legacy, establishing the ButtonCraft Archive that preserved the collective's earliest works. His thoughtful approach to songcraft shines through in collaborations like "This Land Is Our Land" and the whimsical "Fly on the Shoe," proving that sometimes the quiet revolutionaries leave the most lasting impact on musical history.
+            </div>
+        </div>
+        
+        <div class="artist-card">
+            <div class="artist-header">
+                <img src="img/Ryan.png" alt="Ryan" class="artist-avatar">
+                <div class="artist-info">
+                    <h3>Ryan</h3>
+                    <div class="artist-stats">
+                        <div class="stat">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">#1 Hits</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">Tracks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="artist-description">
+                Ryan epitomizes the power of perfect timing and undeniable talent, delivering one of the most memorable features in BUTTON!!! history with his electrifying refrain on the chart-topping "JIG (Janna is a Hoe)." Though his catalog may be lean, Ryan's ability to steal the spotlight and create instant classics proves that sometimes quality trumps quantity in the music game.
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Chart data
+    const chartData = [
+        {
+            position: 1,
+            albumCover: "img/Atlanta",
+            title: "Atlanta State of Prime",
+            artist: "Ray, EJ, and Claire",
+            peak: 1,
+            streak: 1,
+            prevPosition: "NEW",
+            trend: "new"
+        },
+        {
+            position: 2,
+            albumCover: "img/Summertime%20Hits%20Vol.%204",
+            title: "We Didn't Start the Cleetus",
+            artist: "Ray",
+            peak: 1,
+            streak: 3,
+            prevPosition: "1",
+            trend: "down"
+        },
+        {
+            position: 3,
+            albumCover: "img/JIG",
+            title: "JIG (Janna is a Hoe)",
+            artist: "Ray, ft. EJ and Ryan",
+            peak: 1,
+            streak: 4,
+            prevPosition: "2",
+            trend: "down"
+        },
+        {
+            position: 4,
+            albumCover: "img/IMG_5081.jpeg",
+            title: "EJ's Base",
+            artist: "BUTTON!!!",
+            peak: 4,
+            streak: 1,
+            prevPosition: "NEW",
+            trend: "new"
+        },
+        {
+            position: 5,
+            albumCover: "img/Summertime%20Hits%20Vol.%203",
+            title: "ATLANTA PRIME",
+            artist: "Ray, ft. EJ",
+            peak: 3,
+            streak: 4,
+            prevPosition: "3",
+            trend: "down"
+        },
+        {
+            position: 6,
+            albumCover: "img/Summertime%20Hits%20Vol.%204",
+            title: "voidmaxmpohub",
+            artist: "Ray",
+            peak: 6,
+            streak: 1,
+            prevPosition: "NEW",
+            trend: "new"
+        },
+        {
+            position: 7,
+            albumCover: "img/Gemsie%20Sings",
+            title: "Preorder",
+            artist: "EJ",
+            peak: 7,
+            streak: 1,
+            prevPosition: "NEW",
+            trend: "new"
+        },
+        {
+            position: 8,
+            albumCover: "img/Summertime%20Hits%20Vol.%201",
+            title: "No Fighting",
+            artist: "Kate, prod. Ray",
+            peak: 4,
+            streak: 4,
+            prevPosition: "5",
+            trend: "down"
+        },
+        {
+            position: 9,
+            albumCover: "img/IMG_5081.jpeg",
+            title: "This Land Is Our Land - '25 Remaster",
+            artist: "David & Ray",
+            peak: 4,
+            streak: 2,
+            prevPosition: "4",
+            trend: "down"
+        },
+        {
+            position: 10,
+            albumCover: "img/Gemsie%20Sings%20(UNRELEASED)",
+            title: "Think About it Song",
+            artist: "EJ",
+            peak: 7,
+            streak: 2,
+            prevPosition: "9",
+            trend: "down"
+        }
+    ];
+    
+    // View switching functionality
+    function switchView(view) {
+        const songsView = document.getElementById('songsView');
+        const artistsView = document.getElementById('artistsView');
+        const songsToggle = document.getElementById('songsToggle');
+        const artistsToggle = document.getElementById('artistsToggle');
+        const toggleSlider = document.getElementById('toggleSlider');
+        
+        if (view === 'songs') {
+            songsView.style.display = 'block';
+            artistsView.style.display = 'none';
+            songsToggle.classList.add('active');
+            artistsToggle.classList.remove('active');
+            toggleSlider.classList.remove('artists');
+        } else {
+            songsView.style.display = 'none';
+            artistsView.style.display = 'block';
+            songsToggle.classList.remove('active');
+            artistsToggle.classList.add('active');
+            toggleSlider.classList.add('artists');
+        }
+    }
+    
+    // Function to render chart data
+    function renderChart(data) {
+        const chartBody = document.getElementById('chart-body');
+        chartBody.innerHTML = '';
+        
+        data.forEach(item => {
+            const isTopPosition = item.position === 1;
+            let trendIcon = '';
+            let trendClass = '';
             
-            data.forEach(item => {
-                const isTopPosition = item.position === 1;
-                let trendIcon = '';
-                let trendClass = '';
-                
-                if (item.trend === 'up') {
-                    const change = parseInt(item.prevPosition) - item.position;
-                    trendIcon = '▲';
-                    trendClass = 'up';
-                } else if (item.trend === 'down') {
-                    const change = item.position - parseInt(item.prevPosition);
-                    trendIcon = '▼';
-                    trendClass = 'down';
-                } else if (item.trend === 'same') {
-                    trendIcon = '=';
-                    trendClass = 'same';
-                } else if (item.trend === 'new') {
-                    trendIcon = 'NEW';
-                    trendClass = 'new';
-                }
-                
-                const row = document.createElement('div');
-                row.className = isTopPosition ? 'chart-row top-position' : 'chart-row';
-                
-                // Responsive layout that works for both mobile and desktop
-                row.innerHTML = `
-                    <div class="position">${item.position}</div>
-                    <div class="mobile-content">
-                        <img src="${item.albumCover}" alt="Album Cover" class="album-cover">
-                        <div class="song-details">
-                            <div class="song-info">
-                                <h3>${item.title}</h3>
-                                <p>${item.artist}</p>
+            if (item.trend === 'up') {
+                const change = parseInt(item.prevPosition) - item.position;
+                trendIcon = '▲';
+                trendClass = 'up';
+            } else if (item.trend === 'down') {
+                const change = item.position - parseInt(item.prevPosition);
+                trendIcon = '▼';
+                trendClass = 'down';
+            } else if (item.trend === 'same') {
+                trendIcon = '=';
+                trendClass = 'same';
+            } else if (item.trend === 'new') {
+                trendIcon = 'NEW';
+                trendClass = 'new';
+            }
+            
+            const row = document.createElement('div');
+            row.className = isTopPosition ? 'chart-row top-position' : 'chart-row';
+            
+            row.innerHTML = `
+                <div class="position">${item.position}</div>
+                <div class="mobile-content">
+                    <img src="${item.albumCover}" alt="Album Cover" class="album-cover">
+                    <div class="song-details">
+                        <div class="song-info">
+                            <h3>${item.title}</h3>
+                            <p>${item.artist}</p>
+                        </div>
+                        <div class="mobile-stats">
+                            <div class="mobile-stat">
+                                <span class="mobile-stat-label">Peak</span>
+                                <span class="mobile-stat-value">${item.peak}</span>
                             </div>
-                            <div class="mobile-stats">
-                                <div class="mobile-stat">
-                                    <span class="mobile-stat-label">Peak</span>
-                                    <span class="mobile-stat-value">${item.peak}</span>
-                                </div>
-                                <div class="mobile-stat">
-                                    <span class="mobile-stat-label">Weeks</span>
-                                    <span class="mobile-stat-value">${item.streak}</span>
-                                </div>
-                                <div class="mobile-stat">
-                                    <span class="mobile-stat-label">Prev</span>
-                                    <div class="trend ${trendClass}">
-                                        <div class="arrow mobile-stat-value">${trendIcon}</div>
-                                        ${item.prevPosition !== 'NEW' && item.trend !== 'same' ? `<span class="mobile-stat-value">${item.prevPosition}</span>` : ''}
-                                    </div>
+                            <div class="mobile-stat">
+                                <span class="mobile-stat-label">Weeks</span>
+                                <span class="mobile-stat-value">${item.streak}</span>
+                            </div>
+                            <div class="mobile-stat">
+                                <span class="mobile-stat-label">Prev</span>
+                                <div class="trend ${trendClass}">
+                                    <div class="arrow mobile-stat-value">${trendIcon}</div>
+                                    ${item.prevPosition !== 'NEW' && item.trend !== 'same' ? `<span class="mobile-stat-value">${item.prevPosition}</span>` : ''}
                                 </div>
                             </div>
                         </div>
                     </div>
-                `;
-                
-                chartBody.appendChild(row);
-            });
+                </div>
+            `;
+            
+            chartBody.appendChild(row);
+        });
+    }
+    
+    // Initialize with default sorting (by position)
+    let currentSort = 'position';
+    let sortDirection = 'asc';
+    
+    // Function to sort chart data
+    function sortChart(sortBy) {
+        if (currentSort === sortBy) {
+            sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+        } else {
+            sortDirection = 'asc';
+            currentSort = sortBy;
         }
         
-        // Initialize with default sorting (by position)
-        let currentSort = 'position';
-        let sortDirection = 'asc';
-        
-        // Function to sort chart data
-        function sortChart(sortBy) {
-            if (currentSort === sortBy) {
-                sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
-            } else {
-                sortDirection = 'asc';
-                currentSort = sortBy;
+        // Update UI to show sort indicators
+        const headers = document.querySelectorAll('.chart-header-desktop > div');
+        headers.forEach(header => {
+            header.classList.remove('sort-asc', 'sort-desc');
+            if (header.dataset.sort === sortBy) {
+                header.classList.add(sortDirection === 'asc' ? 'sort-asc' : 'sort-desc');
             }
-            
-            // Update UI to show sort indicators
-            const headers = document.querySelectorAll('.chart-header-desktop > div');
-            headers.forEach(header => {
-                header.classList.remove('sort-asc', 'sort-desc');
-                if (header.dataset.sort === sortBy) {
-                    header.classList.add(sortDirection === 'asc' ? 'sort-asc' : 'sort-desc');
-                }
-            });
-            
-            // Sort the data
-            const sortedData = [...chartData].sort((a, b) => {
-                let comparison = 0;
-                
-                if (sortBy === 'artist') {
-                    comparison = a.artist.localeCompare(b.artist);
-                } else {
-                    comparison = a[sortBy] - b[sortBy];
-                }
-                
-                return sortDirection === 'asc' ? comparison : -comparison;
-            });
-            
-            renderChart(sortedData);
-        }
-        
-        // Add event listeners for sorting (desktop only)
-        document.querySelectorAll('.chart-header-desktop > div[data-sort]').forEach(header => {
-            header.addEventListener('click', () => {
-                sortChart(header.dataset.sort);
-            });
         });
         
-        // Initial render
-        renderChart(chartData);
+        // Sort the data
+        const sortedData = [...chartData].sort((a, b) => {
+            let comparison = 0;
+            
+            if (sortBy === 'artist') {
+                comparison = a.artist.localeCompare(b.artist);
+            } else {
+                comparison = a[sortBy] - b[sortBy];
+            }
+            
+            return sortDirection === 'asc' ? comparison : -comparison;
+        });
         
-        // Add touch feedback for mobile
-        if ('ontouchstart' in window) {
-            document.querySelectorAll('.chart-row').forEach(row => {
-                row.addEventListener('touchstart', function() {
-                    this.style.backgroundColor = 'var(--hover-bg)';
-                });
-                row.addEventListener('touchend', function() {
-                    this.style.backgroundColor = '';
-                });
+        renderChart(sortedData);
+    }
+    
+    // Add event listeners for sorting (desktop only)
+    document.querySelectorAll('.chart-header-desktop > div[data-sort]').forEach(header => {
+        header.addEventListener('click', () => {
+            sortChart(header.dataset.sort);
+        });
+    });
+    
+    // Initial render
+    renderChart(chartData);
+    
+    // Add touch feedback for mobile
+    if ('ontouchstart' in window) {
+        document.querySelectorAll('.chart-row').forEach(row => {
+            row.addEventListener('touchstart', function() {
+                this.style.backgroundColor = 'var(--hover-bg)';
             });
-        }
-    </script>
+            row.addEventListener('touchend', function() {
+                this.style.backgroundColor = '';
+            });
+        });
+    }
+</script>
+
 </body>
 </html>
