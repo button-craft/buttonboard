@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,1075 +17,526 @@
             font-family: "Fredoka", "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
             font-weight: 400;
         }
-
-
-    /* Force dark background on all containers */
-    html, body, .container, main, section {
-        background-color: #121212 !important;
-    }
-    
-    /* Override any default styles that might cause white background */
-    *, *::before, *::after {
-        background-color: inherit;
-    }
-    
-    /* Force dark background on root elements */
-    :root, html, body {
-        background: #121212 !important;
-        background-color: #121212 !important;
-    }
-    
-    :root {
-        --primary-red: #ff3d3d;
-        --bg-dark: #121212;
-        --bg-medium: #1e1e1e;
-        --bg-light: #2d2d2d;
-        --text-primary: #f0f0f0;
-        --text-secondary: #b0b0b0;
-        --border-color: #333;
-        --hover-bg: #252525;
-        --accent-blue: #4a9eff;
-    }
-    
-    html {
-        background-color: #121212;
-    }
-    
-    body {
-        background-color: #121212;
-        color: #f0f0f0;
-        min-height: 100vh;
-        padding: 20px;
-        margin: 0;
-    }
-    
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        background-color: transparent !important;
-    }
-    
-    header {
-        text-align: center;
-        margin-bottom: 40px;
-    }
-    
-    .logo {
-        color: #ff3d3d !important;
-        font-size: clamp(28px, 5vw, 42px);
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: -1px;
-        margin-bottom: 10px;
-    }
-    
-    .logo span {
-        color: #f0f0f0 !important;
-    }
-    
-    .back-link {
-        display: inline-block;
-        color: #4a9eff !important;
-        text-decoration: none;
-        margin-bottom: 20px;
-        font-size: 16px;
-        transition: opacity 0.3s;
-    }
-    
-    .back-link:hover {
-        opacity: 0.7;
-    }
-    
-    .subtitle {
-        color: #b0b0b0 !important;
-        font-size: 18px;
-        margin-bottom: 30px;
-    }
-    
-    .album-section {
-        background-color: #1e1e1e !important;
-        border-radius: 16px;
-        padding: 25px;
-        margin-bottom: 30px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .album-section:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-    }
-    
-    .album-header {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        margin-bottom: 25px;
-        padding-bottom: 20px;
-        border-bottom: 2px solid var(--border-color);
-    }
-    
-    .album-cover {
-        width: 120px;
-        height: 120px;
-        border-radius: 12px;
-        object-fit: cover;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .album-cover:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 15px rgba(0,0,0,0.6);
-    }
-    
-    .album-info {
-        flex: 1;
-    }
-    
-    .album-title {
-        font-size: 24px;
-        font-weight: 600;
-        color: var(--primary-red);
-        margin-bottom: 5px;
-    }
-    
-    .album-subtitle {
-        font-size: 16px;
-        color: var(--text-secondary);
-    }
-    
-    .track-item {
-        background-color: #2d2d2d !important;
-        border-radius: 12px;
-        padding: 15px 20px;
-        margin-bottom: 12px;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-    
-    .track-item:hover {
-        background-color: #252525 !important;
-        transform: translateX(5px);
-    }
-    
-    .track-number {
-        font-size: 18px;
-        color: var(--text-secondary);
-        min-width: 30px;
-    }
-    
-    .track-info {
-        flex: 1;
-    }
-    
-    .track-title {
-        font-size: 18px;
-        font-weight: 500;
-        color: var(--text-primary);
-        margin-bottom: 3px;
-    }
-    
-    .track-artist {
-        font-size: 14px;
-        color: var(--text-secondary);
-    }
-    
-    audio {
-        width: 300px;
-        height: 32px;
-        filter: invert(1);
-    }
-    
-    @media (max-width: 768px) {
-        .track-item {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 10px;
+        
+        html, body, .container, main, section {
+            background-color: #121212 !important;
         }
         
-        audio {
-            width: 100%;
+        *, *::before, *::after {
+            background-color: inherit;
+        }
+        
+        :root, html, body {
+            background: #121212 !important;
+            background-color: #121212 !important;
+        }
+        
+        :root {
+            --primary-red: #ff3d3d;
+            --bg-dark: #121212;
+            --bg-medium: #1e1e1e;
+            --bg-light: #2d2d2d;
+            --text-primary: #f0f0f0;
+            --text-secondary: #b0b0b0;
+            --border-color: #333;
+            --hover-bg: #252525;
+            --accent-blue: #4a9eff;
+        }
+        
+        body {
+            background-color: #121212;
+            color: #f0f0f0;
+            min-height: 100vh;
+            padding: 20px;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: transparent !important;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .logo {
+            color: #ff3d3d !important;
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+        
+        .logo span {
+            color: #f0f0f0 !important;
+        }
+        
+        .back-link {
+            display: inline-block;
+            color: #4a9eff !important;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 16px;
+            transition: opacity 0.3s;
+        }
+        
+        .back-link:hover {
+            opacity: 0.7;
+        }
+        
+        .subtitle {
+            color: #b0b0b0 !important;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .album-section {
+            background-color: #1e1e1e !important;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .album-section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.4);
         }
         
         .album-header {
-            flex-direction: column;
-            text-align: center;
-            gap: 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
         }
         
         .album-cover {
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .album-cover:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.6);
         }
         
         .album-info {
-            text-align: center;
-        }
-    }
-    
-    .singles-section {
-        background: linear-gradient(135deg, #2a1a1a, #1a2a2a) !important;
-        border: 2px solid #ff3d3d;
-    }
-    
-    .singles-section .album-header {
-        border-bottom-color: rgba(255, 61, 61, 0.3);
-    }
-    
-    .album-section h3 {
-        margin: 0;
-    }
-    
-    .now-playing {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: var(--bg-light);
-        padding: 15px 20px;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        display: none;
-        align-items: center;
-        gap: 10px;
-        z-index: 1000;
-        max-width: 350px;
-    }
-    
-    .now-playing.active {
-        display: flex;
-    }
-    
-    .now-playing-text {
-        font-size: 14px;
-        color: var(--text-secondary);
-    }
-    
-    .now-playing-title {
-        font-size: 16px;
-        font-weight: 500;
-        color: var(--primary-red);
-    }
-    
-    /* Queue System Styles */
-    .queue-toggle {
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        background: linear-gradient(135deg, #ff3d3d, #ff6b6b);
-        color: white;
-        border: none;
-        padding: 12px 16px;
-        border-radius: 50px;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        z-index: 1001;
-        box-shadow: 0 4px 15px rgba(255, 61, 61, 0.3);
-    }
-    
-    .queue-toggle:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(255, 61, 61, 0.4);
-    }
-    
-    .queue-panel {
-        position: fixed;
-        top: 0;
-        right: -400px;
-        width: 400px;
-        height: 100vh;
-        background-color: var(--bg-medium);
-        border-left: 1px solid var(--border-color);
-        transition: right 0.3s ease;
-        z-index: 1002;
-        display: flex;
-        flex-direction: column;
-        box-shadow: -4px 0 15px rgba(0,0,0,0.3);
-    }
-    
-    .queue-panel.open {
-        right: 0;
-    }
-    
-    .queue-header {
-        padding: 20px;
-        border-bottom: 1px solid var(--border-color);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .queue-title {
-        font-size: 20px;
-        font-weight: 600;
-        color: var(--text-primary);
-    }
-    
-    .queue-close {
-        background: none;
-        border: none;
-        color: var(--text-secondary);
-        font-size: 24px;
-        cursor: pointer;
-        padding: 5px;
-        border-radius: 50%;
-        transition: all 0.3s ease;
-    }
-    
-    .queue-close:hover {
-        background-color: var(--hover-bg);
-        color: var(--text-primary);
-    }
-    
-    .queue-controls {
-        padding: 15px 20px;
-        border-bottom: 1px solid var(--border-color);
-        display: flex;
-        gap: 10px;
-    }
-    
-    .queue-btn {
-        background-color: var(--bg-light);
-        color: var(--text-primary);
-        border: none;
-        padding: 8px 12px;
-        border-radius: 8px;
-        font-size: 12px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-weight: 500;
-    }
-    
-    .queue-btn:hover {
-        background-color: var(--hover-bg);
-    }
-    
-    .queue-btn.danger {
-        background-color: rgba(255, 61, 61, 0.2);
-        color: var(--primary-red);
-    }
-    
-    .queue-btn.danger:hover {
-        background-color: rgba(255, 61, 61, 0.3);
-    }
-    
-    .queue-list {
-        flex: 1;
-        overflow-y: auto;
-        padding: 10px;
-    }
-    
-    .queue-item {
-        background-color: var(--bg-light);
-        border-radius: 8px;
-        padding: 12px;
-        margin-bottom: 8px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        transition: all 0.3s ease;
-        cursor: pointer;
-    }
-    
-    .queue-item:hover {
-        background-color: var(--hover-bg);
-    }
-    
-    .queue-item.current {
-        background-color: rgba(255, 61, 61, 0.2);
-        border: 1px solid rgba(255, 61, 61, 0.3);
-    }
-    
-    .queue-number {
-        font-size: 14px;
-        color: var(--text-secondary);
-        min-width: 20px;
-        text-align: center;
-    }
-    
-    .queue-item.current .queue-number {
-        color: var(--primary-red);
-        font-weight: 600;
-    }
-    
-    .queue-info {
-        flex: 1;
-        min-width: 0;
-    }
-    
-    .queue-track-title {
-        font-size: 14px;
-        font-weight: 500;
-        color: var(--text-primary);
-        margin-bottom: 2px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    
-    .queue-track-artist {
-        font-size: 12px;
-        color: var(--text-secondary);
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    
-    .queue-remove {
-        background: none;
-        border: none;
-        color: var(--text-secondary);
-        font-size: 16px;
-        cursor: pointer;
-        padding: 4px;
-        border-radius: 4px;
-        transition: all 0.3s ease;
-        opacity: 0;
-    }
-    
-    .queue-item:hover .queue-remove {
-        opacity: 1;
-    }
-    
-    .queue-remove:hover {
-        background-color: rgba(255, 61, 61, 0.2);
-        color: var(--primary-red);
-    }
-    
-    .queue-empty {
-        text-align: center;
-        color: var(--text-secondary);
-        padding: 40px 20px;
-        font-size: 14px;
-    }
-    
-    /* Add to Queue Button */
-    .add-to-queue {
-        background: none;
-        border: 1px solid var(--border-color);
-        color: var(--text-secondary);
-        padding: 6px 10px;
-        border-radius: 6px;
-        font-size: 12px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        margin-left: 10px;
-    }
-    
-    .add-to-queue:hover {
-        border-color: var(--primary-red);
-        color: var(--primary-red);
-        background-color: rgba(255, 61, 61, 0.1);
-    }
-    
-    /* Mobile Queue Styles */
-    @media (max-width: 768px) {
-        .queue-panel {
-            width: 100vw;
-            right: -100vw;
+            flex: 1;
         }
         
-        .queue-toggle {
-            bottom: 80px;
-            left: 15px;
-            padding: 10px 14px;
+        .album-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary-red);
+            margin-bottom: 5px;
+        }
+        
+        .album-subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+        
+        .track-item {
+            background-color: #2d2d2d !important;
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .track-item:hover {
+            background-color: #252525 !important;
+            transform: translateX(5px);
+        }
+        
+        .track-number {
+            font-size: 18px;
+            color: var(--text-secondary);
+            min-width: 30px;
+        }
+        
+        .track-info {
+            flex: 1;
+        }
+        
+        .track-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 3px;
+        }
+        
+        .track-artist {
             font-size: 14px;
+            color: var(--text-secondary);
+        }
+        
+        audio {
+            width: 300px;
+            height: 32px;
+            filter: invert(1);
+        }
+        
+        @media (max-width: 768px) {
+            .track-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            audio {
+                width: 100%;
+            }
+            
+            .album-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .album-cover {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .album-info {
+                text-align: center;
+            }
+        }
+        
+        .singles-section {
+            background: linear-gradient(135deg, #2a1a1a, #1a2a2a) !important;
+            border: 2px solid #ff3d3d;
+        }
+        
+        .singles-section .album-header {
+            border-bottom-color: rgba(255, 61, 61, 0.3);
         }
         
         .now-playing {
-            bottom: 15px;
-            left: 15px;
-            right: 15px;
-            max-width: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--bg-light);
+            padding: 15px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            display: none;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+            max-width: 350px;
         }
-    }
-
-    @keyframes fadeIn {
-        from {
+        
+        .now-playing.active {
+            display: flex;
+        }
+        
+        .now-playing-text {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        
+        .now-playing-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--primary-red);
+        }
+        
+        .queue-toggle {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, #ff3d3d, #ff6b6b);
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(255, 61, 61, 0.3);
+        }
+        
+        .queue-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 61, 61, 0.4);
+        }
+        
+        .queue-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background-color: var(--bg-medium);
+            border-left: 1px solid var(--border-color);
+            transition: right 0.3s ease;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            box-shadow: -4px 0 15px rgba(0,0,0,0.3);
+        }
+        
+        .queue-panel.open {
+            right: 0;
+        }
+        
+        .queue-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .queue-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .queue-close {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 24px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .queue-close:hover {
+            background-color: var(--hover-bg);
+            color: var(--text-primary);
+        }
+        
+        .queue-controls {
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            gap: 10px;
+        }
+        
+        .queue-btn {
+            background-color: var(--bg-light);
+            color: var(--text-primary);
+            border: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .queue-btn:hover {
+            background-color: var(--hover-bg);
+        }
+        
+        .queue-btn.danger {
+            background-color: rgba(255, 61, 61, 0.2);
+            color: var(--primary-red);
+        }
+        
+        .queue-btn.danger:hover {
+            background-color: rgba(255, 61, 61, 0.3);
+        }
+        
+        .queue-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        
+        .queue-item {
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .queue-item:hover {
+            background-color: var(--hover-bg);
+        }
+        
+        .queue-item.current {
+            background-color: rgba(255, 61, 61, 0.2);
+            border: 1px solid rgba(255, 61, 61, 0.3);
+        }
+        
+        .queue-number {
+            font-size: 14px;
+            color: var(--text-secondary);
+            min-width: 20px;
+            text-align: center;
+        }
+        
+        .queue-item.current .queue-number {
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+        
+        .queue-info {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .queue-track-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .queue-track-artist {
+            font-size: 12px;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .queue-remove {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 16px;
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
             opacity: 0;
-            transform: translateY(20px);
         }
-        to {
+        
+        .queue-item:hover .queue-remove {
             opacity: 1;
-            transform: translateY(0);
         }
-    }
-    
-    @keyframes fadeInScale {
-        from {
-            opacity: 0;
-            transform: scale(0.9);
+        
+        .queue-remove:hover {
+            background-color: rgba(255, 61, 61, 0.2);
+            color: var(--primary-red);
         }
-        to {
-            opacity: 1;
-            transform: scale(1);
+        
+        .queue-empty {
+            text-align: center;
+            color: var(--text-secondary);
+            padding: 40px 20px;
+            font-size: 14px;
         }
-    }
-</style>
+        
+        .add-to-queue {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-left: 10px;
+        }
+        
+        .add-to-queue:hover {
+            border-color: var(--primary-red);
+            color: var(--primary-red);
+            background-color: rgba(255, 61, 61, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .queue-panel {
+                width: 100vw;
+                right: -100vw;
+            }
+            
+            .queue-toggle {
+                bottom: 80px;
+                left: 15px;
+                padding: 10px 14px;
+                font-size: 14px;
+            }
+            
+            .now-playing {
+                bottom: 15px;
+                left: 15px;
+                right: 15px;
+                max-width: none;
+            }
+        }
 
-
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
 </head>
-<body style="background-color: #121212 !important; color: #f0f0f0 !important;">
-    <div style="background-color: #121212 !important; min-height: 100vh; width: 100%;">
+<body>
     <div class="container">
         <header>
             <a href="index.html" class="back-link">← Back to Chart</a>
             <h1 class="logo">BUTTON<span>Board</span> MUSIC</h1>
             <p class="subtitle">by BUTTIFY®</p>
         </header>
-
-    <div class="album-section" data-album="Summertime Hits Vol. 1">
-        <div class="album-header">
-            <img src="img/Summertime%20Hits%20Vol.%201" alt="Summertime Hits Vol. 1" class="album-cover">
-            <div class="album-info">
-                <h2 class="album-title">Summertime Hits Vol. 1</h2>
-                <p class="album-subtitle">4 Tracks • BUTTON!!! & Kate</p>
+        
+        <div class="album-section" data-album="Summertime Hits Vol. 1">
+            <div class="album-header">
+                <img src="img/Summertime%20Hits%20Vol.%201" alt="Summertime Hits Vol. 1" class="album-cover">
+                <div class="album-info">
+                    <h2 class="album-title">Summertime Hits Vol. 1</h2>
+                    <p class="album-subtitle">4 Tracks • BUTTON!!! & Kate</p>
+                </div>
             </div>
-        </div>
-        <div class="track-item">
-            <span class="track-number">1</span>
-            <div class="track-info">
-                <div class="track-title">No Fighting</div>
-                <div class="track-artist">Kate, prod. Ray</div>
-            </div>
-            <audio controls preload="none" data-track-title="No Fighting" data-track-artist="Kate, prod. Ray">
-                <source src="1.1 No Fighting.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('This Land Is Our Land - \'25 Remaster', 'David & Ray', '5.1 This Land Is Our Land.mp3')">+ Queue</button>" onclick="addToQueue('This Land Is Our Land - \'25 Remaster', 'David & Ray', '5.1 This Land Is Our Land.mp3')">+ Queue</button></button>
-        </div>
-        <div class="track-item">
-            <span class="track-number">2</span>
-            <div class="track-info">
-                <div class="track-title">Upsies</div>
-                <div class="track-artist">EJ & Ray</div>
-            </div>
-            <audio controls preload="none" data-track-title="Upsies" data-track-artist="EJ & Ray">
-                <source src="5.2 Upsies.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('Upsies', 'EJ & Ray', '5.2 Upsies.mp3')">+ Queue</button>
-        </div>
-        <div class="track-item">
-            <span class="track-number">3</span>
-            <div class="track-info">
-                <div class="track-title">EJ's Base</div>
-                <div class="track-artist">BUTTON!!!</div>
-            </div>
-            <audio controls preload="none" data-track-title="EJ's Base" data-track-artist="BUTTON!!!">
-                <source src="EJs Base.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('EJ\'s Base', 'BUTTON!!!', 'EJs Base.mp3')">+ Queue</button>
-        </div>
-    </div>
-    
-    <div class="album-section" data-album="Gemsie Sings OG Album">
-        <div class="album-header">
-            <img src="img/Gemsie%20Sings" alt="Gemsie Sings OG Album" class="album-cover">
-            <div class="album-info">
-                <h2 class="album-title">Gemsie Sings OG Album</h2>
-                <p class="album-subtitle">5 Tracks • EJ</p>
-            </div>
-        </div>
-        <div class="track-item">
-            <span class="track-number">1</span>
-            <div class="track-info">
-                <div class="track-title">All the Single Ladies</div>
-                <div class="track-artist">EJ</div>
-            </div>
-            <audio controls preload="none" data-track-title="All the Single Ladies" data-track-artist="EJ">
-                <source src="All the Single Ladies.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('All the Single Ladies', 'EJ', 'All the Single Ladies.mp3')">+ Queue</button>
-        </div>
-        <div class="track-item">
-            <span class="track-number">2</span>
-            <div class="track-info">
-                <div class="track-title">Gangnam Style</div>
-                <div class="track-artist">EJ</div>
-            </div>
-            <audio controls preload="none" data-track-title="Gangnam Style" data-track-artist="EJ">
-                <source src="Gangnam Style.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('Gangnam Style', 'EJ', 'Gangnam Style.mp3')">+ Queue</button>
-        </div>
-        <div class="track-item">
-            <span class="track-number">3</span>
-            <div class="track-info">
-                <div class="track-title">Preorder</div>
-                <div class="track-artist">EJ</div>
-            </div>
-            <audio controls preload="none" data-track-title="Preorder" data-track-artist="EJ">
-                <source src="Preorder.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('Preorder', 'EJ', 'Preorder.mp3')">+ Queue</button>
-        </div>
-        <div class="track-item">
-            <span class="track-number">4</span>
-            <div class="track-info">
-                <div class="track-title">This Girl is on Fire</div>
-                <div class="track-artist">EJ</div>
-            </div>
-            <audio controls preload="none" data-track-title="This Girl is on Fire" data-track-artist="EJ">
-                <source src="This Girl is on Fire.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('This Girl is on Fire', 'EJ', 'This Girl is on Fire.mp3')">+ Queue</button>
-        </div>
-        <div class="track-item">
-            <span class="track-number">5</span>
-            <div class="track-info">
-                <div class="track-title">Wannabe</div>
-                <div class="track-artist">EJ</div>
-            </div>
-            <audio controls preload="none" data-track-title="Wannabe" data-track-artist="EJ">
-                <source src="Wannabe.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('Wannabe', 'EJ', 'Wannabe.mp3')">+ Queue</button>
-        </div>
-        <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #444;">
-            <h3 style="color: #ff3d3d; font-size: 18px; margin-bottom: 15px; font-weight: 500;">Unreleased Promo Track</h3>
             <div class="track-item">
-                <span class="track-number">★</span>
+                <span class="track-number">1</span>
                 <div class="track-info">
-                    <div class="track-title">Think About it Song</div>
-                    <div class="track-artist">EJ</div>
+                    <div class="track-title">No Fighting</div>
+                    <div class="track-artist">Kate, prod. Ray</div>
                 </div>
-                <audio controls preload="none" data-track-title="Think About it Song" data-track-artist="EJ">
-                    <source src="Think About it Song.mp3" type="audio/mpeg">
+                <audio controls preload="none" data-track-title="No Fighting" data-track-artist="Kate, prod. Ray">
+                    <source src="1.1 No Fighting.mp3" type="audio/mpeg">
                 </audio>
-                <button class="add-to-queue" onclick="addToQueue('Think About it Song', 'EJ', 'Think About it Song.mp3')">+ Queue</button>
-            </div>
-        </div>
-    </div>
-    
-    <div class="album-section singles-section" data-album="Singles & Special Releases">
-        <div class="album-header">
-            <img src="img/JIG" alt="JIG" class="album-cover">
-            <div class="album-info">
-                <h2 class="album-title">Singles & Special Releases</h2>
-                <p class="album-subtitle">2 Tracks • Ray, EJ, Claire & Ryan</p>
-            </div>
-        </div>
-        <div class="track-item">
-            <span class="track-number">★</span>
-            <div class="track-info">
-                <div class="track-title">JIG (Janna is a Hoe)</div>
-                <div class="track-artist">Ray, ft. EJ and Ryan</div>
-            </div>
-            <audio controls preload="none" data-track-title="JIG (Janna is a Hoe)" data-track-artist="Ray, ft. EJ and Ryan">
-                <source src="JIG.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('JIG (Janna is a Hoe)', 'Ray, ft. EJ and Ryan', 'JIG.mp3')">+ Queue</button>
-        </div>
-        <div class="track-item">
-            <span class="track-number">★</span>
-            <div class="track-info">
-                <div class="track-title">Atlanta State of Prime</div>
-                <div class="track-artist">Ray, EJ, and Claire</div>
-            </div>
-            <audio controls preload="none" data-track-title="Atlanta State of Prime" data-track-artist="Ray, EJ, and Claire">
-                <source src="Atlanta State of Prime.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('Atlanta State of Prime', 'Ray, EJ, and Claire', 'Atlanta State of Prime.mp3')">+ Queue</button>
-        </div>
-    </div>
-    
-    <div class="queue-toggle" onclick="toggleQueue()">
-        Queue (<span id="queueCount">0</span>)
-    </div>
-    
-    <div class="queue-panel" id="queuePanel">
-        <div class="queue-header">
-            <div class="queue-title">Play Queue</div>
-            <button class="queue-close" onclick="toggleQueue()">×</button>
-        </div>
-        
-        <div class="queue-controls">
-            <button class="queue-btn" onclick="shuffleQueue()">Shuffle</button>
-            <button class="queue-btn" onclick="addAlbumToQueue()">+ Album</button>
-            <button class="queue-btn danger" onclick="clearQueue()">Clear All</button>
-        </div>
-        
-        <div class="queue-list" id="queueList">
-            <div class="queue-empty" id="queueEmpty">
-                No songs in queue.<br>
-                Click "+ Queue" on any track to add it!
-            </div>
-        </div>
-    </div>
-    
-    <div class="now-playing" id="nowPlaying">
-        <span class="now-playing-text">Now Playing:</span>
-        <span class="now-playing-title" id="nowPlayingTitle"></span>
-    </div>
-</div>
-</div>
-
-<script>
-    // Queue Management System
-    let musicQueue = [];
-    let currentQueueIndex = -1;
-    let isQueueMode = false;
-    
-    // Track currently playing audio
-    let currentlyPlaying = null;
-    const nowPlayingDiv = document.getElementById('nowPlaying');
-    const nowPlayingTitle = document.getElementById('nowPlayingTitle');
-    
-    // Queue Functions
-    function addToQueue(title, artist, src) {
-        const track = {
-            title: title,
-            artist: artist,
-            src: src,
-            id: Date.now() + Math.random() // Unique ID
-        };
-        
-        musicQueue.push(track);
-        updateQueueDisplay();
-        updateQueueCount();
-        
-        // Visual feedback
-        const button = event.target;
-        const originalText = button.textContent;
-        button.textContent = 'Added!';
-        button.style.backgroundColor = 'rgba(76, 175, 80, 0.2)';
-        button.style.color = '#4caf50';
-        button.style.borderColor = '#4caf50';
-        
-        setTimeout(() => {
-            button.textContent = originalText;
-            button.style.backgroundColor = '';
-            button.style.color = '';
-            button.style.borderColor = '';
-        }, 1000);
-    }
-    
-    function addAlbumToQueue() {
-        // Find the album that was hovered over
-        const hoveredAlbum = document.querySelector('.album-section:hover');
-        if (!hoveredAlbum) {
-            alert('Hover over an album and try again!');
-            return;
-        }
-        
-        const tracks = hoveredAlbum.querySelectorAll('.track-item');
-        let addedCount = 0;
-        
-        tracks.forEach(trackItem => {
-            const title = trackItem.querySelector('.track-title').textContent;
-            const artist = trackItem.querySelector('.track-artist').textContent;
-            const audio = trackItem.querySelector('audio source');
-            const src = audio ? audio.src : '';
-            
-            if (src) {
-                musicQueue.push({
-                    title: title,
-                    artist: artist,
-                    src: src,
-                    id: Date.now() + Math.random() + addedCount
-                });
-                addedCount++;
-            }
-        });
-        
-        if (addedCount > 0) {
-            updateQueueDisplay();
-            updateQueueCount();
-            
-            // Visual feedback
-            const albumTitle = hoveredAlbum.querySelector('.album-title').textContent;
-            alert(`Added ${addedCount} tracks from "${albumTitle}" to queue!`);
-        }
-    }
-    
-    function removeFromQueue(index) {
-        // Adjust current index if necessary
-        if (index < currentQueueIndex) {
-            currentQueueIndex--;
-        } else if (index === currentQueueIndex) {
-            // If removing current track, stop playback
-            if (currentlyPlaying && isQueueMode) {
-                currentlyPlaying.pause();
-                currentlyPlaying.currentTime = 0;
-            }
-            currentQueueIndex = -1;
-            isQueueMode = false;
-            nowPlayingDiv.classList.remove('active');
-        }
-        
-        musicQueue.splice(index, 1);
-        updateQueueDisplay();
-        updateQueueCount();
-    }
-    
-    function playFromQueue(index) {
-        if (index >= 0 && index < musicQueue.length) {
-            const track = musicQueue[index];
-            
-            // Stop current playback
-            if (currentlyPlaying) {
-                currentlyPlaying.pause();
-                currentlyPlaying.currentTime = 0;
-            }
-            
-            // Create new audio element for queue playback
-            const audio = new Audio(track.src);
-            currentlyPlaying = audio;
-            currentQueueIndex = index;
-            isQueueMode = true;
-            
-            // Update now playing
-            updateNowPlaying();
-            nowPlayingDiv.classList.add('active');
-            
-            // Set up queue navigation
-            audio.addEventListener('ended', playNextInQueue);
-            audio.addEventListener('pause', function() {
-                if (audio.currentTime === audio.duration || audio.currentTime === 0) {
-                    if (isQueueMode) {
-                        nowPlayingDiv.classList.remove('active');
-                    }
-                }
-            });
-            
-            audio.play().catch(e => console.log('Playback failed:', e));
-            updateQueueDisplay();
-        }
-    }
-    
-    function playNextInQueue() {
-        if (currentQueueIndex < musicQueue.length - 1) {
-            playFromQueue(currentQueueIndex + 1);
-        } else {
-            // End of queue
-            nowPlayingDiv.classList.remove('active');
-            currentQueueIndex = -1;
-            isQueueMode = false;
-            updateQueueDisplay();
-        }
-    }
-    
-    function playPreviousInQueue() {
-        if (isQueueMode && currentQueueIndex > 0) {
-            playFromQueue(currentQueueIndex - 1);
-        }
-    }
-    
-    function clearQueue() {
-        musicQueue = [];
-        currentQueueIndex = -1;
-        
-        if (currentlyPlaying && isQueueMode) {
-            currentlyPlaying.pause();
-            currentlyPlaying.currentTime = 0;
-            isQueueMode = false;
-            nowPlayingDiv.classList.remove('active');
-        }
-        
-        updateQueueDisplay();
-        updateQueueCount();
-    }
-    
-    function shuffleQueue() {
-        if (musicQueue.length <= 1) return;
-        
-        // Keep current track in place if playing
-        let currentTrack = null;
-        if (currentQueueIndex >= 0 && isQueueMode) {
-            currentTrack = musicQueue[currentQueueIndex];
-            musicQueue.splice(currentQueueIndex, 1);
-        }
-        
-        // Shuffle remaining tracks using Fisher-Yates algorithm
-        for (let i = musicQueue.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [musicQueue[i], musicQueue[j]] = [musicQueue[j], musicQueue[i]];
-        }
-        
-        // Put current track back at beginning if it was playing
-        if (currentTrack) {
-            musicQueue.unshift(currentTrack);
-            currentQueueIndex = 0;
-        }
-        
-        updateQueueDisplay();
-    }
-    
-    function toggleQueue() {
-        const panel = document.getElementById('queuePanel');
-        panel.classList.toggle('open');
-    }
-    
-    function updateQueueDisplay() {
-        const queueList = document.getElementById('queueList');
-        const queueEmpty = document.getElementById('queueEmpty');
-        
-        if (musicQueue.length === 0) {
-            queueEmpty.style.display = 'block';
-            queueList.innerHTML = '';
-            queueList.appendChild(queueEmpty);
-            return;
-        }
-        
-        queueEmpty.style.display = 'none';
-        queueList.innerHTML = '';
-        
-        musicQueue.forEach((track, index) => {
-            const queueItem = document.createElement('div');
-            queueItem.className = `queue-item ${index === currentQueueIndex && isQueueMode ? 'current' : ''}`;
-            
-            queueItem.innerHTML = `
-                <div class="queue-number">${index + 1}</div>
-                <div class="queue-info">
-                    <div class="queue-track-title">${track.title}</div>
-                    <div class="queue-track-artist">${track.artist}</div>
-                </div>
-                <button class="queue-remove" onclick="removeFromQueue(${index})">×</button>
-            `;
-            
-            queueItem.addEventListener('click', (e) => {
-                if (!e.target.classList.contains('queue-remove')) {
-                    playFromQueue(index);
-                }
-            });
-            
-            queueList.appendChild(queueItem);
-        });
-    }
-    
-    function updateQueueCount() {
-        document.getElementById('queueCount').textContent = musicQueue.length;
-    }
-    
-    // Enhanced now playing with queue controls
-    function updateNowPlaying() {
-        if (isQueueMode && currentQueueIndex >= 0) {
-            const track = musicQueue[currentQueueIndex];
-            const controls = `
-                <div style="display: flex; align-items: center; gap: 10px; width: 100%;">
-                    <button onclick="playPreviousInQueue()" style="background: none; border: none; color: #ff3d3d; font-size: 16px; cursor: pointer; padding: 4px;" ${currentQueueIndex === 0 ? 'disabled style="opacity: 0.5;"' : ''}>⏮</button>
-                    <div style="flex: 1; min-width: 0;">
-                        <div style="font-size: 14px; color: #b0b0b0;">Queue (${currentQueueIndex + 1}/${musicQueue.length})</div>
-                        <div style="font-size: 16px; font-weight: 500; color: #ff3d3d; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${track.title} - ${track.artist}</div>
-                    </div>
-                    <button onclick="playNextInQueue()" style="background: none; border: none; color: #ff3d3d; font-size: 16px; cursor: pointer; padding: 4px;" ${currentQueueIndex === musicQueue.length - 1 ? 'disabled style="opacity: 0.5;"' : ''}>⏭</button>
-                </div>
-            `;
-            nowPlayingDiv.innerHTML = controls;
-        }
-    }
-    
-    // Enhanced audio event listeners
-    document.querySelectorAll('audio').forEach(audio => {
-        audio.addEventListener('play', function() {
-            // Only manage regular playback if not in queue mode or if this is the queue audio
-            if (!isQueueMode || currentlyPlaying !== this) {
-                // Pause any other playing audio
-                if (currentlyPlaying && currentlyPlaying !== this) {
-                    currentlyPlaying.pause();
-                }
-                
-                // Only update if this isn't queue playback
-                if (!isQueueMode) {
-                    currentlyPlaying = this;
-                    currentQueueIndex = -1;
-                    
-                    // Update now playing display
-                    const trackItem = this.closest('.track-item');
-                    const title = trackItem.querySelector('.track-title').textContent;
-                    const artist = trackItem.querySelector('.track-artist').textContent;
-                    nowPlayingTitle.textContent = `${title} - ${artist}`;
-                    nowPlayingDiv.innerHTML = `
-                        <span class="now-playing-text">Now Playing:</span>
-                        <span class="now-playing-title">${title} - ${artist}</span>
-                    `;
-                    nowPlayingDiv.classList.add('active');
-                    
-                    updateQueueDisplay();
-                }
-            }
-        });
-        
-        audio.addEventListener('pause', function() {
-            if (currentlyPlaying === this && !isQueueMode) {
-                nowPlayingDiv.classList.remove('active');
-            }
-        });
-        
-        audio.addEventListener('ended', function() {
-            if (currentlyPlaying === this && !isQueueMode) {
-                nowPlayingDiv.classList.remove('active');
-            }
-        });
-    });
-    
-    // Keyboard shortcuts
-    document.addEventListener('keydown', function(e) {
-        if (e.target.tagName.toLowerCase() !== 'input') {
-            switch(e.key) {
-                case 'q':
-                case 'Q':
-                    toggleQueue();
-                    break;
-                case 'ArrowRight':
-                    if (isQueueMode && e.shiftKey) {
-                        e.preventDefault();
-                        playNextInQueue();
-                    }
-                    break;
-                case 'ArrowLeft':
-                    if (isQueueMode && e.shiftKey) {
-                        e.preventDefault();
-                        playPreviousInQueue();
-                    }
-                    break;
-                case ' ':
-                    if (currentlyPlaying && e.shiftKey) {
-                        e.preventDefault();
-                        if (currentlyPlaying.paused) {
-                            currentlyPlaying.play();
-                        } else {
-                            currentlyPlaying.pause();
-                        }
-                    }
-                    break;
-                case 'c':
-                case 'C':
-                    if (e.shiftKey) {
-                        clearQueue();
-                    }
-                    break;
-                case 's':
-                case 'S':
-                    if (e.shiftKey) {
-                        shuffleQueue();
-                    }
-                    break;
-            }
-        }
-    });
-    
-    // Initialize
-    updateQueueCount();
-    
-    // Smooth scroll effect
-    document.querySelectorAll('.track-item').forEach((item, index) => {
-        item.style.opacity = '0';
-        item.style.animation = `fadeIn 0.5s ease-out ${index * 0.05}s forwards`;
-    });
-    
-    // Animate album covers on load
-    document.querySelectorAll('.album-cover').forEach((cover, index) => {
-        cover.style.opacity = '0';
-        cover.style.animation = `fadeInScale 0.5s ease-out ${index * 0.1}s forwards`;
-    });
-</script>
-
-
-</body>
-</html>" onclick="addToQueue('No Fighting', 'Kate, prod. Ray', '1.1 No Fighting.mp3')">+ Queue</button>
+                <button class="add-to-queue" onclick="addToQueue('No Fighting', 'Kate, prod. Ray', '1.1 No Fighting.mp3')">+ Queue</button>
             </div>
             <div class="track-item">
                 <span class="track-number">2</span>
@@ -1122,156 +572,155 @@
                 <button class="add-to-queue" onclick="addToQueue('Impostor Imperceptible', 'BUTTON!!!', '1.4 Impostor Imperceptible.mp3')">+ Queue</button>
             </div>
         </div>
-
-    <div class="album-section" data-album="Summertime Hits Vol. 2">
-        <div class="album-header">
-            <img src="img/Summertime%20Hits%20Vol.%202" alt="Summertime Hits Vol. 2" class="album-cover">
-            <div class="album-info">
-                <h2 class="album-title">Summertime Hits Vol. 2</h2>
-                <p class="album-subtitle">3 Tracks • Ray, Claire & Kate</p>
+        
+        <div class="album-section" data-album="Summertime Hits Vol. 2">
+            <div class="album-header">
+                <img src="img/Summertime%20Hits%20Vol.%202" alt="Summertime Hits Vol. 2" class="album-cover">
+                <div class="album-info">
+                    <h2 class="album-title">Summertime Hits Vol. 2</h2>
+                    <p class="album-subtitle">3 Tracks • Ray, Claire & Kate</p>
+                </div>
+            </div>
+            <div class="track-item">
+                <span class="track-number">1</span>
+                <div class="track-info">
+                    <div class="track-title">Flipping With Anderson</div>
+                    <div class="track-artist">Ray</div>
+                </div>
+                <audio controls preload="none" data-track-title="Flipping With Anderson" data-track-artist="Ray">
+                    <source src="2.1 Flipping With Anderson.mp3" type="audio/mpeg">
+                </audio>
+                <button class="add-to-queue" onclick="addToQueue('Flipping With Anderson', 'Ray', '2.1 Flipping With Anderson.mp3')">+ Queue</button>
+            </div>
+            <div class="track-item">
+                <span class="track-number">2</span>
+                <div class="track-info">
+                    <div class="track-title">Twenty Dollars</div>
+                    <div class="track-artist">Claire & Kate, prod. Ray</div>
+                </div>
+                <audio controls preload="none" data-track-title="Twenty Dollars" data-track-artist="Claire & Kate, prod. Ray">
+                    <source src="2.2 Twenty Dollars.mp3" type="audio/mpeg">
+                </audio>
+                <button class="add-to-queue" onclick="addToQueue('Twenty Dollars', 'Claire & Kate, prod. Ray', '2.2 Twenty Dollars.mp3')">+ Queue</button>
+            </div>
+            <div class="track-item">
+                <span class="track-number">3</span>
+                <div class="track-info">
+                    <div class="track-title">Fly on the Shoe</div>
+                    <div class="track-artist">David, prod. Ray</div>
+                </div>
+                <audio controls preload="none" data-track-title="Fly on the Shoe" data-track-artist="David, prod. Ray">
+                    <source src="2.3 Fly on the Shoe.mp3" type="audio/mpeg">
+                </audio>
+                <button class="add-to-queue" onclick="addToQueue('Fly on the Shoe', 'David, prod. Ray', '2.3 Fly on the Shoe.mp3')">+ Queue</button>
             </div>
         </div>
-        <div class="track-item">
-            <span class="track-number">1</span>
-            <div class="track-info">
-                <div class="track-title">Flipping With Anderson</div>
-                <div class="track-artist">Ray</div>
+        
+        <div class="album-section" data-album="Summertime Hits Vol. 3">
+            <div class="album-header">
+                <img src="img/Summertime%20Hits%20Vol.%203" alt="Summertime Hits Vol. 3" class="album-cover">
+                <div class="album-info">
+                    <h2 class="album-title">Summertime Hits Vol. 3</h2>
+                    <p class="album-subtitle">3 Tracks • Ray & EJ</p>
+                </div>
             </div>
-            <audio controls preload="none" data-track-title="Flipping With Anderson" data-track-artist="Ray">
-                <source src="2.1 Flipping With Anderson.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('Flipping With Anderson', 'Ray', '2.1 Flipping With Anderson.mp3')">+ Queue</button>
-        </div>
-        <div class="track-item">
-            <span class="track-number">2</span>
-            <div class="track-info">
-                <div class="track-title">Twenty Dollars</div>
-                <div class="track-artist">Claire & Kate, prod. Ray</div>
+            <div class="track-item">
+                <span class="track-number">1</span>
+                <div class="track-info">
+                    <div class="track-title">GYATT RIZZ SIGMA</div>
+                    <div class="track-artist">Ray</div>
+                </div>
+                <audio controls preload="none" data-track-title="GYATT RIZZ SIGMA" data-track-artist="Ray">
+                    <source src="3.1 GYATT RIZZ SIGMAA.mp3" type="audio/mpeg">
+                </audio>
+                <button class="add-to-queue" onclick="addToQueue('GYATT RIZZ SIGMA', 'Ray', '3.1 GYATT RIZZ SIGMAA.mp3')">+ Queue</button>
             </div>
-            <audio controls preload="none" data-track-title="Twenty Dollars" data-track-artist="Claire & Kate, prod. Ray">
-                <source src="2.2 Twenty Dollars.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('Twenty Dollars', 'Claire & Kate, prod. Ray', '2.2 Twenty Dollars.mp3')">+ Queue</button>
-        </div>
-        <div class="track-item">
-            <span class="track-number">3</span>
-            <div class="track-info">
-                <div class="track-title">Fly on the Shoe</div>
-                <div class="track-artist">David, prod. Ray</div>
+            <div class="track-item">
+                <span class="track-number">2</span>
+                <div class="track-info">
+                    <div class="track-title">ATLANTA PRIME</div>
+                    <div class="track-artist">Ray & EJ</div>
+                </div>
+                <audio controls preload="none" data-track-title="ATLANTA PRIME" data-track-artist="Ray & EJ">
+                    <source src="3.2 ATLANTA PRIME.mp3" type="audio/mpeg">
+                </audio>
+                <button class="add-to-queue" onclick="addToQueue('ATLANTA PRIME', 'Ray & EJ', '3.2 ATLANTA PRIME.mp3')">+ Queue</button>
             </div>
-            <audio controls preload="none" data-track-title="Fly on the Shoe" data-track-artist="David, prod. Ray">
-                <source src="2.3 Fly on the Shoe.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('Fly on the Shoe', 'David, prod. Ray', '2.3 Fly on the Shoe.mp3')">+ Queue</button>
-        </div>
-    </div>
-    
-    <div class="album-section" data-album="Summertime Hits Vol. 3">
-        <div class="album-header">
-            <img src="img/Summertime%20Hits%20Vol.%203" alt="Summertime Hits Vol. 3" class="album-cover">
-            <div class="album-info">
-                <h2 class="album-title">Summertime Hits Vol. 3</h2>
-                <p class="album-subtitle">3 Tracks • Ray & EJ</p>
-            </div>
-        </div>
-        <div class="track-item">
-            <span class="track-number">1</span>
-            <div class="track-info">
-                <div class="track-title">GYATT RIZZ SIGMA</div>
-                <div class="track-artist">Ray</div>
-            </div>
-            <audio controls preload="none" data-track-title="GYATT RIZZ SIGMA" data-track-artist="Ray">
-                <source src="3.1 GYATT RIZZ SIGMAA.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('GYATT RIZZ SIGMA', 'Ray', '3.1 GYATT RIZZ SIGMAA.mp3')">+ Queue</button>
-        </div>
-        <div class="track-item">
-            <span class="track-number">2</span>
-            <div class="track-info">
-                <div class="track-title">ATLANTA PRIME</div>
-                <div class="track-artist">Ray & EJ</div>
-            </div>
-            <audio controls preload="none" data-track-title="ATLANTA PRIME" data-track-artist="Ray & EJ">
-                <source src="3.2 ATLANTA PRIME.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('ATLANTA PRIME', 'Ray & EJ', '3.2 ATLANTA PRIME.mp3')">+ Queue</button>
-        </div>
-        <div class="track-item">
-            <span class="track-number">3</span>
-            <div class="track-info">
-                <div class="track-title">boat</div>
-                <div class="track-artist">Ray & EJ</div>
-            </div>
-            <audio controls preload="none" data-track-title="boat" data-track-artist="Ray & EJ">
-                <source src="3.3 boat.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('boat', 'Ray & EJ', '3.3 boat.mp3')">+ Queue</button>
-        </div>
-    </div>
-    
-    <div class="album-section" data-album="Summertime Hits Vol. 4">
-        <div class="album-header">
-            <img src="img/Summertime%20Hits%20Vol.%204" alt="Summertime Hits Vol. 4" class="album-cover">
-            <div class="album-info">
-                <h2 class="album-title">Summertime Hits Vol. 4</h2>
-                <p class="album-subtitle">4 Tracks • Ray, Kate & Ryan</p>
+            <div class="track-item">
+                <span class="track-number">3</span>
+                <div class="track-info">
+                    <div class="track-title">boat</div>
+                    <div class="track-artist">Ray & EJ</div>
+                </div>
+                <audio controls preload="none" data-track-title="boat" data-track-artist="Ray & EJ">
+                    <source src="3.3 boat.mp3" type="audio/mpeg">
+                </audio>
+                <button class="add-to-queue" onclick="addToQueue('boat', 'Ray & EJ', '3.3 boat.mp3')">+ Queue</button>
             </div>
         </div>
-        <div class="track-item">
-            <span class="track-number">1</span>
-            <div class="track-info">
-                <div class="track-title">BUTTON(Craft)Cards</div>
-                <div class="track-artist">Kate, prod. Ray</div>
+        
+        <div class="album-section" data-album="Summertime Hits Vol. 4">
+            <div class="album-header">
+                <img src="img/Summertime%20Hits%20Vol.%204" alt="Summertime Hits Vol. 4" class="album-cover">
+                <div class="album-info">
+                    <h2 class="album-title">Summertime Hits Vol. 4</h2>
+                    <p class="album-subtitle">4 Tracks • Ray, Kate & Ryan</p>
+                </div>
             </div>
-            <audio controls preload="none" data-track-title="BUTTON(Craft)Cards" data-track-artist="Kate, prod. Ray">
-                <source src="4.1 BUTTON(Craft) Cards.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('BUTTON(Craft)Cards', 'Kate, prod. Ray', '4.1 BUTTON(Craft) Cards.mp3')">+ Queue</button>
-        </div>
-        <div class="track-item">
-            <span class="track-number">2</span>
-            <div class="track-info">
-                <div class="track-title">ketchup</div>
-                <div class="track-artist">Ray, EJ, & Ryan</div>
+            <div class="track-item">
+                <span class="track-number">1</span>
+                <div class="track-info">
+                    <div class="track-title">BUTTON(Craft)Cards</div>
+                    <div class="track-artist">Kate, prod. Ray</div>
+                </div>
+                <audio controls preload="none" data-track-title="BUTTON(Craft)Cards" data-track-artist="Kate, prod. Ray">
+                    <source src="4.1 BUTTON(Craft) Cards.mp3" type="audio/mpeg">
+                </audio>
+                <button class="add-to-queue" onclick="addToQueue('BUTTON(Craft)Cards', 'Kate, prod. Ray', '4.1 BUTTON(Craft) Cards.mp3')">+ Queue</button>
             </div>
-            <audio controls preload="none" data-track-title="ketchup" data-track-artist="Ray, EJ, & Ryan">
-                <source src="4.2 ketchup.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('ketchup', 'Ray, EJ, & Ryan', '4.2 ketchup.mp3')">+ Queue</button>
-        </div>
-        <div class="track-item">
-            <span class="track-number">3</span>
-            <div class="track-info">
-                <div class="track-title">voidmaxmpornhub</div>
-                <div class="track-artist">Ray</div>
+            <div class="track-item">
+                <span class="track-number">2</span>
+                <div class="track-info">
+                    <div class="track-title">ketchup</div>
+                    <div class="track-artist">Ray, EJ, & Ryan</div>
+                </div>
+                <audio controls preload="none" data-track-title="ketchup" data-track-artist="Ray, EJ, & Ryan">
+                    <source src="4.2 ketchup.mp3" type="audio/mpeg">
+                </audio>
+                <button class="add-to-queue" onclick="addToQueue('ketchup', 'Ray, EJ, & Ryan', '4.2 ketchup.mp3')">+ Queue</button>
             </div>
-            <audio controls preload="none" data-track-title="voidmaxmpornhub" data-track-artist="Ray">
-                <source src="4.3 voidmaxmpornhub.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('voidmaxmpornhub', 'Ray', '4.3 voidmaxmpornhub.mp3')">+ Queue</button>
-        </div>
-        <div class="track-item">
-            <span class="track-number">4</span>
-            <div class="track-info">
-                <div class="track-title">We Didn't Start The Cleetus</div>
-                <div class="track-artist">Ray</div>
+            <div class="track-item">
+                <span class="track-number">3</span>
+                <div class="track-info">
+                    <div class="track-title">voidmaxmpornhub</div>
+                    <div class="track-artist">Ray</div>
+                </div>
+                <audio controls preload="none" data-track-title="voidmaxmpornhub" data-track-artist="Ray">
+                    <source src="4.3 voidmaxmpornhub.mp3" type="audio/mpeg">
+                </audio>
+                <button class="add-to-queue" onclick="addToQueue('voidmaxmpornhub', 'Ray', '4.3 voidmaxmpornhub.mp3')">+ Queue</button>
             </div>
-            <audio controls preload="none" data-track-title="We Didn't Start The Cleetus" data-track-artist="Ray">
-                <source src="4.4 We Didnt Start The Cleetus.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('We Didn\'t Start The Cleetus', 'Ray', '4.4 We Didnt Start The Cleetus.mp3')">+ Queue</button>
-        </div>
-    </div>
-    
-    <div class="album-section" data-album="Summertime Hits Vol. 5">
-        <div class="album-header">
-            <img src="img/IMG_5081.jpeg" alt="Summertime Hits Vol. 5" class="album-cover">
-            <div class="album-info">
-                <h2 class="album-title">Summertime Hits Vol. 5</h2>
-                <p class="album-subtitle">3 Tracks • David, EJ & Ray</p>
+            <div class="track-item">
+                <span class="track-number">4</span>
+                <div class="track-info">
+                    <div class="track-title">We Didn't Start The Cleetus</div>
+                    <div class="track-artist">Ray</div>
+                </div>
+                <audio controls preload="none" data-track-title="We Didn't Start The Cleetus" data-track-artist="Ray">
+                    <source src="4.4 We Didnt Start The Cleetus.mp3" type="audio/mpeg">
+                </audio>
+                <button class="add-to-queue" onclick="addToQueue('We Didn\'t Start The Cleetus', 'Ray', '4.4 We Didnt Start The Cleetus.mp3')">+ Queue</button>
             </div>
         </div>
-</div>
+        
+        <div class="album-section" data-album="Summertime Hits Vol. 5">
+            <div class="album-header">
+                <img src="img/IMG_5081.jpeg" alt="Summertime Hits Vol. 5" class="album-cover">
+                <div class="album-info">
+                    <h2 class="album-title">Summertime Hits Vol. 5</h2>
+                    <p class="album-subtitle">3 Tracks • David, EJ & Ray</p>
+                </div>
+            </div>
             <div class="track-item">
                 <span class="track-number">1</span>
                 <div class="track-info">
@@ -1306,523 +755,489 @@
                 <button class="add-to-queue" onclick="addToQueue('EJ\'s Base', 'BUTTON!!!', 'EJs Base.mp3')">+ Queue</button>
             </div>
         </div>
-
-    <div class="album-section" data-album="Gemsie Sings OG Album">
-        <div class="album-header">
-            <img src="img/Gemsie%20Sings" alt="Gemsie Sings OG Album" class="album-cover">
-            <div class="album-info">
-                <h2 class="album-title">Gemsie Sings OG Album</h2>
-                <p class="album-subtitle">5 Tracks • EJ</p>
+        
+        <div class="album-section" data-album="Gemsie Sings OG Album">
+            <div class="album-header">
+                <img src="img/Gemsie%20Sings" alt="Gemsie Sings OG Album" class="album-cover">
+                <div class="album-info">
+                    <h2 class="album-title">Gemsie Sings OG Album</h2>
+                    <p class="album-subtitle">5 Tracks • EJ</p>
+                </div>
+            </div>
+            <div class="track-item">
+                <span class="track-number">1</span>
+                <div class="track-info">
+                    <div class="track-title">All the Single Ladies</div>
+                    <div class="track-artist">EJ</div>
+                </div>
+                <audio controls preload="none" data-track-title="All the Single Ladies" data-track-artist="EJ">
+                    <source src="All the Single Ladies.mp3" type="audio/mpeg">
+                </audio>
+                <button class="add-to-queue" onclick="addToQueue('All the Single Ladies', 'EJ', 'All the Single Ladies.mp3')">+ Queue</button>
+            </div>
+            <div class="track-item">
+                <span class="track-number">2</span>
+                <div class="track-info">
+                    <div class="track-title">Gangnam Style</div>
+                    <div class="track-artist">EJ</div>
+                </div>
+                <audio controls preload="none" data-track-title="Gangnam Style" data-track-artist="EJ">
+                    <source src="Gangnam Style.mp3" type="audio/mpeg">
+                </audio>
+                <button class="add-to-queue" onclick="addToQueue('Gangnam Style', 'EJ', 'Gangnam Style.mp3')">+ Queue</button>
+            </div>
+            <div class="track-item">
+                <span class="track-number">3</span>
+                <div class="track-info">
+                    <div class="track-title">Preorder</div>
+                    <div class="track-artist">EJ</div>
+                </div>
+                <audio controls preload="none" data-track-title="Preorder" data-track-artist="EJ">
+                    <source src="Preorder.mp3" type="audio/mpeg">
+                </audio>
+                <button class="add-to-queue" onclick="addToQueue('Preorder', 'EJ', 'Preorder.mp3')">+ Queue</button>
+            </div>
+            <div class="track-item">
+                <span class="track-number">4</span>
+                <div class="track-info">
+                    <div class="track-title">This Girl is on Fire</div>
+                    <div class="track-artist">EJ</div>
+                </div>
+                <audio controls preload="none" data-track-title="This Girl is on Fire" data-track-artist="EJ">
+                    <source src="This Girl is on Fire.mp3" type="audio/mpeg">
+                </audio>
+                <button class="add-to-queue" onclick="addToQueue('This Girl is on Fire', 'EJ', 'This Girl is on Fire.mp3')">+ Queue</button>
+            </div>
+            <div class="track-item">
+                <span class="track-number">5</span>
+                <div class="track-info">
+                    <div class="track-title">Wannabe</div>
+                    <div class="track-artist">EJ</div>
+                </div>
+                <audio controls preload="none" data-track-title="Wannabe" data-track-artist="EJ">
+                    <source src="Wannabe.mp3" type="audio/mpeg">
+                </audio>
+                <button class="add-to-queue" onclick="addToQueue('Wannabe', 'EJ', 'Wannabe.mp3')">+ Queue</button>
+            </div>
+            <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #444;">
+                <h3 style="color: #ff3d3d; font-size: 18px; margin-bottom: 15px; font-weight: 500;">Unreleased Promo Track</h3>
+                <div class="track-item">
+                    <span class="track-number">★</span>
+                    <div class="track-info">
+                        <div class="track-title">Think About it Song</div>
+                        <div class="track-artist">EJ</div>
+                    </div>
+                    <audio controls preload="none" data-track-title="Think About it Song" data-track-artist="EJ">
+                        <source src="Think About it Song.mp3" type="audio/mpeg">
+                    </audio>
+                    <button class="add-to-queue" onclick="addToQueue('Think About it Song', 'EJ', 'Think About it Song.mp3')">+ Queue</button>
+                </div>
             </div>
         </div>
-        <div class="track-item">
-            <span class="track-number">1</span>
-            <div class="track-info">
-                <div class="track-title">All the Single Ladies</div>
-                <div class="track-artist">EJ</div>
+        
+        <div class="album-section singles-section" data-album="Singles & Special Releases">
+            <div class="album-header">
+                <img src="img/JIG" alt="JIG" class="album-cover">
+                <div class="album-info">
+                    <h2 class="album-title">Singles & Special Releases</h2>
+                    <p class="album-subtitle">2 Tracks • Ray, EJ, Claire & Ryan</p>
+                </div>
             </div>
-            <audio controls preload="none" data-track-title="All the Single Ladies" data-track-artist="EJ">
-                <source src="All the Single Ladies.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('All the Single Ladies', 'EJ', 'All the Single Ladies.mp3')">+ Queue</button>
-        </div>
-        <div class="track-item">
-            <span class="track-number">2</span>
-            <div class="track-info">
-                <div class="track-title">Gangnam Style</div>
-                <div class="track-artist">EJ</div>
-            </div>
-            <audio controls preload="none" data-track-title="Gangnam Style" data-track-artist="EJ">
-                <source src="Gangnam Style.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('Gangnam Style', 'EJ', 'Gangnam Style.mp3')">+ Queue</button>
-        </div>
-        <div class="track-item">
-            <span class="track-number">3</span>
-            <div class="track-info">
-                <div class="track-title">Preorder</div>
-                <div class="track-artist">EJ</div>
-            </div>
-            <audio controls preload="none" data-track-title="Preorder" data-track-artist="EJ">
-                <source src="Preorder.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('Preorder', 'EJ', 'Preorder.mp3')">+ Queue</button>
-        </div>
-        <div class="track-item">
-            <span class="track-number">4</span>
-            <div class="track-info">
-                <div class="track-title">This Girl is on Fire</div>
-                <div class="track-artist">EJ</div>
-            </div>
-            <audio controls preload="none" data-track-title="This Girl is on Fire" data-track-artist="EJ">
-                <source src="This Girl is on Fire.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('This Girl is on Fire', 'EJ', 'This Girl is on Fire.mp3')">+ Queue</button>
-        </div>
-        <div class="track-item">
-            <span class="track-number">5</span>
-            <div class="track-info">
-                <div class="track-title">Wannabe</div>
-                <div class="track-artist">EJ</div>
-            </div>
-            <audio controls preload="none" data-track-title="Wannabe" data-track-artist="EJ">
-                <source src="Wannabe.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('Wannabe', 'EJ', 'Wannabe.mp3')">+ Queue</button>
-        </div>
-        <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #444;">
-            <h3 style="color: #ff3d3d; font-size: 18px; margin-bottom: 15px; font-weight: 500;">Unreleased Promo Track</h3>
             <div class="track-item">
                 <span class="track-number">★</span>
                 <div class="track-info">
-                    <div class="track-title">Think About it Song</div>
-                    <div class="track-artist">EJ</div>
+                    <div class="track-title">JIG (Janna is a Hoe)</div>
+                    <div class="track-artist">Ray, ft. EJ and Ryan</div>
                 </div>
-                <audio controls preload="none" data-track-title="Think About it Song" data-track-artist="EJ">
-                    <source src="Think About it Song.mp3" type="audio/mpeg">
+                <audio controls preload="none" data-track-title="JIG (Janna is a Hoe)" data-track-artist="Ray, ft. EJ and Ryan">
+                    <source src="JIG.mp3" type="audio/mpeg">
                 </audio>
-                <button class="add-to-queue" onclick="addToQueue('Think About it Song', 'EJ', 'Think About it Song.mp3')">+ Queue</button>
+                <button class="add-to-queue" onclick="addToQueue('JIG (Janna is a Hoe)', 'Ray, ft. EJ and Ryan', 'JIG.mp3')">+ Queue</button>
+            </div>
+            <div class="track-item">
+                <span class="track-number">★</span>
+                <div class="track-info">
+                    <div class="track-title">Atlanta State of Prime</div>
+                    <div class="track-artist">Ray, EJ, and Claire</div>
+                </div>
+                <audio controls preload="none" data-track-title="Atlanta State of Prime" data-track-artist="Ray, EJ, and Claire">
+                    <source src="Atlanta State of Prime.mp3" type="audio/mpeg">
+                </audio>
+                <button class="add-to-queue" onclick="addToQueue('Atlanta State of Prime', 'Ray, EJ, and Claire', 'Atlanta State of Prime.mp3')">+ Queue</button>
             </div>
         </div>
-    </div>
-    
-    <div class="album-section singles-section" data-album="Singles & Special Releases">
-        <div class="album-header">
-            <img src="img/JIG" alt="JIG" class="album-cover">
-            <div class="album-info">
-                <h2 class="album-title">Singles & Special Releases</h2>
-                <p class="album-subtitle">2 Tracks • Ray, EJ, Claire & Ryan</p>
+        
+        <div class="queue-toggle" onclick="toggleQueue()">
+            Queue (<span id="queueCount">0</span>)
+        </div>
+        
+        <div class="queue-panel" id="queuePanel">
+            <div class="queue-header">
+                <div class="queue-title">Play Queue</div>
+                <button class="queue-close" onclick="toggleQueue()">×</button>
             </div>
-        </div>
-        <div class="track-item">
-            <span class="track-number">★</span>
-            <div class="track-info">
-                <div class="track-title">JIG (Janna is a Hoe)</div>
-                <div class="track-artist">Ray, ft. EJ and Ryan</div>
-            </div>
-            <audio controls preload="none" data-track-title="JIG (Janna is a Hoe)" data-track-artist="Ray, ft. EJ and Ryan">
-                <source src="JIG.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('JIG (Janna is a Hoe)', 'Ray, ft. EJ and Ryan', 'JIG.mp3')">+ Queue</button>
-        </div>
-        <div class="track-item">
-            <span class="track-number">★</span>
-            <div class="track-info">
-                <div class="track-title">Atlanta State of Prime</div>
-                <div class="track-artist">Ray, EJ, and Claire</div>
-            </div>
-            <audio controls preload="none" data-track-title="Atlanta State of Prime" data-track-artist="Ray, EJ, and Claire">
-                <source src="Atlanta State of Prime.mp3" type="audio/mpeg">
-            </audio>
-            <button class="add-to-queue" onclick="addToQueue('Atlanta State of Prime', 'Ray, EJ, and Claire', 'Atlanta State of Prime.mp3')">+ Queue</button>
-        </div>
-    </div>
-    
-    <div class="queue-toggle" onclick="toggleQueue()">
-        Queue (<span id="queueCount">0</span>)
-    </div>
-    
-    <div class="queue-panel" id="queuePanel">
-        <div class="queue-header">
-            <div class="queue-title">Play Queue</div>
-            <button class="queue-close" onclick="toggleQueue()">×</button>
-        </div>
-        
-        <div class="queue-controls">
-            <button class="queue-btn" onclick="shuffleQueue()">Shuffle</button>
-            <button class="queue-btn" onclick="addAlbumToQueue()">+ Album</button>
-            <button class="queue-btn danger" onclick="clearQueue()">Clear All</button>
-        </div>
-        
-        <div class="queue-list" id="queueList">
-            <div class="queue-empty" id="queueEmpty">
-                No songs in queue.<br>
-                Click "+ Queue" on any track to add it!
-            </div>
-        </div>
-    </div>
-    
-    <div class="now-playing" id="nowPlaying">
-        <span class="now-playing-text">Now Playing:</span>
-        <span class="now-playing-title" id="nowPlayingTitle"></span>
-    </div>
-</div>
-</div>
-
-<script>
-    // Queue Management System
-    let musicQueue = [];
-    let currentQueueIndex = -1;
-    let isQueueMode = false;
-    
-    // Track currently playing audio
-    let currentlyPlaying = null;
-    const nowPlayingDiv = document.getElementById('nowPlaying');
-    const nowPlayingTitle = document.getElementById('nowPlayingTitle');
-    
-    // Queue Functions
-    function addToQueue(title, artist, src) {
-        const track = {
-            title: title,
-            artist: artist,
-            src: src,
-            id: Date.now() + Math.random() // Unique ID
-        };
-        
-        musicQueue.push(track);
-        updateQueueDisplay();
-        updateQueueCount();
-        
-        // Visual feedback
-        const button = event.target;
-        const originalText = button.textContent;
-        button.textContent = 'Added!';
-        button.style.backgroundColor = 'rgba(76, 175, 80, 0.2)';
-        button.style.color = '#4caf50';
-        button.style.borderColor = '#4caf50';
-        
-        setTimeout(() => {
-            button.textContent = originalText;
-            button.style.backgroundColor = '';
-            button.style.color = '';
-            button.style.borderColor = '';
-        }, 1000);
-    }
-    
-    function addAlbumToQueue() {
-        // Find the album that was hovered over
-        const hoveredAlbum = document.querySelector('.album-section:hover');
-        if (!hoveredAlbum) {
-            alert('Hover over an album and try again!');
-            return;
-        }
-        
-        const tracks = hoveredAlbum.querySelectorAll('.track-item');
-        let addedCount = 0;
-        
-        tracks.forEach(trackItem => {
-            const title = trackItem.querySelector('.track-title').textContent;
-            const artist = trackItem.querySelector('.track-artist').textContent;
-            const audio = trackItem.querySelector('audio source');
-            const src = audio ? audio.src : '';
             
-            if (src) {
-                musicQueue.push({
-                    title: title,
-                    artist: artist,
-                    src: src,
-                    id: Date.now() + Math.random() + addedCount
-                });
-                addedCount++;
-            }
-        });
+            <div class="queue-controls">
+                <button class="queue-btn" onclick="shuffleQueue()">Shuffle</button>
+                <button class="queue-btn" onclick="addAlbumToQueue()">+ Album</button>
+                <button class="queue-btn danger" onclick="clearQueue()">Clear All</button>
+            </div>
+            
+            <div class="queue-list" id="queueList">
+                <div class="queue-empty" id="queueEmpty">
+                    No songs in queue.<br>
+                    Click "+ Queue" on any track to add it!
+                </div>
+            </div>
+        </div>
         
-        if (addedCount > 0) {
+        <div class="now-playing" id="nowPlaying">
+            <span class="now-playing-text">Now Playing:</span>
+            <span class="now-playing-title" id="nowPlayingTitle"></span>
+        </div>
+    </div>
+    
+    <script>
+        // Queue Management System
+        let musicQueue = [];
+        let currentQueueIndex = -1;
+        let isQueueMode = false;
+        
+        // Track currently playing audio
+        let currentlyPlaying = null;
+        const nowPlayingDiv = document.getElementById('nowPlaying');
+        const nowPlayingTitle = document.getElementById('nowPlayingTitle');
+        
+        // Queue Functions
+        function addToQueue(title, artist, src) {
+            const track = {
+                title: title,
+                artist: artist,
+                src: src,
+                id: Date.now() + Math.random()
+            };
+            
+            musicQueue.push(track);
             updateQueueDisplay();
             updateQueueCount();
             
             // Visual feedback
-            const albumTitle = hoveredAlbum.querySelector('.album-title').textContent;
-            alert(`Added ${addedCount} tracks from "${albumTitle}" to queue!`);
+            const button = event.target;
+            const originalText = button.textContent;
+            button.textContent = 'Added!';
+            button.style.backgroundColor = 'rgba(76, 175, 80, 0.2)';
+            button.style.color = '#4caf50';
+            button.style.borderColor = '#4caf50';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.backgroundColor = '';
+                button.style.color = '';
+                button.style.borderColor = '';
+            }, 1000);
         }
-    }
-    
-    function removeFromQueue(index) {
-        // Adjust current index if necessary
-        if (index < currentQueueIndex) {
-            currentQueueIndex--;
-        } else if (index === currentQueueIndex) {
-            // If removing current track, stop playback
+        
+        function addAlbumToQueue() {
+            const hoveredAlbum = document.querySelector('.album-section:hover');
+            if (!hoveredAlbum) {
+                alert('Hover over an album and try again!');
+                return;
+            }
+            
+            const tracks = hoveredAlbum.querySelectorAll('.track-item');
+            let addedCount = 0;
+            
+            tracks.forEach(trackItem => {
+                const title = trackItem.querySelector('.track-title').textContent;
+                const artist = trackItem.querySelector('.track-artist').textContent;
+                const audio = trackItem.querySelector('audio source');
+                const src = audio ? audio.src : '';
+                
+                if (src) {
+                    musicQueue.push({
+                        title: title,
+                        artist: artist,
+                        src: src,
+                        id: Date.now() + Math.random() + addedCount
+                    });
+                    addedCount++;
+                }
+            });
+            
+            if (addedCount > 0) {
+                updateQueueDisplay();
+                updateQueueCount();
+                
+                const albumTitle = hoveredAlbum.querySelector('.album-title').textContent;
+                alert(`Added ${addedCount} tracks from "${albumTitle}" to queue!`);
+            }
+        }
+        
+        function removeFromQueue(index) {
+            if (index < currentQueueIndex) {
+                currentQueueIndex--;
+            } else if (index === currentQueueIndex) {
+                if (currentlyPlaying && isQueueMode) {
+                    currentlyPlaying.pause();
+                    currentlyPlaying.currentTime = 0;
+                }
+                currentQueueIndex = -1;
+                isQueueMode = false;
+                nowPlayingDiv.classList.remove('active');
+            }
+            
+            musicQueue.splice(index, 1);
+            updateQueueDisplay();
+            updateQueueCount();
+        }
+        
+        function playFromQueue(index) {
+            if (index >= 0 && index < musicQueue.length) {
+                const track = musicQueue[index];
+                
+                if (currentlyPlaying) {
+                    currentlyPlaying.pause();
+                    currentlyPlaying.currentTime = 0;
+                }
+                
+                const audio = new Audio(track.src);
+                currentlyPlaying = audio;
+                currentQueueIndex = index;
+                isQueueMode = true;
+                
+                updateNowPlaying();
+                nowPlayingDiv.classList.add('active');
+                
+                audio.addEventListener('ended', playNextInQueue);
+                audio.addEventListener('pause', function() {
+                    if (audio.currentTime === audio.duration || audio.currentTime === 0) {
+                        if (isQueueMode) {
+                            nowPlayingDiv.classList.remove('active');
+                        }
+                    }
+                });
+                
+                audio.play().catch(e => console.log('Playback failed:', e));
+                updateQueueDisplay();
+            }
+        }
+        
+        function playNextInQueue() {
+            if (currentQueueIndex < musicQueue.length - 1) {
+                playFromQueue(currentQueueIndex + 1);
+            } else {
+                nowPlayingDiv.classList.remove('active');
+                currentQueueIndex = -1;
+                isQueueMode = false;
+                updateQueueDisplay();
+            }
+        }
+        
+        function playPreviousInQueue() {
+            if (isQueueMode && currentQueueIndex > 0) {
+                playFromQueue(currentQueueIndex - 1);
+            }
+        }
+        
+        function clearQueue() {
+            musicQueue = [];
+            currentQueueIndex = -1;
+            
             if (currentlyPlaying && isQueueMode) {
                 currentlyPlaying.pause();
                 currentlyPlaying.currentTime = 0;
-            }
-            currentQueueIndex = -1;
-            isQueueMode = false;
-            nowPlayingDiv.classList.remove('active');
-        }
-        
-        musicQueue.splice(index, 1);
-        updateQueueDisplay();
-        updateQueueCount();
-    }
-    
-    function playFromQueue(index) {
-        if (index >= 0 && index < musicQueue.length) {
-            const track = musicQueue[index];
-            
-            // Stop current playback
-            if (currentlyPlaying) {
-                currentlyPlaying.pause();
-                currentlyPlaying.currentTime = 0;
+                isQueueMode = false;
+                nowPlayingDiv.classList.remove('active');
             }
             
-            // Create new audio element for queue playback
-            const audio = new Audio(track.src);
-            currentlyPlaying = audio;
-            currentQueueIndex = index;
-            isQueueMode = true;
+            updateQueueDisplay();
+            updateQueueCount();
+        }
+        
+        function shuffleQueue() {
+            if (musicQueue.length <= 1) return;
             
-            // Update now playing
-            updateNowPlaying();
-            nowPlayingDiv.classList.add('active');
+            let currentTrack = null;
+            if (currentQueueIndex >= 0 && isQueueMode) {
+                currentTrack = musicQueue[currentQueueIndex];
+                musicQueue.splice(currentQueueIndex, 1);
+            }
             
-            // Set up queue navigation
-            audio.addEventListener('ended', playNextInQueue);
-            audio.addEventListener('pause', function() {
-                if (audio.currentTime === audio.duration || audio.currentTime === 0) {
-                    if (isQueueMode) {
-                        nowPlayingDiv.classList.remove('active');
-                    }
-                }
-            });
+            for (let i = musicQueue.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [musicQueue[i], musicQueue[j]] = [musicQueue[j], musicQueue[i]];
+            }
             
-            audio.play().catch(e => console.log('Playback failed:', e));
+            if (currentTrack) {
+                musicQueue.unshift(currentTrack);
+                currentQueueIndex = 0;
+            }
+            
             updateQueueDisplay();
         }
-    }
-    
-    function playNextInQueue() {
-        if (currentQueueIndex < musicQueue.length - 1) {
-            playFromQueue(currentQueueIndex + 1);
-        } else {
-            // End of queue
-            nowPlayingDiv.classList.remove('active');
-            currentQueueIndex = -1;
-            isQueueMode = false;
-            updateQueueDisplay();
-        }
-    }
-    
-    function playPreviousInQueue() {
-        if (isQueueMode && currentQueueIndex > 0) {
-            playFromQueue(currentQueueIndex - 1);
-        }
-    }
-    
-    function clearQueue() {
-        musicQueue = [];
-        currentQueueIndex = -1;
         
-        if (currentlyPlaying && isQueueMode) {
-            currentlyPlaying.pause();
-            currentlyPlaying.currentTime = 0;
-            isQueueMode = false;
-            nowPlayingDiv.classList.remove('active');
+        function toggleQueue() {
+            const panel = document.getElementById('queuePanel');
+            panel.classList.toggle('open');
         }
         
-        updateQueueDisplay();
-        updateQueueCount();
-    }
-    
-    function shuffleQueue() {
-        if (musicQueue.length <= 1) return;
-        
-        // Keep current track in place if playing
-        let currentTrack = null;
-        if (currentQueueIndex >= 0 && isQueueMode) {
-            currentTrack = musicQueue[currentQueueIndex];
-            musicQueue.splice(currentQueueIndex, 1);
-        }
-        
-        // Shuffle remaining tracks using Fisher-Yates algorithm
-        for (let i = musicQueue.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [musicQueue[i], musicQueue[j]] = [musicQueue[j], musicQueue[i]];
-        }
-        
-        // Put current track back at beginning if it was playing
-        if (currentTrack) {
-            musicQueue.unshift(currentTrack);
-            currentQueueIndex = 0;
-        }
-        
-        updateQueueDisplay();
-    }
-    
-    function toggleQueue() {
-        const panel = document.getElementById('queuePanel');
-        panel.classList.toggle('open');
-    }
-    
-    function updateQueueDisplay() {
-        const queueList = document.getElementById('queueList');
-        const queueEmpty = document.getElementById('queueEmpty');
-        
-        if (musicQueue.length === 0) {
-            queueEmpty.style.display = 'block';
+        function updateQueueDisplay() {
+            const queueList = document.getElementById('queueList');
+            const queueEmpty = document.getElementById('queueEmpty');
+            
+            if (musicQueue.length === 0) {
+                queueEmpty.style.display = 'block';
+                queueList.innerHTML = '';
+                queueList.appendChild(queueEmpty);
+                return;
+            }
+            
+            queueEmpty.style.display = 'none';
             queueList.innerHTML = '';
-            queueList.appendChild(queueEmpty);
-            return;
+            
+            musicQueue.forEach((track, index) => {
+                const queueItem = document.createElement('div');
+                queueItem.className = `queue-item ${index === currentQueueIndex && isQueueMode ? 'current' : ''}`;
+                
+                queueItem.innerHTML = `
+                    <div class="queue-number">${index + 1}</div>
+                    <div class="queue-info">
+                        <div class="queue-track-title">${track.title}</div>
+                        <div class="queue-track-artist">${track.artist}</div>
+                    </div>
+                    <button class="queue-remove" onclick="removeFromQueue(${index})">×</button>
+                `;
+                
+                queueItem.addEventListener('click', (e) => {
+                    if (!e.target.classList.contains('queue-remove')) {
+                        playFromQueue(index);
+                    }
+                });
+                
+                queueList.appendChild(queueItem);
+            });
         }
         
-        queueEmpty.style.display = 'none';
-        queueList.innerHTML = '';
+        function updateQueueCount() {
+            document.getElementById('queueCount').textContent = musicQueue.length;
+        }
         
-        musicQueue.forEach((track, index) => {
-            const queueItem = document.createElement('div');
-            queueItem.className = `queue-item ${index === currentQueueIndex && isQueueMode ? 'current' : ''}`;
-            
-            queueItem.innerHTML = `
-                <div class="queue-number">${index + 1}</div>
-                <div class="queue-info">
-                    <div class="queue-track-title">${track.title}</div>
-                    <div class="queue-track-artist">${track.artist}</div>
-                </div>
-                <button class="queue-remove" onclick="removeFromQueue(${index})">×</button>
-            `;
-            
-            queueItem.addEventListener('click', (e) => {
-                if (!e.target.classList.contains('queue-remove')) {
-                    playFromQueue(index);
+        function updateNowPlaying() {
+            if (isQueueMode && currentQueueIndex >= 0) {
+                const track = musicQueue[currentQueueIndex];
+                const controls = `
+                    <div style="display: flex; align-items: center; gap: 10px; width: 100%;">
+                        <button onclick="playPreviousInQueue()" style="background: none; border: none; color: #ff3d3d; font-size: 16px; cursor: pointer; padding: 4px;" ${currentQueueIndex === 0 ? 'disabled style="opacity: 0.5;"' : ''}>⏮</button>
+                        <div style="flex: 1; min-width: 0;">
+                            <div style="font-size: 14px; color: #b0b0b0;">Queue (${currentQueueIndex + 1}/${musicQueue.length})</div>
+                            <div style="font-size: 16px; font-weight: 500; color: #ff3d3d; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${track.title} - ${track.artist}</div>
+                        </div>
+                        <button onclick="playNextInQueue()" style="background: none; border: none; color: #ff3d3d; font-size: 16px; cursor: pointer; padding: 4px;" ${currentQueueIndex === musicQueue.length - 1 ? 'disabled style="opacity: 0.5;"' : ''}>⏭</button>
+                    </div>
+                `;
+                nowPlayingDiv.innerHTML = controls;
+            }
+        }
+        
+        // Audio event listeners
+        document.querySelectorAll('audio').forEach(audio => {
+            audio.addEventListener('play', function() {
+                if (!isQueueMode || currentlyPlaying !== this) {
+                    if (currentlyPlaying && currentlyPlaying !== this) {
+                        currentlyPlaying.pause();
+                    }
+                    
+                    if (!isQueueMode) {
+                        currentlyPlaying = this;
+                        currentQueueIndex = -1;
+                        
+                        const trackItem = this.closest('.track-item');
+                        const title = trackItem.querySelector('.track-title').textContent;
+                        const artist = trackItem.querySelector('.track-artist').textContent;
+                        nowPlayingTitle.textContent = `${title} - ${artist}`;
+                        nowPlayingDiv.innerHTML = `
+                            <span class="now-playing-text">Now Playing:</span>
+                            <span class="now-playing-title">${title} - ${artist}</span>
+                        `;
+                        nowPlayingDiv.classList.add('active');
+                        
+                        updateQueueDisplay();
+                    }
                 }
             });
             
-            queueList.appendChild(queueItem);
-        });
-    }
-    
-    function updateQueueCount() {
-        document.getElementById('queueCount').textContent = musicQueue.length;
-    }
-    
-    // Enhanced now playing with queue controls
-    function updateNowPlaying() {
-        if (isQueueMode && currentQueueIndex >= 0) {
-            const track = musicQueue[currentQueueIndex];
-            const controls = `
-                <div style="display: flex; align-items: center; gap: 10px; width: 100%;">
-                    <button onclick="playPreviousInQueue()" style="background: none; border: none; color: #ff3d3d; font-size: 16px; cursor: pointer; padding: 4px;" ${currentQueueIndex === 0 ? 'disabled style="opacity: 0.5;"' : ''}>⏮</button>
-                    <div style="flex: 1; min-width: 0;">
-                        <div style="font-size: 14px; color: #b0b0b0;">Queue (${currentQueueIndex + 1}/${musicQueue.length})</div>
-                        <div style="font-size: 16px; font-weight: 500; color: #ff3d3d; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${track.title} - ${track.artist}</div>
-                    </div>
-                    <button onclick="playNextInQueue()" style="background: none; border: none; color: #ff3d3d; font-size: 16px; cursor: pointer; padding: 4px;" ${currentQueueIndex === musicQueue.length - 1 ? 'disabled style="opacity: 0.5;"' : ''}>⏭</button>
-                </div>
-            `;
-            nowPlayingDiv.innerHTML = controls;
-        }
-    }
-    
-    // Enhanced audio event listeners
-    document.querySelectorAll('audio').forEach(audio => {
-        audio.addEventListener('play', function() {
-            // Only manage regular playback if not in queue mode or if this is the queue audio
-            if (!isQueueMode || currentlyPlaying !== this) {
-                // Pause any other playing audio
-                if (currentlyPlaying && currentlyPlaying !== this) {
-                    currentlyPlaying.pause();
+            audio.addEventListener('pause', function() {
+                if (currentlyPlaying === this && !isQueueMode) {
+                    nowPlayingDiv.classList.remove('active');
                 }
-                
-                // Only update if this isn't queue playback
-                if (!isQueueMode) {
-                    currentlyPlaying = this;
-                    currentQueueIndex = -1;
-                    
-                    // Update now playing display
-                    const trackItem = this.closest('.track-item');
-                    const title = trackItem.querySelector('.track-title').textContent;
-                    const artist = trackItem.querySelector('.track-artist').textContent;
-                    nowPlayingTitle.textContent = `${title} - ${artist}`;
-                    nowPlayingDiv.innerHTML = `
-                        <span class="now-playing-text">Now Playing:</span>
-                        <span class="now-playing-title">${title} - ${artist}</span>
-                    `;
-                    nowPlayingDiv.classList.add('active');
-                    
-                    updateQueueDisplay();
+            });
+            
+            audio.addEventListener('ended', function() {
+                if (currentlyPlaying === this && !isQueueMode) {
+                    nowPlayingDiv.classList.remove('active');
                 }
-            }
+            });
         });
         
-        audio.addEventListener('pause', function() {
-            if (currentlyPlaying === this && !isQueueMode) {
-                nowPlayingDiv.classList.remove('active');
-            }
-        });
-        
-        audio.addEventListener('ended', function() {
-            if (currentlyPlaying === this && !isQueueMode) {
-                nowPlayingDiv.classList.remove('active');
-            }
-        });
-    });
-    
-    // Keyboard shortcuts
-    document.addEventListener('keydown', function(e) {
-        if (e.target.tagName.toLowerCase() !== 'input') {
-            switch(e.key) {
-                case 'q':
-                case 'Q':
-                    toggleQueue();
-                    break;
-                case 'ArrowRight':
-                    if (isQueueMode && e.shiftKey) {
-                        e.preventDefault();
-                        playNextInQueue();
-                    }
-                    break;
-                case 'ArrowLeft':
-                    if (isQueueMode && e.shiftKey) {
-                        e.preventDefault();
-                        playPreviousInQueue();
-                    }
-                    break;
-                case ' ':
-                    if (currentlyPlaying && e.shiftKey) {
-                        e.preventDefault();
-                        if (currentlyPlaying.paused) {
-                            currentlyPlaying.play();
-                        } else {
-                            currentlyPlaying.pause();
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.target.tagName.toLowerCase() !== 'input') {
+                switch(e.key) {
+                    case 'q':
+                    case 'Q':
+                        toggleQueue();
+                        break;
+                    case 'ArrowRight':
+                        if (isQueueMode && e.shiftKey) {
+                            e.preventDefault();
+                            playNextInQueue();
                         }
-                    }
-                    break;
-                case 'c':
-                case 'C':
-                    if (e.shiftKey) {
-                        clearQueue();
-                    }
-                    break;
-                case 's':
-                case 'S':
-                    if (e.shiftKey) {
-                        shuffleQueue();
-                    }
-                    break;
+                        break;
+                    case 'ArrowLeft':
+                        if (isQueueMode && e.shiftKey) {
+                            e.preventDefault();
+                            playPreviousInQueue();
+                        }
+                        break;
+                    case ' ':
+                        if (currentlyPlaying && e.shiftKey) {
+                            e.preventDefault();
+                            if (currentlyPlaying.paused) {
+                                currentlyPlaying.play();
+                            } else {
+                                currentlyPlaying.pause();
+                            }
+                        }
+                        break;
+                    case 'c':
+                    case 'C':
+                        if (e.shiftKey) {
+                            clearQueue();
+                        }
+                        break;
+                    case 's':
+                    case 'S':
+                        if (e.shiftKey) {
+                            shuffleQueue();
+                        }
+                        break;
+                }
             }
-        }
-    });
-    
-    // Initialize and add album hover effects
-    updateQueueCount();
-    
-    // Add hover effects to album sections for the + Album button
-    document.querySelectorAll('.album-section').forEach(section => {
-        section.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px)';
-            this.style.boxShadow = '0 6px 12px rgba(0,0,0,0.4)';
         });
         
-        section.addEventListener('mouseleave', function() {
-            this.style.transform = '';
-            this.style.boxShadow = '';
+        // Initialize
+        updateQueueCount();
+        
+        // Animation effects
+        document.querySelectorAll('.track-item').forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.animation = `fadeIn 0.5s ease-out ${index * 0.05}s forwards`;
         });
-    });
-    
-    // Smooth scroll effect
-    document.querySelectorAll('.track-item').forEach((item, index) => {
-        item.style.opacity = '0';
-        item.style.animation = `fadeIn 0.5s ease-out ${index * 0.05}s forwards`;
-    });
-    
-    // Animate album covers on load
-    document.querySelectorAll('.album-cover').forEach((cover, index) => {
-        cover.style.opacity = '0';
-        cover.style.animation = `fadeInScale 0.5s ease-out ${index * 0.1}s forwards`;
-    });
-</script>
-
-
+        
+        document.querySelectorAll('.album-cover').forEach((cover, index) => {
+            cover.style.opacity = '0';
+            cover.style.animation = `fadeInScale 0.5s ease-out ${index * 0.1}s forwards`;
+        });
+    </script>
 </body>
 </html>
