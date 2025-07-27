@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="dark">
     <meta name="theme-color" content="#121212">
-    <title>BUTTIFY</title>
+    <title>Made possible with BUTTIFY</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -18,6 +18,7 @@
             font-family: "Fredoka", "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
             font-weight: 400;
         }
+
 
     html, body, .container, main, section {
         background-color: #121212 !important;
@@ -335,6 +336,24 @@
         gap: 10px;
     }
     
+    .queue-btn.play-queue {
+        background: linear-gradient(135deg, #ff3d3d, #ff6b6b);
+        color: white;
+        font-weight: 600;
+    }
+    
+    .queue-btn.play-queue:hover {
+        background: linear-gradient(135deg, #ff2020, #ff5555);
+        transform: translateY(-1px);
+    }
+    
+    .queue-btn.play-queue:disabled {
+        background: var(--bg-light);
+        color: var(--text-secondary);
+        cursor: not-allowed;
+        transform: none;
+    }
+    
     .queue-btn {
         background-color: var(--bg-light);
         color: var(--text-primary);
@@ -602,7 +621,6 @@
     }
 </style>
 
-
 </head>
 <body>
     <div class="container">
@@ -611,6 +629,7 @@
             <h1 class="logo">BUTTON<span>Board</span> MUSIC</h1>
             <p class="subtitle">by BUTTIFY®</p>
         </header>
+
 
     <div class="album-section" data-album="Summertime Hits Vol. 1">
         <div class="album-header">
@@ -975,6 +994,7 @@
         </div>
         
         <div class="queue-controls">
+            <button class="queue-btn play-queue" onclick="playAllFromQueue()" id="playQueueBtn">▶ Play Queue</button>
             <button class="queue-btn" onclick="shuffleQueue()">Shuffle</button>
             <button class="queue-btn" onclick="addAlbumToQueue()">+ Album</button>
             <button class="queue-btn danger" onclick="clearQueue()">Clear All</button>
@@ -1018,30 +1038,41 @@
         updateQueueDisplay();
         updateQueueCount();
         
-        // Visual feedback - find ALL buttons with this exact onclick and update them
-        const buttons = document.querySelectorAll('.add-to-queue');
-        buttons.forEach(button => {
-            if (button.onclick && button.onclick.toString().includes(`'${title}'`) && button.onclick.toString().includes(`'${artist}'`)) {
-                const originalText = button.textContent;
-                const originalBg = button.style.backgroundColor;
-                const originalColor = button.style.color;
-                const originalBorder = button.style.borderColor;
+        // Visual feedback - create a unique identifier and find the button
+        setTimeout(() => {
+            const buttons = document.querySelectorAll('.add-to-queue');
+            let targetButton = null;
+            
+            // Find the button by checking the onclick attribute
+            buttons.forEach(button => {
+                if (button.getAttribute('onclick') && 
+                    button.getAttribute('onclick').includes(`'${title}'`) && 
+                    button.getAttribute('onclick').includes(`'${src}'`)) {
+                    targetButton = button;
+                }
+            });
+            
+            if (targetButton) {
+                const originalText = targetButton.textContent;
+                const originalBg = targetButton.style.backgroundColor;
+                const originalColor = targetButton.style.color;
+                const originalBorder = targetButton.style.borderColor;
                 
-                button.textContent = 'Added!';
-                button.style.backgroundColor = 'rgba(76, 175, 80, 0.3)';
-                button.style.color = '#4caf50';
-                button.style.borderColor = '#4caf50';
-                button.style.transform = 'scale(1.05)';
+                targetButton.textContent = 'Added!';
+                targetButton.style.backgroundColor = 'rgba(76, 175, 80, 0.3)';
+                targetButton.style.color = '#4caf50';
+                targetButton.style.borderColor = '#4caf50';
+                targetButton.style.transform = 'scale(1.05)';
                 
                 setTimeout(() => {
-                    button.textContent = originalText;
-                    button.style.backgroundColor = originalBg;
-                    button.style.color = originalColor;
-                    button.style.borderColor = originalBorder;
-                    button.style.transform = '';
+                    targetButton.textContent = originalText;
+                    targetButton.style.backgroundColor = originalBg;
+                    targetButton.style.color = originalColor;
+                    targetButton.style.borderColor = originalBorder;
+                    targetButton.style.transform = '';
                 }, 1200);
             }
-        });
+        }, 10);
     }
     
     function addAlbumToQueue() {
@@ -1192,16 +1223,18 @@
         const queueList = document.getElementById('queueList');
         const queueEmpty = document.getElementById('queueEmpty');
         
+        // Clear the list first
+        queueList.innerHTML = '';
+        
         if (musicQueue.length === 0) {
-            queueEmpty.style.display = 'block';
-            queueList.innerHTML = '';
-            queueList.appendChild(queueEmpty);
+            const emptyDiv = document.createElement('div');
+            emptyDiv.className = 'queue-empty';
+            emptyDiv.innerHTML = 'No songs in queue.<br>Click "+ Queue" on any track to add it!';
+            queueList.appendChild(emptyDiv);
             return;
         }
         
-        queueEmpty.style.display = 'none';
-        queueList.innerHTML = '';
-        
+        // Add each track to the display
         musicQueue.forEach((track, index) => {
             const queueItem = document.createElement('div');
             queueItem.className = `queue-item ${index === currentQueueIndex && isQueueMode ? 'current' : ''}`;
@@ -1215,6 +1248,7 @@
                 <button class="queue-remove" onclick="removeFromQueue(${index})">×</button>
             `;
             
+            // Add click listener to play from queue
             queueItem.addEventListener('click', (e) => {
                 if (!e.target.classList.contains('queue-remove')) {
                     playFromQueue(index);
@@ -1346,6 +1380,7 @@
         cover.style.animation = `fadeInScale 0.5s ease-out ${index * 0.1}s forwards`;
     });
 </script>
+
 
 </body>
 </html>
