@@ -921,20 +921,22 @@
             updateQueueDisplay();
             updateQueueCount();
             
-            // Visual feedback
-            const button = event.target;
-            const originalText = button.textContent;
-            button.textContent = 'Added!';
-            button.style.backgroundColor = 'rgba(76, 175, 80, 0.2)';
-            button.style.color = '#4caf50';
-            button.style.borderColor = '#4caf50';
-            
-            setTimeout(() => {
-                button.textContent = originalText;
-                button.style.backgroundColor = '';
-                button.style.color = '';
-                button.style.borderColor = '';
-            }, 1000);
+            // Visual feedback - find the button that was just clicked
+            const clickedButton = document.activeElement;
+            if (clickedButton && clickedButton.classList.contains('add-to-queue')) {
+                const originalText = clickedButton.textContent;
+                clickedButton.textContent = 'Added!';
+                clickedButton.style.backgroundColor = 'rgba(76, 175, 80, 0.2)';
+                clickedButton.style.color = '#4caf50';
+                clickedButton.style.borderColor = '#4caf50';
+                
+                setTimeout(() => {
+                    clickedButton.textContent = originalText;
+                    clickedButton.style.backgroundColor = '';
+                    clickedButton.style.color = '';
+                    clickedButton.style.borderColor = '';
+                }, 1000);
+            }
         }
         
         function addAlbumToQueue() {
