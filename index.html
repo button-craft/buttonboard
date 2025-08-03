@@ -660,6 +660,8 @@
             }
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.23.0/firebase-app-compat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.23.0/firebase-firestore-compat.min.js"></script>
     <script>
         // Fallback font loading
         if (!document.fonts.check("12px Fredoka")) {
@@ -696,24 +698,15 @@
 <!-- Songs View (existing content) -->
 <div class="songs-view" id="songsView">
     <div class="chart-date">
-        WK/O July 27, 2025
+        WK/O August 3, 2025
     </div>
     
     <div class="biggest-jump">
-        <img src="img/AV2.jpeg" alt="Album Cover" class="cover">
+        <img src="img/JIG" alt="Album Cover" class="cover">
         <div class="biggest-jump-info">
-            <h3>HOT SHOT DEBUT</h3>
-            <h4>Atlanta Prime V2</h4>
-            <p>Ray & EJ • Debuts at #4!</p>
-        </div>
-    </div>
-    
-    <div class="biggest-jump" style="background-color: #1a1a40; border-color: #0a0a20;">
-        <img src="img/IMG_5081.jpeg" alt="Album Cover" class="cover">
-        <div class="biggest-jump-info">
-            <h3 style="color: #0061ff;">BIGGEST DROP THIS WEEK</h3>
-            <h4>Upsies</h4>
-            <p>EJ & Ray • Dropped from #5 to #8 (-3)</p>
+            <h3>BACK TO #1</h3>
+            <h4>JIG (Janna is a Hoe)</h4>
+            <p>Ray, EJ & Ryan • Returns to #1 (+1)!</p>
         </div>
     </div>
     
@@ -729,6 +722,52 @@
         
         <div id="chart-body">
             <!-- Chart rows will be inserted here by JavaScript -->
+        </div>
+    </div>
+    
+    <!-- Voting Section -->
+    <div style="margin-top: 40px; max-width: 1000px; width: 100%;">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <h2 style="color: #ff3d3d; font-size: clamp(24px, 4vw, 32px); font-weight: 600; margin-bottom: 10px;">What's Next?</h2>
+            <p style="color: #b0b0b0; font-size: clamp(14px, 2.5vw, 18px); margin-bottom: 25px;">Vote what songs you want to chart next Sunday.</p>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 30px;">
+            <!-- Preorder Option -->
+            <div class="vote-option" onclick="vote('preorder')" data-song="preorder">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                    <img src="img/Gemsie%20Sings" alt="Gemsie Sings" style="width: 60px; height: 60px; border-radius: 8px; object-fit: cover;">
+                    <div>
+                        <h3 style="color: #f0f0f0; font-size: 18px; font-weight: 500; margin-bottom: 3px;">Preorder</h3>
+                        <p style="color: #b0b0b0; font-size: 14px;">EJ</p>
+                    </div>
+                </div>
+                <div class="vote-count" id="preorder-count">0 votes</div>
+            </div>
+            
+            <!-- Think About it Song Option -->
+            <div class="vote-option" onclick="vote('think-about-it')" data-song="think-about-it">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                    <img src="img/Gemsie%20Sings" alt="Gemsie Sings" style="width: 60px; height: 60px; border-radius: 8px; object-fit: cover;">
+                    <div>
+                        <h3 style="color: #f0f0f0; font-size: 18px; font-weight: 500; margin-bottom: 3px;">Think About it Song</h3>
+                        <p style="color: #b0b0b0; font-size: 14px;">EJ</p>
+                    </div>
+                </div>
+                <div class="vote-count" id="think-about-it-count">0 votes</div>
+            </div>
+            
+            <!-- None Option -->
+            <div class="vote-option" onclick="vote('none')" data-song="none">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                    <div style="width: 60px; height: 60px; border-radius: 8px; background: linear-gradient(135deg, #2d2d2d, #1e1e1e); display: flex; align-items: center; justify-content: center; color: #b0b0b0; font-size: 24px;">✓</div>
+                    <div>
+                        <h3 style="color: #f0f0f0; font-size: 18px; font-weight: 500; margin-bottom: 3px;">None</h3>
+                        <p style="color: #b0b0b0; font-size: 14px;">The chart is fine</p>
+                    </div>
+                </div>
+                <div class="vote-count" id="none-count">0 votes</div>
+            </div>
         </div>
     </div>
 </div>
@@ -751,7 +790,7 @@
                             <span class="stat-label">#1 Hits</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">14</span>
+                            <span class="stat-number">17</span>
                             <span class="stat-label">Tracks</span>
                         </div>
                     </div>
@@ -773,7 +812,7 @@
                             <span class="stat-label">#1 Hits</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">9</span>
+                            <span class="stat-number">13</span>
                             <span class="stat-label">Tracks</span>
                         </div>
                     </div>
@@ -795,7 +834,7 @@
                             <span class="stat-label">#1 Hits</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">2</span>
+                            <span class="stat-number">3</span>
                             <span class="stat-label">Tracks</span>
                         </div>
                     </div>
@@ -879,23 +918,23 @@
     const chartData = [
         {
             position: 1,
-            albumCover: "img/Atlanta.png",
-            title: "Atlanta State of Prime",
-            artist: "Ray, EJ, and Claire",
-            peak: 1,
-            streak: 2,
-            prevPosition: "1",
-            trend: "same"
-        },
-        {
-            position: 2,
             albumCover: "img/JIG",
             title: "JIG (Janna is a Hoe)",
             artist: "Ray, EJ & Ryan",
             peak: 1,
-            streak: 5,
-            prevPosition: "3",
+            streak: 6,
+            prevPosition: "2",
             trend: "up"
+        },
+        {
+            position: 2,
+            albumCover: "img/Atlanta.png",
+            title: "Atlanta State of Prime",
+            artist: "Ray, EJ, and Claire",
+            peak: 1,
+            streak: 3,
+            prevPosition: "1",
+            trend: "down"
         },
         {
             position: 3,
@@ -903,19 +942,19 @@
             title: "We Didn't Start the Cleetus",
             artist: "Ray",
             peak: 1,
-            streak: 4,
-            prevPosition: "2",
-            trend: "down"
+            streak: 5,
+            prevPosition: "3",
+            trend: "same"
         },
         {
             position: 4,
-            albumCover: "img/AV2.jpeg",
-            title: "Atlanta Prime V2",
-            artist: "Ray & EJ",
+            albumCover: "img/SS.png",
+            title: "EJ's Base",
+            artist: "Claire & Ray",
             peak: 4,
-            streak: 1,
-            prevPosition: "NEW",
-            trend: "new"
+            streak: 3,
+            prevPosition: "7",
+            trend: "up"
         },
         {
             position: 5,
@@ -923,59 +962,59 @@
             title: "voidmaxmpornhub",
             artist: "Ray",
             peak: 5,
-            streak: 2,
-            prevPosition: "6",
-            trend: "up"
+            streak: 3,
+            prevPosition: "5",
+            trend: "same"
         },
         {
             position: 6,
-            albumCover: "img/Summertime%20Hits%20Vol.%203",
-            title: "ATLANTA PRIME",
+            albumCover: "img/AV2.jpeg",
+            title: "Atlanta Prime V2",
             artist: "Ray & EJ",
-            peak: 3,
-            streak: 5,
-            prevPosition: "5",
-            trend: "down"
-        },
-        {
-            position: 7,
-            albumCover: "img/SS.png",
-            title: "EJ's Base",
-            artist: "BUTTON!!!",
             peak: 4,
             streak: 2,
             prevPosition: "4",
             trend: "down"
         },
         {
+            position: 7,
+            albumCover: "img/Summertime%20Hits%20Vol.%203",
+            title: "ATLANTA PRIME",
+            artist: "Ray & EJ",
+            peak: 3,
+            streak: 6,
+            prevPosition: "6",
+            trend: "down"
+        },
+        {
             position: 8,
+            albumCover: "img/Summertime%20Hits%20Vol.%204",
+            title: "ketchup",
+            artist: "Ray, EJ & Ryan",
+            peak: 8,
+            streak: 2,
+            prevPosition: "9",
+            trend: "up"
+        },
+        {
+            position: 9,
             albumCover: "img/IMG_5081.jpeg",
             title: "Upsies",
             artist: "EJ & Ray",
             peak: 5,
-            streak: 2,
-            prevPosition: "5",
+            streak: 3,
+            prevPosition: "8",
             trend: "down"
-        },
-        {
-            position: 9,
-            albumCover: "img/Summertime%20Hits%20Vol.%204",
-            title: "ketchup",
-            artist: "Ray, EJ & Ryan",
-            peak: 9,
-            streak: 1,
-            prevPosition: "NEW",
-            trend: "new"
         },
         {
             position: 10,
-            albumCover: "img/Gemsie%20Sings",
-            title: "Preorder",
-            artist: "EJ",
-            peak: 7,
-            streak: 2,
-            prevPosition: "7",
-            trend: "down"
+            albumCover: "img/Summertime%20Hits%20Vol.%203",
+            title: "boat",
+            artist: "Ray & EJ",
+            peak: 10,
+            streak: 1,
+            prevPosition: "NEW",
+            trend: "new"
         }
     ];
     
@@ -1124,6 +1163,135 @@
             });
         });
     }
+    
+    // Voting System with Firestore
+    let userVote = localStorage.getItem('userVote');
+    const votes = { preorder: 0, 'think-about-it': 0, none: 0 };
+    
+    // Firebase Configuration - REPLACE WITH YOUR CONFIG
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD_0WDSsiXhfpMNyg8K79bO5lCLQlyu9tc",
+  authDomain: "button-board-d54e5.firebaseapp.com",
+  projectId: "button-board-d54e5",
+  storageBucket: "button-board-d54e5.firebasestorage.app",
+  messagingSenderId: "10645945353",
+  appId: "1:10645945353:web:fae5adaebc10bad7538cd8",
+  measurementId: "G-95P10XVJ8Q"
+};
+
+    
+    // Initialize Firebase
+    let db;
+    try {
+        firebase.initializeApp(firebaseConfig);
+        db = firebase.firestore();
+        console.log('Firebase initialized successfully');
+        listenToVotes();
+    } catch (error) {
+        console.log('Firebase not configured yet:', error.message);
+    }
+    
+    function vote(option) {
+        if (userVote) {
+            alert('You have already voted this week!');
+            return;
+        }
+        
+        // Update UI immediately
+        document.querySelectorAll('.vote-option').forEach(opt => {
+            opt.classList.remove('selected');
+        });
+        document.querySelector(`[data-song="${option}"]`).classList.add('selected');
+        
+        // Store vote locally
+        localStorage.setItem('userVote', option);
+        userVote = option;
+        
+        // Update Firestore if configured
+        if (db) {
+            updateFirestoreVote(option);
+        } else {
+            // Fallback to local count
+            votes[option]++;
+            updateVoteDisplay();
+        }
+        
+        alert('Vote submitted! Thank you for voting.');
+    }
+    
+    function updateVoteDisplay() {
+        document.getElementById('preorder-count').textContent = `${votes.preorder} votes`;
+        document.getElementById('think-about-it-count').textContent = `${votes['think-about-it']} votes`;
+        document.getElementById('none-count').textContent = `${votes.none} votes`;
+    }
+    
+    function updateFirestoreVote(option) {
+        const voteRef = db.collection('votes').doc('weekly-aug-3-2025');
+        
+        // Use transaction to safely increment
+        db.runTransaction((transaction) => {
+            return transaction.get(voteRef).then((doc) => {
+                if (!doc.exists) {
+                    // Create the document if it doesn't exist
+                    transaction.set(voteRef, {
+                        preorder: option === 'preorder' ? 1 : 0,
+                        'think-about-it': option === 'think-about-it' ? 1 : 0,
+                        none: option === 'none' ? 1 : 0,
+                        lastUpdated: firebase.firestore.FieldValue.serverTimestamp()
+                    });
+                } else {
+                    // Increment the existing count
+                    const currentCount = doc.data()[option] || 0;
+                    transaction.update(voteRef, {
+                        [option]: currentCount + 1,
+                        lastUpdated: firebase.firestore.FieldValue.serverTimestamp()
+                    });
+                }
+            });
+        }).then(() => {
+            console.log('Vote recorded successfully!');
+        }).catch((error) => {
+            console.error('Error recording vote:', error);
+            // Fallback to local count
+            votes[option]++;
+            updateVoteDisplay();
+        });
+    }
+    
+    function listenToVotes() {
+        const voteRef = db.collection('votes').doc('weekly-aug-3-2025');
+        
+        voteRef.onSnapshot((doc) => {
+            if (doc.exists) {
+                const data = doc.data();
+                votes.preorder = data.preorder || 0;
+                votes['think-about-it'] = data['think-about-it'] || 0;
+                votes.none = data.none || 0;
+                updateVoteDisplay();
+                console.log('Vote counts updated from Firestore');
+            } else {
+                console.log('No vote document found, creating...');
+                // Initialize the document
+                voteRef.set({
+                    preorder: 0,
+                    'think-about-it': 0,
+                    none: 0,
+                    lastUpdated: firebase.firestore.FieldValue.serverTimestamp()
+                });
+            }
+        }, (error) => {
+            console.error('Error listening to votes:', error);
+        });
+    }
+    
+    // Show user's previous vote if exists
+    if (userVote) {
+        document.querySelector(`[data-song="${userVote}"]`)?.classList.add('selected');
+    }
+    
+    // Initialize vote display
+    updateVoteDisplay();
 </script>
 
 </body>
