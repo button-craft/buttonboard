@@ -359,12 +359,12 @@
         }
         
         .chart-header-desktop > div.sort-asc::after {
-            content: ' â–²';
+            content: ' ▲';
             font-size: 10px;
         }
         
         .chart-header-desktop > div.sort-desc::after {
-            content: ' â–¼';
+            content: ' ▼';
             font-size: 10px;
         }
         
@@ -680,7 +680,7 @@
     <a href="stream.html" style="display: inline-block; background: linear-gradient(45deg, #ff3d3d, #ff6b6b) !important; color: white !important; text-decoration: none; padding: 12px 30px; border-radius: 25px; font-weight: 500; font-size: 16px; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(255, 61, 61, 0.3);" 
        onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(255, 61, 61, 0.4)';" 
        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(255, 61, 61, 0.3)';">
-        BUTTIFYÂ®
+        BUTTIFY®
     </a>
 </div>
 
@@ -704,7 +704,7 @@
         <div class="biggest-jump-info">
             <h3>BACK TO #1</h3>
             <h4>JIG (Janna is a Hoe)</h4>
-            <p>Ray, EJ & Ryan â€¢ Returns to #1 (+1)!</p>
+            <p>Ray, EJ & Ryan • Returns to #1 (+1)!</p>
         </div>
     </div>
     
@@ -1005,11 +1005,11 @@
             
             if (item.trend === 'up') {
                 const change = parseInt(item.prevPosition) - item.position;
-                trendIcon = 'â–²';
+                trendIcon = '▲';
                 trendClass = 'up';
             } else if (item.trend === 'down') {
                 const change = item.position - parseInt(item.prevPosition);
-                trendIcon = 'â–¼';
+                trendIcon = '▼';
                 trendClass = 'down';
             } else if (item.trend === 'same') {
                 trendIcon = '=';
