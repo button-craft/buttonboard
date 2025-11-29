@@ -359,12 +359,12 @@
         }
         
         .chart-header-desktop > div.sort-asc::after {
-            content: ' ▲';
+            content: ' â–²';
             font-size: 10px;
         }
         
         .chart-header-desktop > div.sort-desc::after {
-            content: ' ▼';
+            content: ' â–¼';
             font-size: 10px;
         }
         
@@ -660,8 +660,6 @@
             }
         }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.23.0/firebase-app-compat.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.23.0/firebase-firestore-compat.min.js"></script>
     <script>
         // Fallback font loading
         if (!document.fonts.check("12px Fredoka")) {
@@ -673,7 +671,7 @@
     </script>
 </head>
 <body style="background-color: #121212 !important; color: #f0f0f0 !important;">
-    <div style="background-color: #121212 !important; min-height: 100vh; width: 100%;">
+    <div style="background-color: #121212 !important; min-height: 100vh; width: 100%; display: flex; flex-direction: column; align-items: center;">
     <header>
         <h1 class="logo">BUTTON<span>Board</span> HOT 100</h1>
     </header>
@@ -682,7 +680,7 @@
     <a href="stream.html" style="display: inline-block; background: linear-gradient(45deg, #ff3d3d, #ff6b6b) !important; color: white !important; text-decoration: none; padding: 12px 30px; border-radius: 25px; font-weight: 500; font-size: 16px; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(255, 61, 61, 0.3);" 
        onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(255, 61, 61, 0.4)';" 
        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(255, 61, 61, 0.3)';">
-        BUTTIFY®
+        BUTTIFYÂ®
     </a>
 </div>
 
@@ -702,11 +700,11 @@
     </div>
     
     <div class="biggest-jump">
-        <img src="img/JIG" alt="Album Cover" class="cover">
+        <img src="img/JIG.png" alt="Album Cover" class="cover">
         <div class="biggest-jump-info">
             <h3>BACK TO #1</h3>
             <h4>JIG (Janna is a Hoe)</h4>
-            <p>Ray, EJ & Ryan • Returns to #1 (+1)!</p>
+            <p>Ray, EJ & Ryan â€¢ Returns to #1 (+1)!</p>
         </div>
     </div>
     
@@ -722,52 +720,6 @@
         
         <div id="chart-body">
             <!-- Chart rows will be inserted here by JavaScript -->
-        </div>
-    </div>
-    
-    <!-- Voting Section -->
-    <div style="margin-top: 40px; max-width: 1000px; width: 100%;">
-        <div style="text-align: center; margin-bottom: 30px;">
-            <h2 style="color: #ff3d3d; font-size: clamp(24px, 4vw, 32px); font-weight: 600; margin-bottom: 10px;">What's Next?</h2>
-            <p style="color: #b0b0b0; font-size: clamp(14px, 2.5vw, 18px); margin-bottom: 25px;">Vote what songs you want to chart next Sunday.</p>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 30px;">
-            <!-- Preorder Option -->
-            <div class="vote-option" onclick="vote('preorder')" data-song="preorder">
-                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                    <img src="img/Gemsie%20Sings" alt="Gemsie Sings" style="width: 60px; height: 60px; border-radius: 8px; object-fit: cover;">
-                    <div>
-                        <h3 style="color: #f0f0f0; font-size: 18px; font-weight: 500; margin-bottom: 3px;">Preorder</h3>
-                        <p style="color: #b0b0b0; font-size: 14px;">EJ</p>
-                    </div>
-                </div>
-                <div class="vote-count" id="preorder-count">0 votes</div>
-            </div>
-            
-            <!-- Think About it Song Option -->
-            <div class="vote-option" onclick="vote('think-about-it')" data-song="think-about-it">
-                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                    <img src="img/Gemsie%20Sings" alt="Gemsie Sings" style="width: 60px; height: 60px; border-radius: 8px; object-fit: cover;">
-                    <div>
-                        <h3 style="color: #f0f0f0; font-size: 18px; font-weight: 500; margin-bottom: 3px;">Think About it Song</h3>
-                        <p style="color: #b0b0b0; font-size: 14px;">EJ</p>
-                    </div>
-                </div>
-                <div class="vote-count" id="think-about-it-count">0 votes</div>
-            </div>
-            
-            <!-- None Option -->
-            <div class="vote-option" onclick="vote('none')" data-song="none">
-                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                    <div style="width: 60px; height: 60px; border-radius: 8px; background: linear-gradient(135deg, #2d2d2d, #1e1e1e); display: flex; align-items: center; justify-content: center; color: #b0b0b0; font-size: 24px;">✓</div>
-                    <div>
-                        <h3 style="color: #f0f0f0; font-size: 18px; font-weight: 500; margin-bottom: 3px;">None</h3>
-                        <p style="color: #b0b0b0; font-size: 14px;">The chart is fine</p>
-                    </div>
-                </div>
-                <div class="vote-count" id="none-count">0 votes</div>
-            </div>
         </div>
     </div>
 </div>
@@ -918,7 +870,7 @@
     const chartData = [
         {
             position: 1,
-            albumCover: "img/JIG",
+            albumCover: "img/JIG.png",
             title: "JIG (Janna is a Hoe)",
             artist: "Ray, EJ & Ryan",
             peak: 1,
@@ -1053,11 +1005,11 @@
             
             if (item.trend === 'up') {
                 const change = parseInt(item.prevPosition) - item.position;
-                trendIcon = '▲';
+                trendIcon = 'â–²';
                 trendClass = 'up';
             } else if (item.trend === 'down') {
                 const change = item.position - parseInt(item.prevPosition);
-                trendIcon = '▼';
+                trendIcon = 'â–¼';
                 trendClass = 'down';
             } else if (item.trend === 'same') {
                 trendIcon = '=';
@@ -1163,132 +1115,6 @@
             });
         });
     }
-    
-    // Voting System with Firestore
-    let userVote = localStorage.getItem('userVote');
-    const votes = { preorder: 0, 'think-about-it': 0, none: 0 };
-    
-    // Firebase Configuration - REPLACE WITH YOUR CONFIG
-    const firebaseConfig = {
-        apiKey: "your-api-key-here",
-        authDomain: "your-project-id.firebaseapp.com",
-        projectId: "your-project-id",
-        storageBucket: "your-project-id.appspot.com",
-        messagingSenderId: "your-sender-id",
-        appId: "your-app-id"
-    };
-    
-    // Initialize Firebase
-    let db;
-    try {
-        firebase.initializeApp(firebaseConfig);
-        db = firebase.firestore();
-        console.log('Firebase initialized successfully');
-        listenToVotes();
-    } catch (error) {
-        console.log('Firebase not configured yet:', error.message);
-    }
-    
-    function vote(option) {
-        if (userVote) {
-            alert('You have already voted this week!');
-            return;
-        }
-        
-        // Update UI immediately
-        document.querySelectorAll('.vote-option').forEach(opt => {
-            opt.classList.remove('selected');
-        });
-        document.querySelector(`[data-song="${option}"]`).classList.add('selected');
-        
-        // Store vote locally
-        localStorage.setItem('userVote', option);
-        userVote = option;
-        
-        // Update Firestore if configured
-        if (db) {
-            updateFirestoreVote(option);
-        } else {
-            // Fallback to local count
-            votes[option]++;
-            updateVoteDisplay();
-        }
-        
-        alert('Vote submitted! Thank you for voting.');
-    }
-    
-    function updateVoteDisplay() {
-        document.getElementById('preorder-count').textContent = `${votes.preorder} votes`;
-        document.getElementById('think-about-it-count').textContent = `${votes['think-about-it']} votes`;
-        document.getElementById('none-count').textContent = `${votes.none} votes`;
-    }
-    
-    function updateFirestoreVote(option) {
-        const voteRef = db.collection('votes').doc('weekly-aug-3-2025');
-        
-        // Use transaction to safely increment
-        db.runTransaction((transaction) => {
-            return transaction.get(voteRef).then((doc) => {
-                if (!doc.exists) {
-                    // Create the document if it doesn't exist
-                    transaction.set(voteRef, {
-                        preorder: option === 'preorder' ? 1 : 0,
-                        'think-about-it': option === 'think-about-it' ? 1 : 0,
-                        none: option === 'none' ? 1 : 0,
-                        lastUpdated: firebase.firestore.FieldValue.serverTimestamp()
-                    });
-                } else {
-                    // Increment the existing count
-                    const currentCount = doc.data()[option] || 0;
-                    transaction.update(voteRef, {
-                        [option]: currentCount + 1,
-                        lastUpdated: firebase.firestore.FieldValue.serverTimestamp()
-                    });
-                }
-            });
-        }).then(() => {
-            console.log('Vote recorded successfully!');
-        }).catch((error) => {
-            console.error('Error recording vote:', error);
-            // Fallback to local count
-            votes[option]++;
-            updateVoteDisplay();
-        });
-    }
-    
-    function listenToVotes() {
-        const voteRef = db.collection('votes').doc('weekly-aug-3-2025');
-        
-        voteRef.onSnapshot((doc) => {
-            if (doc.exists) {
-                const data = doc.data();
-                votes.preorder = data.preorder || 0;
-                votes['think-about-it'] = data['think-about-it'] || 0;
-                votes.none = data.none || 0;
-                updateVoteDisplay();
-                console.log('Vote counts updated from Firestore');
-            } else {
-                console.log('No vote document found, creating...');
-                // Initialize the document
-                voteRef.set({
-                    preorder: 0,
-                    'think-about-it': 0,
-                    none: 0,
-                    lastUpdated: firebase.firestore.FieldValue.serverTimestamp()
-                });
-            }
-        }, (error) => {
-            console.error('Error listening to votes:', error);
-        });
-    }
-    
-    // Show user's previous vote if exists
-    if (userVote) {
-        document.querySelector(`[data-song="${userVote}"]`)?.classList.add('selected');
-    }
-    
-    // Initialize vote display
-    updateVoteDisplay();
 </script>
 
 </body>
