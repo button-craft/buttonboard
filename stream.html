@@ -103,20 +103,38 @@ img { display:block; }
 .tr-q:hover { color:var(--fg); }
 .bonus-label { font-size:12px; color:var(--fg2); font-weight:600; text-transform:uppercase; letter-spacing:.08em; margin:22px 0 6px 10px; }
 
-/* ── DISC DIVIDER ── */
-.disc-label {
-  font-size:22px; font-weight:700; color:var(--fg);
-  margin:28px 0 10px 0; padding-bottom:10px;
-  border-bottom:1px solid var(--ln);
-  letter-spacing:-.01em;
-}
-
-/* ── TEASER / UNRELEASED TRACKS ── */
+/* ── TEASER / UNRELEASED ── */
 .tr.teaser { cursor:default; opacity:0.38; }
 .tr.teaser:hover { background:transparent; }
 .tr.teaser .tr-num-pl { display:none !important; }
 .tr.teaser .tr-num-n { opacity:1 !important; }
 .tr.teaser .tr-q { display:none; }
+
+/* ── GSS DISC TOGGLE ── */
+.gss-alb-wrap {
+  position:relative; width:150px; height:150px; flex-shrink:0; cursor:pointer;
+}
+.gss-alb-wrap .alb-art {
+  position:absolute; inset:0; width:150px; height:150px;
+  transition:opacity .35s, transform .35s;
+  border-radius:6px;
+}
+.gss-alb-wrap .art-d1 { opacity:1; transform:scale(1); }
+.gss-alb-wrap .art-d2 { opacity:0; transform:scale(.92); }
+.gss-alb-wrap.disc2 .art-d1 { opacity:0; transform:scale(.92); }
+.gss-alb-wrap.disc2 .art-d2 { opacity:1; transform:scale(1); }
+.gss-disc-hint {
+  position:absolute; bottom:6px; left:50%; transform:translateX(-50%);
+  font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  background:rgba(0,0,0,.65); color:var(--fg2); border-radius:500px;
+  padding:3px 9px; white-space:nowrap; pointer-events:none;
+  transition:opacity .2s;
+}
+.gss-alb-wrap:hover .gss-disc-hint { opacity:1; }
+.gss-disc-hint { opacity:0; }
+
+.gss-disc-panel { display:none; }
+.gss-disc-panel.on { display:block; }
 
 .sg-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(148px,1fr)); gap:16px; margin-top:16px; }
 .sg-card { background:var(--bg2); border-radius:8px; padding:12px; cursor:pointer; transition:background .18s; }
@@ -184,6 +202,8 @@ img { display:block; }
   #main { padding:0 14px calc(var(--ph) + 16px); }
   .hero { margin:20px -14px 0; padding:36px 14px 20px; }
   .alb-art { width:100px; height:100px; }
+  .gss-alb-wrap { width:100px; height:100px; }
+  .gss-alb-wrap .alb-art { width:100px; height:100px; }
   .tl-head { display:none; }
   .tr-q { opacity:1; }
   .sg-grid { grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px; }
@@ -277,9 +297,9 @@ const VOLS = [
     {n:4, title:'Impostor Imperceptible', artist:'BUTTON!!!',       src:'1.4 Impostor Imperceptible.mp3'},
   ]},
   { id:'sh2', vol:2, year:2022, cover:'img/Summertime%20Hits%20Vol.%202', tracks:[
-    {n:1, title:'Flipping With Anderson',    artist:'Ray',                     src:'2.1 Flipping With Anderson.mp3'},
+    {n:1, title:'Flipping With Anderson',    artist:'Ray',                      src:'2.1 Flipping With Anderson.mp3'},
     {n:2, title:'Twenty Dollars (ft. Kate)', artist:'Claire & Kate, prod. Ray', src:'2.2 Twenty Dollars.mp3'},
-    {n:3, title:'Fly on the Shoe',           artist:'David, prod. Ray',        src:'2.3 Fly on the Shoe.mp3'},
+    {n:3, title:'Fly on the Shoe',           artist:'David, prod. Ray',         src:'2.3 Fly on the Shoe.mp3'},
   ]},
   { id:'sh3', vol:3, year:2024, cover:'img/Summertime%20Hits%20Vol.%203', tracks:[
     {n:1, title:'GYATT RIZZ SIGMA',      artist:'Ray',      src:'3.1 GYATT RIZZ SIGMAA.mp3'},
@@ -287,16 +307,16 @@ const VOLS = [
     {n:3, title:'boat with EJ',          artist:'Ray & EJ', src:'3.3 boat.mp3'},
   ]},
   { id:'sh4', vol:4, year:2025, cover:'img/Summertime%20Hits%20Vol.%204', tracks:[
-    {n:1, title:'BUTTON(Craft)Cards',         artist:'Kate, prod. Ray', src:'4.1 BUTTON(Craft) Cards.mp3'},
-    {n:2, title:'ketchup (ft. EJ, Ryan)',      artist:'Ray, EJ & Ryan',  src:'4.2 ketchup.mp3'},
-    {n:3, title:'voidmaxmpornhub',             artist:'Ray',             src:'4.3 voidmaxmpornhub.mp3'},
-    {n:4, title:"We Didn't Start the Cleetus", artist:'Ray',             src:'4.4 We Didnt Start The Cleetus.mp3'},
+    {n:1, title:'BUTTON(Craft)Cards',          artist:'Kate, prod. Ray', src:'4.1 BUTTON(Craft) Cards.mp3'},
+    {n:2, title:'ketchup (ft. EJ, Ryan)',       artist:'Ray, EJ & Ryan',  src:'4.2 ketchup.mp3'},
+    {n:3, title:'voidmaxmpornhub',              artist:'Ray',             src:'4.3 voidmaxmpornhub.mp3'},
+    {n:4, title:"We Didn't Start the Cleetus",  artist:'Ray',             src:'4.4 We Didnt Start The Cleetus.mp3'},
   ]},
   { id:'sh5', vol:5, year:2025, cover:'img/IMG_5081.jpeg', tracks:[
     {n:1, title:"This Land Is Our Land - '25 Remaster (ft. Ray)", artist:'David & Ray', src:'5.1 This Land Is Our Land.mp3'},
-    {n:2, title:'Upsies with Ray',                                 artist:'EJ & Ray',   src:'5.2 Upsies.mp3'},
-    {n:3, title:'Shoulder with EJ',                                artist:'Ray & EJ',   src:'5.3 Shoulder.mp3'},
-    {n:4, title:'Dawg Days with Ray',                              artist:'EJ & Ray',   src:'5.4 Dawg Days.mp3'},
+    {n:2, title:'Upsies with Ray',                                  artist:'EJ & Ray',   src:'5.2 Upsies.mp3'},
+    {n:3, title:'Shoulder with EJ',                                 artist:'Ray & EJ',   src:'5.3 Shoulder.mp3'},
+    {n:4, title:'Dawg Days with Ray',                               artist:'EJ & Ray',   src:'5.4 Dawg Days.mp3'},
   ]},
   { id:'sh6', vol:6, year:2026, cover:'img/IMG_7454.png', tracks:[
     {n:1, title:'D.I.G (ft. Janna)', artist:'Ray & Janna', src:'6.1 D.I.G.mp3'},
@@ -307,11 +327,11 @@ const SHITS = { id:'shits', year:2025, cover:'img/SS.png', tracks:[
   {n:1, title:"EJ's Base (ft. Ray)", artist:'Claire & Ray', src:'EJs Base.mp3'},
 ]};
 const SINGLES = [
-  {id:'ap2',   title:'Atlanta Prime V2 with EJ',                artist:'Ray & EJ',        year:2025, cover:'img/Summertime%20Hits%20Vol.%203', src:'Atlanta Prime V2.mp3'},
-  {id:'jig',   title:'JIG (Janna is a Hoe) (ft. EJ, Ryan)',    artist:'Ray, EJ & Ryan',  year:2024, cover:'img/JIG.png',     src:'JIG.mp3'},
-  {id:'jigrx', title:'JIG (Holiday Remix) (ft. EJ, Ryan)',      artist:'Ray, EJ & Ryan',  year:2025, cover:'img/jigchr.png', src:'JIG (Holiday Remix).wav'},
-  {id:'asp',   title:'Atlanta State of Prime (ft. EJ, Claire)', artist:'Ray, EJ & Claire',year:2025, cover:'img/Atlanta.png', src:'Atlanta State of Prime.mp3'},
-  {id:'dtth',  title:"Don't Touch The Hair",                    artist:'EJ',              year:2026, cover:'img/DTTH.jpeg',   src:'DontTouchTheHair.mp3'},
+  {id:'ap2',   title:'Atlanta Prime V2 with EJ',                artist:'Ray & EJ',         year:2025, cover:'img/Summertime%20Hits%20Vol.%203', src:'Atlanta Prime V2.mp3'},
+  {id:'jig',   title:'JIG (Janna is a Hoe) (ft. EJ, Ryan)',    artist:'Ray, EJ & Ryan',   year:2024, cover:'img/JIG.png',     src:'JIG.mp3'},
+  {id:'jigrx', title:'JIG (Holiday Remix) (ft. EJ, Ryan)',      artist:'Ray, EJ & Ryan',   year:2025, cover:'img/jigchr.png', src:'JIG (Holiday Remix).wav'},
+  {id:'asp',   title:'Atlanta State of Prime (ft. EJ, Claire)', artist:'Ray, EJ & Claire', year:2025, cover:'img/Atlanta.png', src:'Atlanta State of Prime.mp3'},
+  {id:'dtth',  title:"Don't Touch The Hair",                    artist:'EJ',               year:2026, cover:'img/DTTH.jpeg',   src:'DontTouchTheHair.mp3'},
 ];
 const GEMSIE_OG = { id:'gog', year:2020, cover:'img/Gemsie%20Sings', tracks:[
   {n:1,   title:'All the Single Ladies', artist:'EJ', src:'All the Single Ladies.mp3'},
@@ -335,29 +355,30 @@ const GSS_D1 = [
   {n:9,  title:'16',                            artist:'EJ',         src:'16.mp3'},
   {n:10, title:'Wetter',                        artist:'EJ',         src:'wetter.mp3'},
 ];
-// GSS Disc 1 bonus remixes — playable
+// GSS Disc 1 bonus — greyed out
 const GSS_D1_BONUS = [
-  {n:'💎', title:"The Door Still Open", artist:'EJ', src:'thedoorstillopenDeluxe.mp3', bonus:true},
-  {n:'💎', title:'Late Delivery',        artist:'EJ', src:'latedeliveryDeluxe.mp3',     bonus:true},
+  {n:'💎', title:'The Door Still Open',    artist:'EJ', src:'thedoorstillopenDeluxe.mp3', bonus:true, teaser:true},
+  {n:'💎', title:'Late Delivery',           artist:'EJ', src:'latedeliveryDeluxe.mp3',     bonus:true, teaser:true},
+  {n:'💎', title:'Ricecakes and Applebees', artist:'EJ', src:'ricecakesDeluxe.mp3',         bonus:true, teaser:true},
 ];
-// GSS Disc 2 — teaser (unplayable, greyed out)
+// GSS Disc 2 — teaser
 const GSS_D2 = [
-  {n:1,  title:'GEMSTONE',                      artist:'EJ',       src:'gemstone.mp3',       teaser:true},
-  {n:2,  title:'Crystal Cocoon',                artist:'EJ',       src:'crystalcocoon.mp3',  teaser:true},
-  {n:3,  title:'HEIST',                         artist:'EJ',       src:'heist.mp3',          teaser:true},
-  {n:4,  title:'Sidewinder',                    artist:'EJ',       src:'sidewinder.mp3',     teaser:true},
-  {n:5,  title:'DUOTONE (Interlude)',           artist:'EJ',       src:'duotoneinterlude.mp3',teaser:true},
-  {n:6,  title:'DUOTONE',                       artist:'EJ',       src:'duotone.mp3',        teaser:true},
-  {n:7,  title:'High Off Your Love (ft. Ray)',  artist:'EJ & Ray', src:'highoffyourlove.mp3', teaser:true},
-  {n:8,  title:'EVERYBODY',                     artist:'EJ',       src:'everybody.mp3',      teaser:true},
-  {n:9,  title:'Underground',                   artist:'EJ',       src:'underground.mp3',    teaser:true},
-  {n:10, title:'jaded',                         artist:'EJ & Ray', src:'jaded.mp3',          teaser:true},
-  {n:11, title:'Long Time',                     artist:'EJ',       src:'longtime.mp3',       teaser:true},
+  {n:1,  title:'GEMSTONE',                     artist:'EJ',       src:'gemstone.mp3',        teaser:true},
+  {n:2,  title:'Crystal Cocoon',               artist:'EJ',       src:'crystalcocoon.mp3',   teaser:true},
+  {n:3,  title:'HEIST',                        artist:'EJ',       src:'heist.mp3',           teaser:true},
+  {n:4,  title:'Sidewinder',                   artist:'EJ',       src:'sidewinder.mp3',      teaser:true},
+  {n:5,  title:'DUOTONE (Interlude)',          artist:'EJ',       src:'duotoneinterlude.mp3',teaser:true},
+  {n:6,  title:'DUOTONE',                      artist:'EJ',       src:'duotone.mp3',         teaser:true},
+  {n:7,  title:'High Off Your Love (ft. Ray)', artist:'EJ & Ray', src:'highoffyourlove.mp3', teaser:true},
+  {n:8,  title:'EVERYBODY',                    artist:'EJ',       src:'everybody.mp3',       teaser:true},
+  {n:9,  title:'Underground',                  artist:'EJ',       src:'underground.mp3',     teaser:true},
+  {n:10, title:'jaded',                        artist:'EJ & Ray', src:'jaded.mp3',           teaser:true},
+  {n:11, title:'Long Time',                    artist:'EJ',       src:'longtime.mp3',        teaser:true},
 ];
-
 const GSS = {
-  id:'gss', year:2026, cover:'img/GSS.jpeg',
-  disc1: GSS_D1, disc1bonus: GSS_D1_BONUS, disc2: GSS_D2
+  id:'gss', year:2026,
+  coverD1:'img/GSS.jpeg',
+  coverD2:'img/Copy of STILL SINGS.jpeg',
 };
 
 /* ── STATE ── */
@@ -365,63 +386,66 @@ const audio = new Audio();
 const S = { tid:null, title:'', artist:'', cover:'', playing:false, queue:[], qIdx:-1, qMode:false };
 
 /* ── UTILS ── */
-const tid = (aid,src) => `${aid}::${src}`;
-const fmt = s => isFinite(s)?`${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}`:'0:00';
+const tid     = (aid, src) => `${aid}::${src}`;
+const fmt     = s => isFinite(s) ? `${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}` : '0:00';
 const shuffle = a => { for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a; };
 
 function buildIdx() {
-  const r=[];
-  VOLS.forEach(v=>v.tracks.forEach(t=>r.push({title:t.title,artist:t.artist,cover:v.cover,src:t.src,album:`Summertime Hits Vol. ${v.vol}`,aid:v.id})));
-  SHITS.tracks.forEach(t=>r.push({title:t.title,artist:t.artist,cover:SHITS.cover,src:t.src,album:'Summertime Shits',aid:SHITS.id}));
-  SINGLES.forEach(s=>r.push({title:s.title,artist:s.artist,cover:s.cover,src:s.src,album:`Single (${s.year})`,aid:s.id}));
-  GEMSIE_OG.tracks.forEach(t=>r.push({title:t.title,artist:t.artist,cover:GEMSIE_OG.cover,src:t.src,album:'Gemsie Sings OG Album',aid:GEMSIE_OG.id}));
-  // Only index playable GSS tracks
-  [...GSS_D1, ...GSS_D1_BONUS].forEach(t=>r.push({title:t.title,artist:t.artist,cover:GSS.cover,src:t.src,album:'Gemsie Still Sings',aid:GSS.id}));
+  const r = [];
+  VOLS.forEach(v => v.tracks.forEach(t => r.push({title:t.title,artist:t.artist,cover:v.cover,src:t.src,album:`Summertime Hits Vol. ${v.vol}`,aid:v.id})));
+  SHITS.tracks.forEach(t => r.push({title:t.title,artist:t.artist,cover:SHITS.cover,src:t.src,album:'Summertime Shits',aid:SHITS.id}));
+  SINGLES.forEach(s => r.push({title:s.title,artist:s.artist,cover:s.cover,src:s.src,album:`Single (${s.year})`,aid:s.id}));
+  GEMSIE_OG.tracks.forEach(t => r.push({title:t.title,artist:t.artist,cover:GEMSIE_OG.cover,src:t.src,album:'Gemsie Sings OG Album',aid:GEMSIE_OG.id}));
+  GSS_D1.forEach(t => r.push({title:t.title,artist:t.artist,cover:GSS.coverD1,src:t.src,album:'Gemsie Still Sings',aid:GSS.id}));
   return r;
 }
 const IDX = buildIdx();
 
 /* ── PLAY ── */
-function play(tidKey,title,artist,src,cover) {
+function play(tidKey, title, artist, src, cover) {
   audio.pause(); audio.src=src;
-  Object.assign(S,{tid:tidKey,title,artist,cover,playing:true});
+  Object.assign(S, {tid:tidKey, title, artist, cover, playing:true});
   audio.play().catch(()=>{});
   renderPlayer(); highlightTracks();
 }
-const canNext=()=>S.qMode?S.qIdx<S.queue.length-1:S.queue.length>0;
-const canPrev=()=>(S.qMode&&S.qIdx>0)||audio.currentTime>3;
-function next(){
-  if(S.qMode&&S.qIdx<S.queue.length-1)S.qIdx++;
-  else if(!S.qMode&&S.queue.length){S.qMode=true;S.qIdx=0;}
+const canNext = () => S.qMode ? S.qIdx < S.queue.length-1 : S.queue.length > 0;
+const canPrev = () => (S.qMode && S.qIdx > 0) || audio.currentTime > 3;
+function next() {
+  if (S.qMode && S.qIdx < S.queue.length-1) S.qIdx++;
+  else if (!S.qMode && S.queue.length) { S.qMode=true; S.qIdx=0; }
   else return;
   const q=S.queue[S.qIdx]; play(q.tid,q.title,q.artist,q.src,q.cover); renderQueue();
 }
-function prev(){
-  if(audio.currentTime>3){audio.currentTime=0;return;}
-  if(S.qMode&&S.qIdx>0){S.qIdx--;const q=S.queue[S.qIdx];play(q.tid,q.title,q.artist,q.src,q.cover);renderQueue();}
+function prev() {
+  if (audio.currentTime > 3) { audio.currentTime=0; return; }
+  if (S.qMode && S.qIdx > 0) { S.qIdx--; const q=S.queue[S.qIdx]; play(q.tid,q.title,q.artist,q.src,q.cover); renderQueue(); }
 }
-function playAlbum(tracks,cover,aid,doShuffle){
-  const list=doShuffle?shuffle([...tracks]):[...tracks];
-  const f=list[0]; play(tid(aid,f.src),f.title,f.artist,f.src,cover);
+function playAlbum(tracks, cover, aid, doShuffle) {
+  const list = doShuffle ? shuffle([...tracks]) : [...tracks];
+  const f=list[0]; play(tid(aid,f.src), f.title, f.artist, f.src, cover);
   S.queue=list.slice(1).map(t=>({tid:tid(aid,t.src),title:t.title,artist:t.artist,src:t.src,cover}));
-  S.qIdx=-1;S.qMode=false;renderQueue();
+  S.qIdx=-1; S.qMode=false; renderQueue();
 }
 
 /* ── QUEUE ── */
-function addQ(item){
-  S.queue.push(item);renderQueue();
-  document.querySelectorAll(`.tr[data-tid="${item.tid}"] .tr-q`).forEach(b=>{const w=b.textContent;b.textContent='✓';b.style.color='#4caf50';setTimeout(()=>{b.textContent=w;b.style.color='';},900);});
+function addQ(item) {
+  S.queue.push(item); renderQueue();
+  document.querySelectorAll(`.tr[data-tid="${item.tid}"] .tr-q`).forEach(b=>{
+    const w=b.textContent; b.textContent='✓'; b.style.color='#4caf50';
+    setTimeout(()=>{b.textContent=w; b.style.color='';},900);
+  });
 }
-function removeQ(i){
-  if(S.qMode&&i<S.qIdx)S.qIdx--;else if(S.qMode&&i===S.qIdx){S.qMode=false;S.qIdx=-1;}
-  S.queue.splice(i,1);renderQueue();
+function removeQ(i) {
+  if (S.qMode && i < S.qIdx) S.qIdx--;
+  else if (S.qMode && i === S.qIdx) { S.qMode=false; S.qIdx=-1; }
+  S.queue.splice(i,1); renderQueue();
 }
-function renderQueue(){
-  const body=document.getElementById('qpBody'),badge=document.getElementById('qBadge'),n=S.queue.length;
-  badge.textContent=n;badge.classList.toggle('on',n>0);
+function renderQueue() {
+  const body=document.getElementById('qpBody'), badge=document.getElementById('qBadge'), n=S.queue.length;
+  badge.textContent=n; badge.classList.toggle('on',n>0);
   document.getElementById('nextBtn').disabled=!canNext();
   document.getElementById('prevBtn').disabled=!canPrev();
-  if(!n){body.innerHTML='<div class="qp-empty">No songs in queue.<br>Click + on any track to add it.</div>';return;}
+  if (!n) { body.innerHTML='<div class="qp-empty">No songs in queue.<br>Click + on any track to add it.</div>'; return; }
   body.innerHTML='';
   S.queue.forEach((q,i)=>{
     const el=document.createElement('div');
@@ -433,9 +457,9 @@ function renderQueue(){
 }
 
 /* ── PLAYER UI ── */
-function renderPlayer(){
+function renderPlayer() {
   const art=document.getElementById('plArt');
-  art.src=S.cover||'';art.style.display=S.cover?'block':'none';
+  art.src=S.cover||''; art.style.display=S.cover?'block':'none';
   document.getElementById('plTitle').innerHTML=S.title||'<span class="pl-idle">Select a track to play</span>';
   document.getElementById('plArtist').textContent=S.artist||'';
   document.getElementById('ppBtn').disabled=!S.title;
@@ -444,18 +468,19 @@ function renderPlayer(){
   document.getElementById('icPlay').style.display=S.playing?'none':'';
   document.getElementById('icPause').style.display=S.playing?'':'none';
 }
-function highlightTracks(){document.querySelectorAll('.tr').forEach(r=>r.classList.toggle('playing',r.dataset.tid===S.tid));}
+function highlightTracks() {
+  document.querySelectorAll('.tr').forEach(r=>r.classList.toggle('playing',r.dataset.tid===S.tid));
+}
 
 /* ── TRACK ROW ── */
-function mkRow(t,aid,cover){
+function mkRow(t, aid, cover) {
   const key=tid(aid,t.src);
   const row=document.createElement('div');
 
-  if(t.teaser){
-    // Greyed out, unplayable teaser row
+  if (t.teaser) {
     row.className='tr teaser';
     row.dataset.tid=key;
-    row.innerHTML=`<div class="tr-num"><span class="tr-num-n">${t.n??''}</span></div><div class="tr-info"><div class="tr-title">${t.title}</div><div class="tr-artist">${t.artist}</div></div>`;
+    row.innerHTML=`<div class="tr-num"><span class="tr-num-n">${t.n??''}</span></div><div class="tr-info"><div class="tr-title">${t.title}</div><div class="tr-artist">${t.artist}</div></div><div></div>`;
     return row;
   }
 
@@ -468,110 +493,112 @@ function mkRow(t,aid,cover){
 }
 
 /* ── ALBUM (standard) ── */
-function renderAlbum(data,containerId,albumTitle,albumArtist,albumYear,albumType){
-  const wrap=document.getElementById(containerId);if(!wrap)return;
-  const main=data.tracks.filter(t=>!t.bonus),bonus=data.tracks.filter(t=>t.bonus),cnt=main.length;
+function renderAlbum(data, containerId, albumTitle, albumArtist, albumYear, albumType) {
+  const wrap=document.getElementById(containerId); if(!wrap) return;
+  const main=data.tracks.filter(t=>!t.bonus), bonus=data.tracks.filter(t=>t.bonus), cnt=main.length;
   const div=document.createElement('div');
-  div.innerHTML=`<div class="alb-top"><img class="alb-art" src="${data.cover}" alt="${albumTitle}"><div><div class="alb-type">${albumType}</div><div class="alb-name">${albumTitle}</div><div class="alb-meta"><b>${albumArtist}</b><span class="dot">•</span>${albumYear}<span class="dot">•</span>${cnt} track${cnt!==1?'s':''}${bonus.length?' + 1 bonus':''}</div></div></div><div class="alb-actions"><button class="play-big" title="Play album"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></button><button class="shuf-sm" title="Shuffle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg></button></div><div class="tl-head"><span>#</span><span>TITLE</span><span></span></div><div class="tl-main"></div>${bonus.length?'<div class="bonus-label">Bonus Tracks</div><div class="tl-bonus"></div>':''}`;
+  div.innerHTML=`<div class="alb-top"><img class="alb-art" src="${data.cover}" alt="${albumTitle}"><div><div class="alb-type">${albumType}</div><div class="alb-name">${albumTitle}</div><div class="alb-meta"><b>${albumArtist}</b><span class="dot">•</span>${albumYear}<span class="dot">•</span>${cnt} track${cnt!==1?'s':''}${bonus.length?` + ${bonus.length} bonus`:''}</div></div></div><div class="alb-actions"><button class="play-big" title="Play album"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></button><button class="shuf-sm" title="Shuffle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg></button></div><div class="tl-head"><span>#</span><span>TITLE</span><span></span></div><div class="tl-main"></div>${bonus.length?'<div class="bonus-label">Bonus Tracks</div><div class="tl-bonus"></div>':''}`;
   wrap.appendChild(div);
   div.querySelector('.tl-main').append(...main.map(t=>mkRow(t,data.id,data.cover)));
-  if(bonus.length)div.querySelector('.tl-bonus').append(...bonus.map(t=>mkRow(t,data.id,data.cover)));
+  if (bonus.length) div.querySelector('.tl-bonus').append(...bonus.map(t=>mkRow(t,data.id,data.cover)));
   div.querySelector('.play-big').addEventListener('click',()=>playAlbum(main,data.cover,data.id,false));
   div.querySelector('.shuf-sm').addEventListener('click', ()=>playAlbum(main,data.cover,data.id,true));
 }
 
-/* ── GSS CUSTOM RENDER (Disc 1 + Disc 2) ── */
-function renderGSS(){
+/* ── GSS CUSTOM RENDER (disc toggle) ── */
+function renderGSS() {
   const wrap=document.getElementById('gssPanel');
-  const cover=GSS.cover, aid=GSS.id;
+  const aid=GSS.id;
 
-  // ── Album header + play/shuffle (Disc 1 only)
-  const d1cnt=GSS_D1.length;
+  // ── Album header with flipping cover
   const header=document.createElement('div');
   header.innerHTML=`
     <div class="alb-top">
-      <img class="alb-art" src="${cover}" alt="Gemsie Still Sings">
+      <div class="gss-alb-wrap" id="gssArtWrap" title="Tap to flip disc">
+        <img class="alb-art art-d1" src="${GSS.coverD1}" alt="Gemsie Still Sings — Disc 1">
+        <img class="alb-art art-d2" src="${GSS.coverD2}" alt="Gemsie Still Sings — Disc 2">
+        <div class="gss-disc-hint" id="gssDiscHint">Disc 2 →</div>
+      </div>
       <div>
         <div class="alb-type">Album</div>
         <div class="alb-name">Gemsie Still Sings</div>
-        <div class="alb-meta"><b>EJ</b><span class="dot">•</span>2026<span class="dot">•</span>23 tracks, 2 discs</div>
+        <div class="alb-meta" id="gssAlbMeta"><b>EJ</b><span class="dot">•</span>2026<span class="dot">•</span>10 tracks + 3 bonus</div>
       </div>
     </div>
-    <div class="alb-actions">
+    <div class="alb-actions" id="gssActions">
       <button class="play-big gss-play" title="Play Disc 1"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></button>
       <button class="shuf-sm gss-shuf" title="Shuffle Disc 1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg></button>
     </div>`;
   wrap.appendChild(header);
-  header.querySelector('.gss-play').addEventListener('click',()=>playAlbum(GSS_D1,cover,aid,false));
-  header.querySelector('.gss-shuf').addEventListener('click',()=>playAlbum(GSS_D1,cover,aid,true));
 
-  // ── Disc 1 label
-  const d1label=document.createElement('div');
-  d1label.className='disc-label';
-  d1label.textContent='Disc 1';
-  wrap.appendChild(d1label);
+  // ── Disc 1 panel
+  const d1panel=document.createElement('div');
+  d1panel.id='gssPanelD1'; d1panel.className='gss-disc-panel on';
+  d1panel.innerHTML='<div class="tl-head"><span>#</span><span>TITLE</span><span></span></div><div class="tl-main"></div><div class="bonus-label">Bonus Tracks</div><div class="tl-bonus"></div>';
+  wrap.appendChild(d1panel);
+  GSS_D1.forEach(t=>d1panel.querySelector('.tl-main').appendChild(mkRow(t,aid,GSS.coverD1)));
+  GSS_D1_BONUS.forEach(t=>d1panel.querySelector('.tl-bonus').appendChild(mkRow(t,aid,GSS.coverD1)));
 
-  // Track list header
-  const tlhead=document.createElement('div');
-  tlhead.className='tl-head';
-  tlhead.innerHTML='<span>#</span><span>TITLE</span><span></span>';
-  wrap.appendChild(tlhead);
+  // ── Disc 2 panel
+  const d2panel=document.createElement('div');
+  d2panel.id='gssPanelD2'; d2panel.className='gss-disc-panel';
+  d2panel.innerHTML='<div class="tl-head"><span>#</span><span>TITLE</span><span></span></div><div class="tl-main"></div>';
+  wrap.appendChild(d2panel);
+  GSS_D2.forEach(t=>d2panel.querySelector('.tl-main').appendChild(mkRow(t,aid,GSS.coverD2)));
 
-  // Disc 1 tracks
-  const d1tracks=document.createElement('div');
-  d1tracks.className='tl-main';
-  GSS_D1.forEach(t=>d1tracks.appendChild(mkRow(t,aid,cover)));
-  wrap.appendChild(d1tracks);
+  // ── Toggle logic
+  let onDisc2=false;
+  const artWrap=document.getElementById('gssArtWrap');
+  const hint=document.getElementById('gssDiscHint');
+  const meta=document.getElementById('gssAlbMeta');
+  const playBtn=header.querySelector('.gss-play');
+  const shufBtn=header.querySelector('.gss-shuf');
 
-  // Bonus remixes label + tracks
-  const bonusLabel=document.createElement('div');
-  bonusLabel.className='bonus-label';
-  bonusLabel.textContent='Bonus Tracks';
-  wrap.appendChild(bonusLabel);
+  function updateGSSDisc() {
+    artWrap.classList.toggle('disc2', onDisc2);
+    d1panel.classList.toggle('on', !onDisc2);
+    d2panel.classList.toggle('on',  onDisc2);
+    hint.textContent = onDisc2 ? '← Disc 1' : 'Disc 2 →';
+    if (onDisc2) {
+      meta.innerHTML='<b>EJ</b><span class="dot">•</span>2026<span class="dot">•</span>Disc 2 · 11 tracks';
+      playBtn.style.display='none'; shufBtn.style.display='none';
+    } else {
+      meta.innerHTML='<b>EJ</b><span class="dot">•</span>2026<span class="dot">•</span>10 tracks + 3 bonus';
+      playBtn.style.display=''; shufBtn.style.display='';
+    }
+  }
 
-  const bonusTracks=document.createElement('div');
-  bonusTracks.className='tl-bonus';
-  GSS_D1_BONUS.forEach(t=>bonusTracks.appendChild(mkRow(t,aid,cover)));
-  wrap.appendChild(bonusTracks);
+  artWrap.addEventListener('click', ()=>{ onDisc2=!onDisc2; updateGSSDisc(); });
+  // Also show hint always on mobile (no hover)
+  artWrap.addEventListener('touchstart', ()=>{ hint.style.opacity='1'; }, {passive:true});
 
-  // ── Disc 2 label
-  const d2label=document.createElement('div');
-  d2label.className='disc-label';
-  d2label.style.marginTop='36px';
-  d2label.textContent='Disc 2';
-  wrap.appendChild(d2label);
-
-  // Track list header for disc 2
-  const tlhead2=document.createElement('div');
-  tlhead2.className='tl-head';
-  tlhead2.innerHTML='<span>#</span><span>TITLE</span><span></span>';
-  wrap.appendChild(tlhead2);
-
-  // Disc 2 teaser tracks
-  const d2tracks=document.createElement('div');
-  d2tracks.className='tl-main';
-  GSS_D2.forEach(t=>d2tracks.appendChild(mkRow(t,aid,cover)));
-  wrap.appendChild(d2tracks);
+  playBtn.addEventListener('click', ()=>playAlbum(GSS_D1, GSS.coverD1, aid, false));
+  shufBtn.addEventListener('click', ()=>playAlbum(GSS_D1, GSS.coverD1, aid, true));
 }
 
 /* ── SH TABS ── */
-function renderSHTabs(){
-  const tabsEl=document.getElementById('shTabs'),panelsEl=document.getElementById('shPanels');
+function renderSHTabs() {
+  const tabsEl=document.getElementById('shTabs'), panelsEl=document.getElementById('shPanels');
   VOLS.forEach((v,i)=>{
     const tab=document.createElement('button');
-    tab.className='tab'+(i===0?' on':'');tab.textContent=`Vol. ${v.vol}`;
-    tab.addEventListener('click',()=>{tabsEl.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));panelsEl.querySelectorAll('.album-panel').forEach(p=>p.classList.remove('on'));tab.classList.add('on');document.getElementById(`shp${v.vol}`).classList.add('on');});
+    tab.className='tab'+(i===0?' on':''); tab.textContent=`Vol. ${v.vol}`;
+    tab.addEventListener('click',()=>{
+      tabsEl.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+      panelsEl.querySelectorAll('.album-panel').forEach(p=>p.classList.remove('on'));
+      tab.classList.add('on'); document.getElementById(`shp${v.vol}`).classList.add('on');
+    });
     tabsEl.appendChild(tab);
-    const panel=document.createElement('div');panel.id=`shp${v.vol}`;panel.className='album-panel'+(i===0?' on':'');panelsEl.appendChild(panel);
+    const panel=document.createElement('div'); panel.id=`shp${v.vol}`; panel.className='album-panel'+(i===0?' on':'');
+    panelsEl.appendChild(panel);
     renderAlbum(v,`shp${v.vol}`,`Summertime Hits Vol. ${v.vol}`,'Ray',v.year,'Album');
   });
 }
 
 /* ── SINGLES ── */
-function renderSingles(){
+function renderSingles() {
   const grid=document.getElementById('singlesGrid');
   SINGLES.forEach(s=>{
-    const card=document.createElement('div');card.className='sg-card';
+    const card=document.createElement('div'); card.className='sg-card';
     card.innerHTML=`<img class="sg-art" src="${s.cover}" alt="${s.title}"><div class="sg-title">${s.title}</div><div class="sg-meta">${s.artist} · ${s.year}</div>`;
     card.addEventListener('click',()=>play(tid(s.id,s.src),s.title,s.artist,s.src,s.cover));
     grid.appendChild(card);
@@ -579,16 +606,16 @@ function renderSingles(){
 }
 
 /* ── SEARCH ── */
-function doSearch(q){
+function doSearch(q) {
   const ov=document.getElementById('searchOverlay');
-  if(!q.trim()){ov.classList.remove('show');return;}
+  if (!q.trim()) { ov.classList.remove('show'); return; }
   ov.classList.add('show');
   const ql=q.toLowerCase();
   const res=IDX.filter(t=>t.title.toLowerCase().includes(ql)||t.artist.toLowerCase().includes(ql)||t.album.toLowerCase().includes(ql));
   ov.innerHTML=`<div class="sr-heading">Results for &ldquo;${q}&rdquo;</div>`;
-  if(!res.length){ov.innerHTML+='<div class="sr-none">No tracks found.</div>';return;}
+  if (!res.length) { ov.innerHTML+='<div class="sr-none">No tracks found.</div>'; return; }
   res.forEach(t=>{
-    const row=document.createElement('div');row.className='sr-row';
+    const row=document.createElement('div'); row.className='sr-row';
     row.innerHTML=`<img class="sr-art" src="${t.cover}" alt=""><div class="sr-info"><div class="sr-title">${t.title}</div><div class="sr-sub">${t.artist} — ${t.album}</div></div>`;
     row.addEventListener('click',()=>play(tid(t.aid,t.src),t.title,t.artist,t.src,t.cover));
     ov.appendChild(row);
@@ -621,9 +648,9 @@ document.addEventListener('click',e=>{if(!e.target.closest('#searchOverlay')&&!e
 
 /* ── INIT ── */
 renderSHTabs();
-renderAlbum(SHITS,    'shitsPanel','Summertime Shits',     'BUTTON!!!',SHITS.year,    'Album');
+renderAlbum(SHITS,     'shitsPanel','Summertime Shits',      'BUTTON!!!',SHITS.year,    'Album');
 renderSingles();
-renderAlbum(GEMSIE_OG,'ogPanel',  'Gemsie Sings OG Album','EJ',       GEMSIE_OG.year,'Album');
+renderAlbum(GEMSIE_OG,'ogPanel',   'Gemsie Sings OG Album', 'EJ',       GEMSIE_OG.year,'Album');
 renderGSS();
 renderPlayer();
 renderQueue();
