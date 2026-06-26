@@ -103,6 +103,21 @@ img { display:block; }
 .tr-q:hover { color:var(--fg); }
 .bonus-label { font-size:12px; color:var(--fg2); font-weight:600; text-transform:uppercase; letter-spacing:.08em; margin:22px 0 6px 10px; }
 
+/* ── DISC DIVIDER ── */
+.disc-label {
+  font-size:22px; font-weight:700; color:var(--fg);
+  margin:28px 0 10px 0; padding-bottom:10px;
+  border-bottom:1px solid var(--ln);
+  letter-spacing:-.01em;
+}
+
+/* ── TEASER / UNRELEASED TRACKS ── */
+.tr.teaser { cursor:default; opacity:0.38; }
+.tr.teaser:hover { background:transparent; }
+.tr.teaser .tr-num-pl { display:none !important; }
+.tr.teaser .tr-num-n { opacity:1 !important; }
+.tr.teaser .tr-q { display:none; }
+
 .sg-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(148px,1fr)); gap:16px; margin-top:16px; }
 .sg-card { background:var(--bg2); border-radius:8px; padding:12px; cursor:pointer; transition:background .18s; }
 .sg-card:hover { background:var(--bg4); }
@@ -208,7 +223,7 @@ img { display:block; }
   <div class="hero og"><div class="hero-grad"></div><div class="hero-eyebrow">Album</div><div class="hero-title">Gemsie Sings OG Album</div><div class="hero-meta"><b>EJ</b><span class="dot">•</span>2020<span class="dot">•</span>5 tracks + 1 bonus</div></div>
   <div id="ogPanel"></div>
 
-  <div class="hero gss"><div class="hero-grad"></div><div class="hero-eyebrow">Album</div><div class="hero-title">Gemsie Still Sings</div><div class="hero-meta"><b>EJ</b><span class="dot">•</span>2026<span class="dot">•</span>10 tracks</div></div>
+  <div class="hero gss"><div class="hero-grad"></div><div class="hero-eyebrow">Album</div><div class="hero-title">Gemsie Still Sings</div><div class="hero-meta"><b>EJ</b><span class="dot">•</span>2026<span class="dot">•</span>23 tracks</div></div>
   <div id="gssPanel"></div>
 </main>
 
@@ -306,7 +321,9 @@ const GEMSIE_OG = { id:'gog', year:2020, cover:'img/Gemsie%20Sings', tracks:[
   {n:5,   title:'Wannabe',                artist:'EJ', src:'Wannabe.mp3'},
   {n:'★', title:'Think About it Song',   artist:'EJ', src:'Think About it Song.mp3', bonus:true},
 ]};
-const GSS = { id:'gss', year:2026, cover:'img/GSS.jpeg', tracks:[
+
+// GSS Disc 1 — playable
+const GSS_D1 = [
   {n:1,  title:'Thought About It',             artist:'EJ',         src:'ThoughtAboutIt.mp3'},
   {n:2,  title:'H.E.A.T. (ft. Ray)',           artist:'EJ & Ray',   src:'HEAT.mp3'},
   {n:3,  title:'Ricecakes and Applebees',       artist:'EJ',         src:'RicecakesandApplebees.mp3'},
@@ -317,7 +334,31 @@ const GSS = { id:'gss', year:2026, cover:'img/GSS.jpeg', tracks:[
   {n:8,  title:"The Door's Still Open",         artist:'EJ',         src:'thedoorstillopen.mp3'},
   {n:9,  title:'16',                            artist:'EJ',         src:'16.mp3'},
   {n:10, title:'Wetter',                        artist:'EJ',         src:'wetter.mp3'},
-]};
+];
+// GSS Disc 1 bonus remixes — playable
+const GSS_D1_BONUS = [
+  {n:'💎', title:"The Door Still Open", artist:'EJ', src:'thedoorstillopenDeluxe.mp3', bonus:true},
+  {n:'💎', title:'Late Delivery',        artist:'EJ', src:'latedeliveryDeluxe.mp3',     bonus:true},
+];
+// GSS Disc 2 — teaser (unplayable, greyed out)
+const GSS_D2 = [
+  {n:1,  title:'GEMSTONE',                      artist:'EJ',       src:'gemstone.mp3',       teaser:true},
+  {n:2,  title:'Crystal Cocoon',                artist:'EJ',       src:'crystalcocoon.mp3',  teaser:true},
+  {n:3,  title:'HEIST',                         artist:'EJ',       src:'heist.mp3',          teaser:true},
+  {n:4,  title:'Sidewinder',                    artist:'EJ',       src:'sidewinder.mp3',     teaser:true},
+  {n:5,  title:'DUOTONE (Interlude)',           artist:'EJ',       src:'duotoneinterlude.mp3',teaser:true},
+  {n:6,  title:'DUOTONE',                       artist:'EJ',       src:'duotone.mp3',        teaser:true},
+  {n:7,  title:'High Off Your Love (ft. Ray)',  artist:'EJ & Ray', src:'highoffyourlove.mp3', teaser:true},
+  {n:8,  title:'EVERYBODY',                     artist:'EJ',       src:'everybody.mp3',      teaser:true},
+  {n:9,  title:'Underground',                   artist:'EJ',       src:'underground.mp3',    teaser:true},
+  {n:10, title:'jaded',                         artist:'EJ & Ray', src:'jaded.mp3',          teaser:true},
+  {n:11, title:'Long Time',                     artist:'EJ',       src:'longtime.mp3',       teaser:true},
+];
+
+const GSS = {
+  id:'gss', year:2026, cover:'img/GSS.jpeg',
+  disc1: GSS_D1, disc1bonus: GSS_D1_BONUS, disc2: GSS_D2
+};
 
 /* ── STATE ── */
 const audio = new Audio();
@@ -334,7 +375,8 @@ function buildIdx() {
   SHITS.tracks.forEach(t=>r.push({title:t.title,artist:t.artist,cover:SHITS.cover,src:t.src,album:'Summertime Shits',aid:SHITS.id}));
   SINGLES.forEach(s=>r.push({title:s.title,artist:s.artist,cover:s.cover,src:s.src,album:`Single (${s.year})`,aid:s.id}));
   GEMSIE_OG.tracks.forEach(t=>r.push({title:t.title,artist:t.artist,cover:GEMSIE_OG.cover,src:t.src,album:'Gemsie Sings OG Album',aid:GEMSIE_OG.id}));
-  GSS.tracks.forEach(t=>r.push({title:t.title,artist:t.artist,cover:GSS.cover,src:t.src,album:'Gemsie Still Sings',aid:GSS.id}));
+  // Only index playable GSS tracks
+  [...GSS_D1, ...GSS_D1_BONUS].forEach(t=>r.push({title:t.title,artist:t.artist,cover:GSS.cover,src:t.src,album:'Gemsie Still Sings',aid:GSS.id}));
   return r;
 }
 const IDX = buildIdx();
@@ -408,6 +450,15 @@ function highlightTracks(){document.querySelectorAll('.tr').forEach(r=>r.classLi
 function mkRow(t,aid,cover){
   const key=tid(aid,t.src);
   const row=document.createElement('div');
+
+  if(t.teaser){
+    // Greyed out, unplayable teaser row
+    row.className='tr teaser';
+    row.dataset.tid=key;
+    row.innerHTML=`<div class="tr-num"><span class="tr-num-n">${t.n??''}</span></div><div class="tr-info"><div class="tr-title">${t.title}</div><div class="tr-artist">${t.artist}</div></div>`;
+    return row;
+  }
+
   row.className='tr'+(S.tid===key?' playing':'');
   row.dataset.tid=key;
   row.innerHTML=`<div class="tr-num"><span class="tr-num-n">${t.n??''}</span><span class="tr-num-pl"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></span></div><div class="tr-info"><div class="tr-title">${t.title}</div><div class="tr-artist">${t.artist}</div></div><button class="tr-q" aria-label="Add to queue">+</button>`;
@@ -416,7 +467,7 @@ function mkRow(t,aid,cover){
   return row;
 }
 
-/* ── ALBUM ── */
+/* ── ALBUM (standard) ── */
 function renderAlbum(data,containerId,albumTitle,albumArtist,albumYear,albumType){
   const wrap=document.getElementById(containerId);if(!wrap)return;
   const main=data.tracks.filter(t=>!t.bonus),bonus=data.tracks.filter(t=>t.bonus),cnt=main.length;
@@ -427,6 +478,80 @@ function renderAlbum(data,containerId,albumTitle,albumArtist,albumYear,albumType
   if(bonus.length)div.querySelector('.tl-bonus').append(...bonus.map(t=>mkRow(t,data.id,data.cover)));
   div.querySelector('.play-big').addEventListener('click',()=>playAlbum(main,data.cover,data.id,false));
   div.querySelector('.shuf-sm').addEventListener('click', ()=>playAlbum(main,data.cover,data.id,true));
+}
+
+/* ── GSS CUSTOM RENDER (Disc 1 + Disc 2) ── */
+function renderGSS(){
+  const wrap=document.getElementById('gssPanel');
+  const cover=GSS.cover, aid=GSS.id;
+
+  // ── Album header + play/shuffle (Disc 1 only)
+  const d1cnt=GSS_D1.length;
+  const header=document.createElement('div');
+  header.innerHTML=`
+    <div class="alb-top">
+      <img class="alb-art" src="${cover}" alt="Gemsie Still Sings">
+      <div>
+        <div class="alb-type">Album</div>
+        <div class="alb-name">Gemsie Still Sings</div>
+        <div class="alb-meta"><b>EJ</b><span class="dot">•</span>2026<span class="dot">•</span>23 tracks, 2 discs</div>
+      </div>
+    </div>
+    <div class="alb-actions">
+      <button class="play-big gss-play" title="Play Disc 1"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></button>
+      <button class="shuf-sm gss-shuf" title="Shuffle Disc 1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg></button>
+    </div>`;
+  wrap.appendChild(header);
+  header.querySelector('.gss-play').addEventListener('click',()=>playAlbum(GSS_D1,cover,aid,false));
+  header.querySelector('.gss-shuf').addEventListener('click',()=>playAlbum(GSS_D1,cover,aid,true));
+
+  // ── Disc 1 label
+  const d1label=document.createElement('div');
+  d1label.className='disc-label';
+  d1label.textContent='Disc 1';
+  wrap.appendChild(d1label);
+
+  // Track list header
+  const tlhead=document.createElement('div');
+  tlhead.className='tl-head';
+  tlhead.innerHTML='<span>#</span><span>TITLE</span><span></span>';
+  wrap.appendChild(tlhead);
+
+  // Disc 1 tracks
+  const d1tracks=document.createElement('div');
+  d1tracks.className='tl-main';
+  GSS_D1.forEach(t=>d1tracks.appendChild(mkRow(t,aid,cover)));
+  wrap.appendChild(d1tracks);
+
+  // Bonus remixes label + tracks
+  const bonusLabel=document.createElement('div');
+  bonusLabel.className='bonus-label';
+  bonusLabel.textContent='Bonus Tracks';
+  wrap.appendChild(bonusLabel);
+
+  const bonusTracks=document.createElement('div');
+  bonusTracks.className='tl-bonus';
+  GSS_D1_BONUS.forEach(t=>bonusTracks.appendChild(mkRow(t,aid,cover)));
+  wrap.appendChild(bonusTracks);
+
+  // ── Disc 2 label
+  const d2label=document.createElement('div');
+  d2label.className='disc-label';
+  d2label.style.marginTop='36px';
+  d2label.textContent='Disc 2';
+  wrap.appendChild(d2label);
+
+  // Track list header for disc 2
+  const tlhead2=document.createElement('div');
+  tlhead2.className='tl-head';
+  tlhead2.innerHTML='<span>#</span><span>TITLE</span><span></span>';
+  wrap.appendChild(tlhead2);
+
+  // Disc 2 teaser tracks
+  const d2tracks=document.createElement('div');
+  d2tracks.className='tl-main';
+  GSS_D2.forEach(t=>d2tracks.appendChild(mkRow(t,aid,cover)));
+  wrap.appendChild(d2tracks);
 }
 
 /* ── SH TABS ── */
@@ -499,7 +624,7 @@ renderSHTabs();
 renderAlbum(SHITS,    'shitsPanel','Summertime Shits',     'BUTTON!!!',SHITS.year,    'Album');
 renderSingles();
 renderAlbum(GEMSIE_OG,'ogPanel',  'Gemsie Sings OG Album','EJ',       GEMSIE_OG.year,'Album');
-renderAlbum(GSS,      'gssPanel', 'Gemsie Still Sings',   'EJ',       GSS.year,      'Album');
+renderGSS();
 renderPlayer();
 renderQueue();
 </script>
