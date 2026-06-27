@@ -26,7 +26,6 @@
         .stream-btn { display:inline-block; background:linear-gradient(45deg,#ff3d3d,#ff6b6b); color:#fff; text-decoration:none; padding:12px 30px; border-radius:25px; font-weight:500; font-size:16px; transition:transform .2s,box-shadow .2s; box-shadow:0 4px 15px rgba(255,61,61,.3); margin-bottom:20px; }
         .stream-btn:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(255,61,61,.4); }
 
-        /* Toggle */
         .view-toggle { display:flex; justify-content:center; margin-bottom:clamp(20px,4vw,30px); width:100%; max-width:1000px; }
         .toggle-container { background:var(--bg3); border-radius:25px; padding:4px; display:flex; position:relative; box-shadow:0 4px 6px rgba(0,0,0,.3); }
         .toggle-option { padding:12px 24px; border-radius:20px; cursor:pointer; transition:all .3s; font-weight:500; font-size:16px; z-index:2; position:relative; }
@@ -38,7 +37,6 @@
 
         .chart-date { text-align:center; margin-bottom:clamp(15px,3vw,20px); font-size:clamp(12px,2vw,14px); color:var(--fg2); }
 
-        /* Artists View */
         .artists-view { display:none; width:100%; max-width:1000px; }
         .artists-view.active { display:block; }
         .artists-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(15px,3vw,25px); margin-bottom:30px; }
@@ -54,18 +52,15 @@
         .stat-label { font-size:12px; color:var(--fg2); text-transform:uppercase; font-weight:500; }
         .artist-description { color:var(--fg2); line-height:1.5; font-size:14px; }
 
-        /* Songs View */
         .songs-view { width:100%; max-width:1000px; }
         .songs-view.hidden { display:none; }
 
-        /* Biggest Jump Banner */
         .biggest-jump { background:#400000; border:1px solid #200000; padding:clamp(10px,2vw,15px); margin-bottom:clamp(15px,3vw,20px); display:flex; align-items:center; border-radius:12px; max-width:1000px; width:100%; gap:clamp(10px,2vw,15px); }
         .biggest-jump .cover { width:clamp(60px,10vw,80px); height:clamp(60px,10vw,80px); object-fit:cover; border-radius:8px; flex-shrink:0; }
         .biggest-jump-info h3 { color:var(--acc); margin-bottom:5px; font-size:clamp(14px,2vw,16px); font-weight:500; }
         .biggest-jump-info h4 { font-size:clamp(16px,2.5vw,18px); margin-bottom:3px; color:var(--fg); font-weight:500; }
         .biggest-jump-info p { font-size:clamp(12px,2vw,14px); color:var(--fg2); font-weight:300; }
 
-        /* Chart */
         .chart-container { background:var(--bg2); border-radius:12px; box-shadow:0 4px 6px rgba(0,0,0,.3); overflow:hidden; max-width:1000px; width:100%; }
         .chart-header-desktop { background:var(--bg3); padding:15px 20px; border-bottom:1px solid var(--border); display:none; grid-template-columns:40px 100px 1fr 100px 100px 80px; align-items:center; font-weight:500; font-size:13px; color:var(--fg2); gap:10px; }
         @media(min-width:768px){.chart-header-desktop{display:grid;}}
@@ -136,7 +131,7 @@
 
     <!-- SONGS VIEW -->
     <div class="songs-view" id="songsView">
-        <div class="chart-date">WK/O May 24, 2026</div>
+        <div class="chart-date">WK/O June 21, 2026</div>
 
         <div class="biggest-jump">
             <img src="img/GSS.jpeg" alt="Gemsie Still Sings" class="cover">
@@ -170,7 +165,7 @@
                         <h3>Ray</h3>
                         <div class="artist-stats">
                             <div class="stat"><span class="stat-number">3</span><span class="stat-label">#1 Hits</span></div>
-                            <div class="stat"><span class="stat-number">19</span><span class="stat-label">Tracks</span></div>
+                            <div class="stat"><span class="stat-number">21</span><span class="stat-label">Tracks</span></div>
                         </div>
                     </div>
                 </div>
@@ -184,7 +179,7 @@
                         <h3>EJ</h3>
                         <div class="artist-stats">
                             <div class="stat"><span class="stat-number">4</span><span class="stat-label">#1 Hits</span></div>
-                            <div class="stat"><span class="stat-number">27</span><span class="stat-label">Tracks</span></div>
+                            <div class="stat"><span class="stat-number">40</span><span class="stat-label">Tracks</span></div>
                         </div>
                     </div>
                 </div>
@@ -266,16 +261,16 @@
 
     <script>
     const chartData = [
-        { position:1,  albumCover:'img/GSS.jpeg',                     title:'Wetter',                                 artist:'EJ',              peak:1,  streak:2,  prevPosition:'6', trend:'up'   },
-        { position:2,  albumCover:'img/GSS.jpeg',                     title:'Execute Order 66 (ft. David)',            artist:'EJ & David',      peak:2,  streak:2,  prevPosition:'4', trend:'up'   },
-        { position:3,  albumCover:'img/GSS.jpeg',                     title:'TASER TASER TASER (ft. Ryan)',            artist:'EJ & Ryan',       peak:3,  streak:2,  prevPosition:'3', trend:'same' },
-        { position:4,  albumCover:'img/GSS.jpeg',                     title:'16',                                     artist:'EJ',              peak:2,  streak:2,  prevPosition:'2', trend:'down' },
-        { position:5,  albumCover:'img/GSS.jpeg',                     title:'Late Delivery',                          artist:'EJ',              peak:5,  streak:1,  prevPosition:'NEW', trend:'new' },
-        { position:6,  albumCover:'img/Atlanta.png',                  title:'Atlanta State of Prime (ft. EJ, Claire)', artist:'Ray, EJ & Claire',peak:1,  streak:33, prevPosition:'9', trend:'up'   },
-        { position:7,  albumCover:'img/GSS.jpeg',                     title:'H.E.A.T. (ft. Ray)',                     artist:'EJ & Ray',        peak:7,  streak:2,  prevPosition:'8', trend:'up'   },
-        { position:8,  albumCover:'img/JIG.png',                      title:'JIG (Janna is a Hoe) (ft. EJ, Ryan)',    artist:'Ray, EJ & Ryan',  peak:1,  streak:36, prevPosition:'5', trend:'down' },
-        { position:9,  albumCover:'img/GSS.jpeg',                     title:'Thought About It',                       artist:'EJ',              peak:1,  streak:2,  prevPosition:'1', trend:'down' },
-        { position:10, albumCover:'img/Summertime%20Hits%20Vol.%204', title:"We Didn't Start the Cleetus",            artist:'Ray',             peak:1,  streak:35, prevPosition:'7', trend:'down' },
+        { position:1,  albumCover:'img/GSS.jpeg',                     title:'Wetter',                                  artist:'EJ',              peak:1,  streak:6,  prevPosition:'6', trend:'up'   },
+        { position:2,  albumCover:'img/GSS.jpeg',                     title:'Execute Order 66 (ft. David)',             artist:'EJ & David',      peak:2,  streak:6,  prevPosition:'4', trend:'up'   },
+        { position:3,  albumCover:'img/GSS.jpeg',                     title:'TASER TASER TASER (ft. Ryan)',             artist:'EJ & Ryan',       peak:3,  streak:6,  prevPosition:'3', trend:'same' },
+        { position:4,  albumCover:'img/GSS.jpeg',                     title:'16',                                      artist:'EJ',              peak:2,  streak:6,  prevPosition:'2', trend:'down' },
+        { position:5,  albumCover:'img/GSS.jpeg',                     title:'Late Delivery',                           artist:'EJ',              peak:5,  streak:5,  prevPosition:'NEW', trend:'new' },
+        { position:6,  albumCover:'img/Atlanta.png',                  title:'Atlanta State of Prime (ft. EJ, Claire)',  artist:'Ray, EJ & Claire',peak:1,  streak:37, prevPosition:'9', trend:'up'   },
+        { position:7,  albumCover:'img/GSS.jpeg',                     title:'H.E.A.T. (ft. Ray)',                      artist:'EJ & Ray',        peak:7,  streak:6,  prevPosition:'8', trend:'up'   },
+        { position:8,  albumCover:'img/JIG.png',                      title:'JIG (Janna is a Hoe) (ft. EJ, Ryan)',     artist:'Ray, EJ & Ryan',  peak:1,  streak:40, prevPosition:'5', trend:'down' },
+        { position:9,  albumCover:'img/GSS.jpeg',                     title:'Thought About It',                        artist:'EJ',              peak:1,  streak:6,  prevPosition:'1', trend:'down' },
+        { position:10, albumCover:'img/Summertime%20Hits%20Vol.%204', title:"We Didn't Start the Cleetus",             artist:'Ray',             peak:1,  streak:39, prevPosition:'7', trend:'down' },
     ];
 
     function switchView(view) {
