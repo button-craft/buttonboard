@@ -369,11 +369,12 @@ const GSS_D2 = [
   {n:4,  title:'Sidewinder',                   artist:'EJ',       src:'sidewinder.mp3',      teaser:true},
   {n:5,  title:'DUOTONE (Interlude)',          artist:'EJ',       src:'duotoneinterlude.mp3',teaser:true},
   {n:6,  title:'DUOTONE',                      artist:'EJ',       src:'duotone.mp3',         teaser:true},
-  {n:7,  title:'High Off Your Love (ft. Ray)', artist:'EJ & Ray', src:'highoffyourlove.mp3', teaser:true},
-  {n:8,  title:'EVERYBODY',                    artist:'EJ',       src:'everybody.mp3',       teaser:true},
-  {n:9,  title:'Underground',                  artist:'EJ',       src:'underground.mp3',     teaser:true},
-  {n:10, title:'jaded',                        artist:'EJ & Ray', src:'jaded.mp3',           teaser:true},
-  {n:11, title:'Long Time',                    artist:'EJ',       src:'longtime.mp3',        teaser:true},
+  {n:7,  title:'Enchanted',                    artist:'EJ',       src:'enchanted.mp3',       teaser:true},
+  {n:8,  title:'High Off Your Love (ft. Ray)', artist:'EJ & Ray', src:'highoffyourlove.mp3', teaser:true},
+  {n:9,  title:'EVERYBODY',                    artist:'EJ',       src:'everybody.mp3',       teaser:true},
+  {n:10, title:'Underground',                  artist:'EJ',       src:'underground.mp3',     teaser:true},
+  {n:11, title:'jaded',                        artist:'EJ & Ray', src:'jaded.mp3',           teaser:true},
+  {n:12, title:'Long Time',                    artist:'EJ',       src:'longtime.mp3',        teaser:true},
 ];
 const GSS = {
   id:'gss', year:2026,
@@ -560,7 +561,7 @@ function renderGSS() {
     d2panel.classList.toggle('on',  onDisc2);
     hint.textContent = onDisc2 ? '← Disc 1' : 'Disc 2 →';
     if (onDisc2) {
-      meta.innerHTML='<b>EJ</b><span class="dot">•</span>2026<span class="dot">•</span>Disc 2 · 11 tracks';
+      meta.innerHTML='<b>EJ</b><span class="dot">•</span>2026<span class="dot">•</span>Disc 2 · 12 tracks';
       playBtn.style.display='none'; shufBtn.style.display='none';
     } else {
       meta.innerHTML='<b>EJ</b><span class="dot">•</span>2026<span class="dot">•</span>10 tracks + 3 bonus';
