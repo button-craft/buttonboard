@@ -357,24 +357,24 @@ const GSS_D1 = [
 ];
 // GSS Disc 1 bonus — greyed out
 const GSS_D1_BONUS = [
-  {n:'💎', title:'The Door Still Open',    artist:'EJ', src:'thedoorstillopenDeluxe.mp3', bonus:true, teaser:true},
-  {n:'💎', title:'Late Delivery',           artist:'EJ', src:'latedeliveryDeluxe.mp3',     bonus:true, teaser:true},
-  {n:'💎', title:'Ricecakes and Applebees', artist:'EJ', src:'ricecakesDeluxe.mp3',         bonus:true, teaser:true},
+  {n:'💎', title:'The Door Still Open',    artist:'EJ', src:'thedoorstillopenDeluxe.mp3', bonus:true},
+  {n:'💎', title:'Late Delivery',           artist:'EJ', src:'latedeliveryDeluxe.mp3',     bonus:true},
+  {n:'💎', title:'Ricecakes and Applebees', artist:'EJ', src:'ricecakesDeluxe.mp3',         bonus:true},
 ];
 // GSS Disc 2 — teaser
 const GSS_D2 = [
-  {n:1,  title:'GEMSTONE',                     artist:'EJ',       src:'gemstone.mp3',        teaser:true},
-  {n:2,  title:'Crystal Cocoon',               artist:'EJ',       src:'crystalcocoon.mp3',   teaser:true},
-  {n:3,  title:'HEIST',                        artist:'EJ',       src:'heist.mp3',           teaser:true},
-  {n:4,  title:'Sidewinder',                   artist:'EJ',       src:'sidewinder.mp3',      teaser:true},
-  {n:5,  title:'DUOTONE (Interlude)',          artist:'EJ',       src:'duotoneinterlude.mp3',teaser:true},
-  {n:6,  title:'DUOTONE',                      artist:'EJ',       src:'duotone.mp3',         teaser:true},
-  {n:7,  title:'Enchanted',                    artist:'EJ',       src:'enchanted.mp3',       teaser:true},
-  {n:8,  title:'High Off Your Love (ft. Ray)', artist:'EJ & Ray', src:'highoffyourlove.mp3', teaser:true},
-  {n:9,  title:'EVERYBODY',                    artist:'EJ',       src:'everybody.mp3',       teaser:true},
-  {n:10, title:'Underground',                  artist:'EJ',       src:'underground.mp3',     teaser:true},
-  {n:11, title:'jaded',                        artist:'EJ & Ray', src:'jaded.mp3',           teaser:true},
-  {n:12, title:'Long Time',                    artist:'EJ',       src:'longtime.mp3',        teaser:true},
+  {n:1,  title:'GEMSTONE',                     artist:'EJ',       src:'gemstone.mp3'},
+  {n:2,  title:'Crystal Cocoon',               artist:'EJ',       src:'crystalcocoon.mp3'},
+  {n:3,  title:'HEIST',                        artist:'EJ',       src:'heist.mp3'},
+  {n:4,  title:'Sidewinder',                   artist:'EJ',       src:'sidewinder.mp3'},
+  {n:5,  title:'DUOTONE (Interlude)',          artist:'EJ',       src:'duotoneinterlude.mp3'},
+  {n:6,  title:'DUOTONE',                      artist:'EJ',       src:'duotone.mp3'},
+  {n:7,  title:'Enchanted',                    artist:'EJ',       src:'enchanted.mp3'},
+  {n:8,  title:'High Off Your Love (ft. Ray)', artist:'EJ & Ray', src:'highoffyourlove.mp3'},
+  {n:9,  title:'EVERYBODY',                    artist:'EJ',       src:'everybody.mp3'},
+  {n:10, title:'Underground',                  artist:'EJ',       src:'underground.mp3'},
+  {n:11, title:'jaded',                        artist:'EJ & Ray', src:'jaded.mp3'},
+  {n:12, title:'Long Time',                    artist:'EJ',       src:'longtime.mp3'},
 ];
 const GSS = {
   id:'gss', year:2026,
@@ -398,6 +398,7 @@ function buildIdx() {
   SINGLES.forEach(s => r.push({title:s.title,artist:s.artist,cover:s.cover,src:s.src,album:`Single (${s.year})`,aid:s.id}));
   GEMSIE_OG.tracks.forEach(t => r.push({title:t.title,artist:t.artist,cover:GEMSIE_OG.cover,src:t.src,album:'Gemsie Sings OG Album',aid:GEMSIE_OG.id}));
   GSS_D1.forEach(t => r.push({title:t.title,artist:t.artist,cover:GSS.coverD1,src:t.src,album:'Gemsie Still Sings',aid:GSS.id}));
+  GSS_D2.forEach(t => r.push({title:t.title,artist:t.artist,cover:GSS.coverD2,src:t.src,album:'Gemsie Still Sings — Disc 2',aid:GSS.id}));
   return r;
 }
 const IDX = buildIdx();
@@ -562,10 +563,10 @@ function renderGSS() {
     hint.textContent = onDisc2 ? '← Disc 1' : 'Disc 2 →';
     if (onDisc2) {
       meta.innerHTML='<b>EJ</b><span class="dot">•</span>2026<span class="dot">•</span>Disc 2 · 12 tracks';
-      playBtn.style.display='none'; shufBtn.style.display='none';
+      playBtn.title='Play Disc 2'; shufBtn.title='Shuffle Disc 2';
     } else {
       meta.innerHTML='<b>EJ</b><span class="dot">•</span>2026<span class="dot">•</span>10 tracks + 3 bonus';
-      playBtn.style.display=''; shufBtn.style.display='';
+      playBtn.title='Play Disc 1'; shufBtn.title='Shuffle Disc 1';
     }
   }
 
@@ -573,8 +574,8 @@ function renderGSS() {
   // Also show hint always on mobile (no hover)
   artWrap.addEventListener('touchstart', ()=>{ hint.style.opacity='1'; }, {passive:true});
 
-  playBtn.addEventListener('click', ()=>playAlbum(GSS_D1, GSS.coverD1, aid, false));
-  shufBtn.addEventListener('click', ()=>playAlbum(GSS_D1, GSS.coverD1, aid, true));
+  playBtn.addEventListener('click', ()=>playAlbum(onDisc2 ? GSS_D2 : GSS_D1, onDisc2 ? GSS.coverD2 : GSS.coverD1, aid, false));
+  shufBtn.addEventListener('click', ()=>playAlbum(onDisc2 ? GSS_D2 : GSS_D1, onDisc2 ? GSS.coverD2 : GSS.coverD1, aid, true));
 }
 
 /* ── SH TABS ── */
