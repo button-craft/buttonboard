@@ -55,12 +55,6 @@
         .songs-view { width:100%; max-width:1000px; }
         .songs-view.hidden { display:none; }
 
-        .biggest-jump { background:#400000; border:1px solid #200000; padding:clamp(10px,2vw,15px); margin-bottom:clamp(15px,3vw,20px); display:flex; align-items:center; border-radius:12px; max-width:1000px; width:100%; gap:clamp(10px,2vw,15px); }
-        .biggest-jump .cover { width:clamp(60px,10vw,80px); height:clamp(60px,10vw,80px); object-fit:cover; border-radius:8px; flex-shrink:0; }
-        .biggest-jump-info h3 { color:var(--acc); margin-bottom:5px; font-size:clamp(14px,2vw,16px); font-weight:500; }
-        .biggest-jump-info h4 { font-size:clamp(16px,2.5vw,18px); margin-bottom:3px; color:var(--fg); font-weight:500; }
-        .biggest-jump-info p { font-size:clamp(12px,2vw,14px); color:var(--fg2); font-weight:300; }
-
         .chart-container { background:var(--bg2); border-radius:12px; box-shadow:0 4px 6px rgba(0,0,0,.3); overflow:hidden; max-width:1000px; width:100%; }
         .chart-header-desktop { background:var(--bg3); padding:15px 20px; border-bottom:1px solid var(--border); display:none; grid-template-columns:40px 100px 1fr 100px 100px 80px; align-items:center; font-weight:500; font-size:13px; color:var(--fg2); gap:10px; }
         @media(min-width:768px){.chart-header-desktop{display:grid;}}
@@ -131,16 +125,7 @@
 
     <!-- SONGS VIEW -->
     <div class="songs-view" id="songsView">
-        <div class="chart-date">WK/O July 5, 2026</div>
-
-        <div class="biggest-jump">
-            <img src="img/GSS.jpeg" alt="16" class="cover">
-            <div class="biggest-jump-info">
-                <h3>⬆ BIGGEST JUMP</h3>
-                <h4>16</h4>
-                <p>EJ · +3 spots · Now #5</p>
-            </div>
-        </div>
+        <div class="chart-date">WK/O July 12, 2026</div>
 
         <div class="chart-container">
             <div class="chart-header-desktop">
@@ -193,7 +178,7 @@
                         <h3>Claire</h3>
                         <div class="artist-stats">
                             <div class="stat"><span class="stat-number">1</span><span class="stat-label">#1 Hits</span></div>
-                            <div class="stat"><span class="stat-number">3</span><span class="stat-label">Tracks</span></div>
+                            <div class="stat"><span class="stat-number">4</span><span class="stat-label">Tracks</span></div>
                         </div>
                     </div>
                 </div>
@@ -249,7 +234,7 @@
                         <h3>Janna</h3>
                         <div class="artist-stats">
                             <div class="stat"><span class="stat-number">0</span><span class="stat-label">#1 Hits</span></div>
-                            <div class="stat"><span class="stat-number">1</span><span class="stat-label">Tracks</span></div>
+                            <div class="stat"><span class="stat-number">2</span><span class="stat-label">Tracks</span></div>
                         </div>
                     </div>
                 </div>
@@ -261,16 +246,16 @@
 
     <script>
     const chartData = [
-        { position:1,  albumCover:'img/GSS.jpeg',    title:'Wetter',                                        artist:'EJ',              peak:1,  streak:8,  prevPosition:'2', trend:'up'   },
-        { position:2,  albumCover:'img/GSS.jpeg',    title:'Execute Order 66 (ft. David)',                  artist:'EJ & David',      peak:1,  streak:8,  prevPosition:'1', trend:'down' },
-        { position:3,  albumCover:'img/Atlanta.png', title:'Atlanta State of Prime (ft. EJ, Claire)',       artist:'Ray, EJ & Claire',peak:1,  streak:39, prevPosition:'3', trend:'same' },
-        { position:4,  albumCover:'img/GSS.jpeg',    title:'TASER TASER TASER (ft. Ryan)',                  artist:'EJ & Ryan',       peak:3,  streak:8,  prevPosition:'5', trend:'up'   },
-        { position:5,  albumCover:'img/GSS.jpeg',    title:'16',                                            artist:'EJ',              peak:2,  streak:8,  prevPosition:'8', trend:'up'   },
-        { position:6,  albumCover:'img/IMG_7454.png',title:"This Land Is Our Land - '26 Remaster",          artist:'David',           peak:6,  streak:1,  prevPosition:'NEW', trend:'new' },
-        { position:7,  albumCover:'img/Summertime%20Hits%20Vol.%201',title:'No Fighting',                  artist:'Kate',            peak:4,  streak:1,  prevPosition:'NEW', trend:'new' },
-        { position:8,  albumCover:'img/jigchr.png',  title:'JIG (Holiday Remix) (ft. EJ, Ryan)',            artist:'Ray, EJ & Ryan',  peak:4,  streak:2,  prevPosition:'4', trend:'down' },
-        { position:9,  albumCover:'img/Copy%20of%20STILL%20SINGS.jpeg',title:'jaded (with Ray)',           artist:'EJ & Ray',        peak:9,  streak:1,  prevPosition:'NEW', trend:'new' },
-        { position:10, albumCover:'img/IMG_5081.jpeg',title:"This Land Is Our Land - '25 Remaster (ft. Ray)",artist:'David & Ray',   peak:10, streak:1,  prevPosition:'NEW', trend:'new' },
+        { position:1,  albumCover:'img/JIG.png',    title:'JIG (Janna is a Hoe) (ft. EJ, Ryan)',            artist:'Ray, EJ & Ryan',   peak:1,  streak:1,  prevPosition:'NEW', trend:'new'  },
+        { position:2,  albumCover:'img/IMG_1640.png',title:'Bros No Hoes',                                    artist:'Jackbox',          peak:2,  streak:1,  prevPosition:'NEW', trend:'new'  },
+        { position:3,  albumCover:'img/Atlanta.png', title:'Atlanta State of Prime (ft. EJ, Claire)',        artist:'Ray, EJ & Claire', peak:1,  streak:40, prevPosition:'3',   trend:'same' },
+        { position:4,  albumCover:'img/jigchr.png',  title:'JIG (Holiday Remix) (ft. EJ, Ryan)',             artist:'Ray, EJ & Ryan',   peak:4,  streak:3,  prevPosition:'8',   trend:'up'   },
+        { position:5,  albumCover:'img/GSS.jpeg',    title:'Wetter',                                         artist:'EJ',               peak:1,  streak:9,  prevPosition:'1',   trend:'down' },
+        { position:6,  albumCover:'img/GSS.jpeg',    title:'Execute Order 66 (ft. David)',                   artist:'EJ & David',       peak:1,  streak:9,  prevPosition:'2',   trend:'down' },
+        { position:7,  albumCover:'img/GSS.jpeg',    title:'16',                                             artist:'EJ',               peak:2,  streak:9,  prevPosition:'5',   trend:'down' },
+        { position:8,  albumCover:'img/Copy%20of%20STILL%20SINGS.jpeg', title:'DUOTONE',                    artist:'EJ',               peak:8,  streak:1,  prevPosition:'NEW', trend:'new'  },
+        { position:9,  albumCover:'img/Copy%20of%20STILL%20SINGS.jpeg', title:"I Ain't Been Here a Long Time", artist:'EJ',            peak:9,  streak:1,  prevPosition:'NEW', trend:'new'  },
+        { position:10, albumCover:'img/Summertime%20Hits%20Vol.%203', title:'Atlanta Prime V2 (with EJ)',   artist:'Ray & EJ',         peak:10, streak:1,  prevPosition:'NEW', trend:'new'  },
     ];
 
     function switchView(view) {
